@@ -164,7 +164,7 @@ class Site Extends Engine\Red
         );
 
         $menudata = array(
-            'sessions' => $this->e;
+            'sessions' => $this->e
         );
 
         $this->r->branch(array(
