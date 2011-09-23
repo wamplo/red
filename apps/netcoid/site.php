@@ -16,6 +16,7 @@ class Site Extends Engine\Red
     public function __construct(){
         $this->a = new Assets;
         $this->r = new RedRiver;
+        $this->e = new Sessions;
     }
 
     /**
@@ -163,7 +164,7 @@ class Site Extends Engine\Red
         );
 
         $menudata = array(
-            'sessions' => new Sessions
+            'sessions' => $this->e;
         );
 
         $this->r->branch(array(
