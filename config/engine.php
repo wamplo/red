@@ -13,7 +13,6 @@ Class Engine
     public function register()
     {
         $config = array(
-            'folder' 		=> '',
             'development'	=> TRUE
         );
         

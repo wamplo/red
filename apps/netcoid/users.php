@@ -44,7 +44,7 @@ class Users Extends Engine\Red
         $follow_group = $g->getFollowingGroups($this->e->get('uid'));
 
         # START RENDERARRAY
-        $renderarr = NULL;
+        $renderarr = array();
 
         # FOLLOW POST
         if (!empty($follow_post)) {

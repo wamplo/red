@@ -47,18 +47,18 @@ class Assets
 
 		# DEVELOPMENT FOLDER
 		if ($this->config['development']) {
-			return '/apps' . DS . $app . DS . 'assets' . DS . $src;
+			return  '/apps' . DS . $app . DS . 'assets' . DS . $src;
 		}
 
 		# PRODUCTION BUILD FOLDER
 		if (!$this->config['development']) {
-			return '/www-static' . DS . $app . DS . 'assets' . DS . $src;
+			return  '/www-static' . DS . $app . DS . 'assets' . DS . $src;
 		}
 	}
 
 	public function getView( $app, $file, $data = NULL ){
 
-		//ob_start(array ($this, 'compressor' ));
+		ob_start(array ($this, 'compressor' ));
 
 		# DEVELOPMENT FOLDER
 		if ($this->config['development']) {
@@ -69,11 +69,11 @@ class Assets
 			include strtolower('www-static' . DS . $app . DS . 'views' . DS . $file);
 		}
 
-		//$html = ob_get_clean();
+		$html = ob_get_clean();
 
 		# NOT REALLY GOOD? munkin return aja cukup cuma agak berantakan karena
 		# banyak komentarnya
-		//return $this->compressor($html);
+		return $this->compressor($html);
 	}
 
 	/**
@@ -85,15 +85,13 @@ class Assets
 	public function getIMG($app, $src, $options = NULL) {
 
 		$app = strtolower($app);
-		$src = strtolower($src);
-
 		if (! file_exists ( 'apps' . DS . $app . DS . 'assets' . DS . $src )) {
 			throw new \Exception ( "No such img as $path" );
 		}
 
 		$data = getimagesize( 'apps' . DS . $app . DS . 'assets' . DS . $src );
 		
-		echo '<img height="'.$data['1'].'px" width="'.$data['0'].'px" ' . $options . ' src="/' . 'apps' . DS . $app . DS . 'assets' . DS . $src . '" />';
+		echo '<img height="'.$data['1'].'px" width="'.$data['0'].'px" ' . $options . ' src="/apps' . DS . $app . DS . 'assets' . DS . $src . '" />';
 	}
 
 	/**
@@ -104,7 +102,7 @@ class Assets
 	 * @tutorial wiki/missing.txt
 	 */
 	public function href($link, $language) {
-		echo "<a title='$language' href='$link'>$language</a>";
+		echo '<a title="' . $language . '" href="' . $link . '">'. $language . '</a>';
 	}
 
 	public function compressor($buffer) {

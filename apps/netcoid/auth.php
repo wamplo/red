@@ -45,7 +45,9 @@ class Auth Extends Engine\Red
 
                 $data = $u->getData($_POST['username']);
                 $check = $s->CheckPassword($_POST['password'], $data['password']);
-
+                
+                # CHECK RETURN ARRAY JIKA DATABASE KOSONG USER
+                
                 if ($check) {
                     $this->e->set('uid', $data['uid']);
                     $this->e->set('name', $data['name']);

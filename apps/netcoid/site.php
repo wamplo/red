@@ -76,6 +76,7 @@ class Site Extends Engine\Red
         $t = $g->getSearch();
 
         # http://stackoverflow.com/questions/4452472/category-hierarchy-php-mysql
+        $list = array();
         foreach ($t as $value) {
             $thisref = &$refs[ $value['GID'] ];
             $thisref['parent_GID'] = $value['parent_GID'];

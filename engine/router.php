@@ -26,10 +26,10 @@ class Router
     private function setup()
     {
         # SETUP CONFIGURATION
-        $config = $this->dependency['engine']->register();
+        # $config = $this->dependency['engine']->register();
 
-        # REMOVE FOLDER FROM URL
-        $this->url = parse_url(str_replace($config['folder'], NULL, $_SERVER['REQUEST_URI']), PHP_URL_PATH);
+        # REMOVE FOLDER(not supported) & CLEAN THE URL from ?
+        $this->url = parse_url(str_replace( '' , NULL, $_SERVER['REQUEST_URI']), PHP_URL_PATH);
 
         # GET SEGMENTS
         $this->segments = explode('/', $this->url);
@@ -101,10 +101,11 @@ class Router
         
         # GET INFORMATION FROM STRING
         $path = "apps" . DS . $controller[0] . DS . $controller[1] . ".php";
-        
+        $path = strtolower($path);
+
         # CHECK PERMISSION & EXIST
         if (file_exists($path) && is_readable($path)) {
-            
+
             include_once $path;
 
             # NODE, CLASS, METHOD
@@ -117,6 +118,7 @@ class Router
                 $controller[1]
             ));
 
+            #var_dump($app,$class,$method);
             # START THE MAGIC
             $controller = new $class();
             if (is_callable(array(

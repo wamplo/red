@@ -8,7 +8,7 @@
 		<ul class="r" id="red-copyright">
 			<li><p><?php echo l('copyright'); ?></p></li>
 			<li id="verified-business"><a href="/verify"><?php 
-			$this->getIMG('netcoid','img/Site/verified.png'); ?></a></li>
+			$this->getIMG('netcoid','img/site/verified.png'); ?></a></li>
 		</ul>
 	</div>
 </div>
