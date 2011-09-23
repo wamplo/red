@@ -85,6 +85,7 @@ class Assets
 	public function getIMG($app, $src, $options = NULL) {
 
 		$app = strtolower($app);
+		
 		if (! file_exists ( 'apps' . DS . $app . DS . 'assets' . DS . $src )) {
 			throw new \Exception ( "No such img as $path" );
 		}
@@ -109,7 +110,7 @@ class Assets
 		$search = array ('/<!--(.|\s)*?-->/' ); //strip html comments
 		# another search
 		
-		$replace = array ('' );
+		$replace = array ('');
 		# another replace
 
 		$buffer = preg_replace ( $search, $replace, $buffer );

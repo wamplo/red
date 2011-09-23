@@ -143,7 +143,7 @@ class Site Extends Engine\Red
                     $this->a->getPath('netcoid','css/main.v2.css')
                 ),
             'cache' => 0
-        ),0); # START
+        ),1); # START
         $this->__Footer();
     }
 
@@ -154,12 +154,7 @@ class Site Extends Engine\Red
      **/
     private function __Header(){
 
-        echo $this->a->getView('netcoid','framework/header.php',
-            array(
-                'title' => 'Netcoid &mdash; jejaring bisnis indonesia',
-                'description' => 'Netcoid, jejaring bisnis indonesia, menghubungkan pelaku bisnis indonesia' 
-            )
-        );
+
 
         $menudata = array(
             'sessions' => new Sessions
