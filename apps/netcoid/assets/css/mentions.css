@@ -1,0 +1,11 @@
+.mentions{ 
+font-size:11px;
+}
+
+.mentions #d a{color: #CCCCCC;
+margin-left: 10px;opacity:0;}
+.mentions #l a{color: #D32E2E;
+margin-left: 10px;}
+
+.mentions:hover #d a{
+opacity:1;}

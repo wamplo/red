@@ -1,0 +1,39 @@
+/* APPROVEAL
+   ================================================== */
+.box-approve {
+    background: none repeat scroll 0 0 #fff;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+    width: 300px;
+}
+.box-approve a {
+    color: #D32E2E;
+    text-decoration: underline;
+}
+#box-help {
+    float: left;
+    margin: 5px;
+    padding: 5px;
+    width: 300px;
+}
+#box-help a {
+    color: #D32E2E;
+    text-decoration: underline;
+}
+
+#like-facebookapi {
+    display: block;
+    margin: 10px 0 0;
+}
+#follow-twitterapi{
+    display: block;
+}
+h2{    margin-bottom: 7px;}
+#allstars-twitter{
+    margin-top: 5px;
+}
+.spanwelcome{
+    padding: 10px;
+    background:none repeat scroll 0 0 #FEFFCB;
+}

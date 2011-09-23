@@ -1,0 +1,17 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = false
+
+[alias]
+    addremove = !git add . && git ls-files --deleted | xargs --no-run-if-empty git rm
+
+[remote "origin"]
+	url = git@github.com:netcoid/red.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master

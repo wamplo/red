@@ -1,0 +1,599 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"in_a",
+				"in_array"
+			],
+			[
+				"_",
+				"$_: GET['…']"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"function",
+				"function_exists"
+			],
+			[
+				"Exception",
+				"restore_exception_handler"
+			],
+			[
+				"exepti",
+				"Exception"
+			],
+			[
+				"doc",
+				"doc_s: Function Signature"
+			],
+			[
+				"error",
+				"error_reporting"
+			],
+			[
+				"base",
+				"base64_encode"
+			],
+			[
+				"json_",
+				"json_encode"
+			],
+			[
+				"rand",
+				"rand"
+			],
+			[
+				"for",
+				"for: for (…) {…}"
+			],
+			[
+				"filecon",
+				"file_get_contents"
+			],
+			[
+				"get_con",
+				"file_get_contents"
+			],
+			[
+				"getcont",
+				"file_get_contents"
+			],
+			[
+				"log",
+				"log"
+			],
+			[
+				"sys",
+				"system"
+			],
+			[
+				"oid",
+				"oci_internal_debug"
+			],
+			[
+				"strto",
+				"strtok"
+			],
+			[
+				"strpos",
+				"strpos"
+			],
+			[
+				"php",
+				"php"
+			],
+			[
+				"if",
+				"if: if …"
+			],
+			[
+				"namespace",
+				"xml_set_end_namespace_decl_handler"
+			],
+			[
+				"impl",
+				"implode"
+			],
+			[
+				"expl",
+				"explode"
+			],
+			[
+				"getarg",
+				"func_get_args"
+			],
+			[
+				"arg",
+				"func_get_arg"
+			],
+			[
+				"url",
+				"urldecode"
+			],
+			[
+				"DIStict",
+				"radius_request_authenticator"
+			],
+			[
+				"IS",
+				"isset"
+			],
+			[
+				"is_c",
+				"is_callable"
+			],
+			[
+				"imp",
+				"implode"
+			],
+			[
+				"classe",
+				"class_exists"
+			],
+			[
+				"div",
+				"div"
+			],
+			[
+				"li",
+				"li"
+			],
+			[
+				"p",
+				"p"
+			],
+			[
+				"script",
+				"script"
+			],
+			[
+				"a",
+				"a"
+			],
+			[
+				"file",
+				"file_put_contents"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "List",
+	"command_palette":
+	{
+		"height": 392,
+		"selected_items":
+		[
+			[
+				"build",
+				"Set Syntax: NAnt Build File"
+			],
+			[
+				"",
+				"Convert Case: Swap Case"
+			]
+		],
+		"width": 400
+	},
+	"console":
+	{
+		"height": 190
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": true,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/ADAM/www.networks.co.id/git-deploy",
+		"/D/Project Storage/red/www/www.networks.co.id/wiki/config",
+		"/D/Project Storage/red/www/www.networks.co.id/.git/config",
+		"/D/Project Storage/red/www/www.networks.co.id/.git/ftpdata",
+		"/D/Project Storage/red/www/www.networks.co.id/README.md",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Groups/Index.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/Posts.php",
+		"/D/Project Storage/red/www/www.networks.co.id/.gitignore",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/blogpostbagus2.txt",
+		"/D/Project Storage/wnmp/www/netcoid/.git/config",
+		"/D/Project Storage/red/www/www.networks.co.id/wiki/ftpdata",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/__init__.php",
+		"/D/Project Storage/red/www/www.networks.co.id/.htaccess",
+		"/D/ADAM/www.networks.co.id/deploy.ini",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/Groups.php",
+		"/D/ADAM/www.networks.co.id/.git/config",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/__init__.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/Site.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Site/Development.php",
+		"/D/Project Storage/red/www/www.networks.co.id/wiki/others/apps/netcoid/dashboard.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/editv2.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Users/Dashboard.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/Groups.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/Posts.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/Api.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/models/products.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/Follow.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/blog.css",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/js/Users/Dashboard.js",
+		"/D/Project Storage/wnmp/www/netcoid/www-static/assets/js/users/dashboard.js",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/Users.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/ajax.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/Users.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/github/holman-boastful-7423621/netcoid.boastful.js",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Posts/Show.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/github/holman-boastful-7423621/jquery.boastful.js",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/github/holman-boastful-7423621/netcoid.boastful.css",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/comments.css",
+		"/D/Project Storage/red/www/www.networks.co.id/wiki/others/apps/netcoid/ajax.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/site.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/Register.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Users/Welcome.php",
+		"/D/Project Storage/red/www/www.networks.co.id/wiki/others/apps/netcoid/views/welcome.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/models/social.php",
+		"/D/Project Storage/wnmp/www/netcoid/routes.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Users/Editprofile.php",
+		"/D/Project Storage/red/www/www.networks.co.id/wiki/others/apps/netcoid/register.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/js/signup.js",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/Auth.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/social.php",
+		"/D/Project Storage/wnmp/www/netcoid/wiki/database.sql",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/migration/migrations_3.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Profiles/Index.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/Profiles.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Posts/Edit.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/Comments.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/models/comments.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/comments.php",
+		"/D/Project Storage/red/www/www.networks.co.id/todo.txt",
+		"/D/Project Storage/wnmp/www/netcoid/www-static/assets/css/netcoid.v1.css",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/Pagination.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/mentions.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/views/products/single.php",
+		"/D/Project Storage/wnmp/www/netcoid/www-static/assets/css/users.css",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Users/Mentions.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/mentions.css",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/Mentions.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/models/mentions.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/views/users/mentions-list.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/blogpostbagus.txt",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/Support.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Profiles/Posts.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/README.txt",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/default/defaults.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Profiles/Offers.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Profiles/Request.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/pagination.css",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/groups.css",
+		"/D/Project Storage/wnmp/www/netcoid/wiki/blogpost7",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/Flash.php",
+		"/D/Project Storage/red/www/www.networks.co.id/wiki/others/apps/netcoid/views/show.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/Forms.php",
+		"/D/Project Storage/red/www/www.networks.co.id/wiki/others/apps/netcoid/posts.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/views/products/all.php",
+		"/D/Project Storage/wnmp/www/netcoid/www-static/assets/css/product.css",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Posts/Any.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Posts/Offer.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Posts/Request.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/js/Posts/wmd-addon.js",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/Assets.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/Validation.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/product.css",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/default/assets/js/redriver.js",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/main.v2.css",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/admin/views/groups/New.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/js/wmd.js",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/languages/indonesia.php",
+		"/D/Project Storage/red/server/php-5.3.6/php.ini",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/demo/browser/demo.html",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/RedRiver.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/admin/admin.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/admin/assets/js/groups.js",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/Markdown.Converter.js",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/Markdown.Editor.js",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/Markdown.Sanitizer.js",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/Markdown.Red.js",
+		"/D/Project Storage/wnmp/www/netcoid/application/views/usersv2/profile.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/default/views/Framework/Form.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/forms.css",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Site/Login.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/default/assets/css/framework.css",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Framework/Menu.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/login.css",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/Login.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/Memcached.php",
+		"/D/Project Storage/red/www/www.networks.co.id/wiki/others/apps/netcoid/login.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/default/skel.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Users/Menuright.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Framework/Bottom.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/users.css",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Site/Search2.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/views/usersv2/footer.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/views/usersv2/menu-right.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/views/usersv2/header.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/views/usersv2/editproduct.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/views/profile/index.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Site/Search.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/migration/migrations_2.php"
+	],
+	"find":
+	{
+		"height": 36
+	},
+	"find_in_files":
+	{
+		"height": 0,
+		"include_history":
+		[
+			""
+		],
+		"location_history":
+		[
+			"<open folders>",
+			"D:\\Project Storage\\wnmp\\www\\netcoid\\application\\views\\site",
+			"D:\\Project Storage\\wnmp\\www\\netcoid",
+			"<open files>",
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"__checkPostUser",
+			"        if (!$check['permission']['request'] || !$this->e->get('uid')) {\n            die('security@networks.co.id');\n        }",
+			"#comments .comments #comment",
+			"Apps\\Main",
+			"Nodes",
+			"$this->c",
+			"comment",
+			"time_updated",
+			"$this->__securitycheck();",
+			"4-150",
+			"0-150 boleh berupa a-Z 0-9 # dan spasi",
+			"product",
+			"product-to-next",
+			"#red-login",
+			"input, textarea",
+			"input",
+			"form",
+			"orm",
+			"input, textarea",
+			"    margin-left: 5px;\n    padding-left: 21px;",
+			"users-menu-information",
+			"/www-static/assets/images/i",
+			"development",
+			"$a->",
+			"PRODUCTION_ASSETS_FOLDER",
+			"jpegtrans",
+			"View",
+			"command",
+			"save",
+			"d",
+			"development",
+			"$r",
+			"$a->",
+			"$a->getView",
+			"Nodes\\Main\\Models\\",
+			"comments",
+			"news/new.php",
+			"$a->",
+			"$r->",
+			"Cant load",
+			"blog_title_error",
+			"imageDialogText",
+			"input",
+			"red-error-box",
+			"box-approve",
+			"$database = new \\Config\\Database; ",
+			" badan-intelijen-netcoid",
+			"onkeyup",
+			"is_routes",
+			"body",
+			"textarea",
+			"<div id=\"red-header\">\n	<div class=\"clearfix\" id=\"red-menu\">\n		<ul class=\"l\">\n			<li id=\"logo\"><a href=\"/\"><?php $this->getIMG('nodes/main/assets/img/logo2.png'); ?></a></li>\n		</ul>\n		<ul class=\"r\">\n			<li class=\"t\"><?php $this->href('/login',l('login')); ?></li>\n		</ul>\n	</div>\n</div>",
+			"<!-- START FOOTER  -->\n<div id=\"red-footer\">\n	<div class=\"clearfix\" id=\"red-footer-warp\">\n		<ul class=\"l\" id=\"red-footer-menu\">\n			<li id=\"hint\"><?php $this->href('/HQ',l('contactus')); ?></li>\n		</ul>\n		\n		<ul class=\"r\" id=\"red-copyright\">\n			<li><p><?php echo l('copyright'); ?></p></li>\n			<li id=\"verified-business\"><a href=\"/verify\"><?php \n			$this->getIMG('nodes/main/assets/img/verified.png'); ?></a></li>\n		</ul>\n	</div>\n</div>\n<!-- END FOOTER  -->",
+			"RegExp",
+			"attr",
+			"title",
+			"element.title",
+			"message",
+			"title",
+			"input",
+			"red-register",
+			"head-h",
+			"label",
+			"red-menu-login",
+			"jsfolder",
+			"cssfolder",
+			"/www-static/",
+			"gratis selamanya",
+			"Menghubungkan pelaku bisnis dengan teknologi dan social media",
+			"space",
+			"#red-header #red-menu a",
+			"charset",
+			"hashlib",
+			"random",
+			"array",
+			"list",
+			"_run_script",
+			"config",
+			"asset.php",
+			"$this->routes",
+			"redirect",
+			"config",
+			"C:\\php",
+			"extension_dir",
+			" java -jar bin/compiler.jar --js ../../www-devel/js/$i --js_output_file ../../www-static/js/$i",
+			"zend_extension_ts",
+			"php",
+			"extensions",
+			"RunHiddenConsole memcached\\memcached.exe -m 10 -c 1024",
+			"listUnapprovedByUID",
+			"#red-edit-left-wide",
+			"help",
+			"wmd/markdownhelp.html",
+			"addarticle",
+			"textarea-informationbox",
+			"g",
+			"validateDelegate",
+			"textarea",
+			"side",
+			"label.error",
+			"#form-register",
+			"#red-register .textinput ",
+			"textinput",
+			"label.error",
+			"header",
+			"redirect",
+			"red-blog-menu",
+			"addar",
+			"addartc",
+			"highlight",
+			"RECAPTCHA_API_SECURE_SERVER",
+			"RECAPTCHA_API_SERVER",
+			"recaptcha_get_html",
+			"get_html",
+			".feeds #subimage img",
+			"aaa",
+			"faktanyadalah",
+			"faktanyaadalah",
+			"faktanyaadlaah",
+			"fakta",
+			"profile",
+			"start.pjax",
+			"#message",
+			"background-image",
+			"andra",
+			"/edit/",
+			"users/",
+			"recaptcha_challenge_field "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"Apps\\Netcoid",
+			"Apps",
+			"$c",
+			"$this->__securitycheck($username);",
+			"4-140",
+			"4-150 boleh berupa a-Z 0-9 # dan spasi",
+			"groups",
+			"    margin-left: 10px;\n    padding-left: 25px;",
+			"../img/Icons",
+			"$this->a->",
+			"$this->r",
+			"$this->a->",
+			"$this->a->getView",
+			"Nodes\\Netcoid\\Models\\",
+			"news.php",
+			"$this->a->",
+			"$this->r->",
+			"$this-r->",
+			"/new/edit/",
+			"/new/edit/profile",
+			"usersv2/",
+			"features/compress/",
+			"<br/>",
+			"$this->user['role']",
+			"$this->user['role'] != 5",
+			"$this->user['uid'] != 5",
+			"$this->user",
+			"$this->role",
+			"Requires"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0
+	},
+	"input":
+	{
+		"height": 29
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0,
+			1
+		],
+		"rows":
+		[
+			0,
+			1
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 119
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0,
+		"selected_items":
+		[
+			[
+				"/",
+				"/D/Project Storage/wnmp/www/netcoid/routes.php"
+			]
+		],
+		"width": 0
+	},
+	"select_project":
+	{
+		"height": 500,
+		"selected_items":
+		[
+			[
+				"",
+				"/D/netcoid.sublime-project"
+			]
+		],
+		"width": 380
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 237,
+	"status_bar_visible": true
+}

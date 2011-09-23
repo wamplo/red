@@ -1,0 +1,392 @@
+#kurs{
+    background: none repeat scroll 0 0 #C9EBBA;
+    border: 1px solid #B6DAA6;
+    margin: 5px 0;
+    padding: 5px;
+}
+.textinput{}
+#red-edit-right {
+    float: left;
+    margin-right: 15px;
+    width: 245px;
+}
+#red-edit-right li {
+    list-style: square outside none;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+#red-edit-left-wide
+{
+    float: left;
+    margin-right: 20px;
+    padding: 10px;
+    width: 485px;   
+}
+#red-edit-full{
+    border-top: 1px solid #F5EFE7;
+    float: left;
+    margin-right: 20px;
+    padding: 10px;
+    width: 745px;   
+}
+#red-edit-right-wide
+{
+    border-top: 1px solid #F5EFE7;
+    background: none repeat scroll 0 0 #FEFBE8;
+    float: left;
+    margin-right: 20px;
+    padding: 10px;
+    width: 485px;   
+}
+#textarea-informationbox{
+    height: 400px;
+    width: 460px;
+    /* ada error*/
+    margin-bottom:-1px;
+}
+#red-edit-left
+{
+    border-top: 1px solid #F5EFE7;
+    background: none repeat scroll 0 0 #FEFBE8;
+    float: left;
+    margin-right: 20px;
+    padding: 10px;
+    width: 220px;
+}
+#red-edit-left p
+{
+    color: #CC3E3E;
+    margin: 5px;
+}
+#red-profile-status
+{
+    background: none repeat scroll 0 0 #CFDEFF;
+    border: 1px solid #BACEEB;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+#red-whattodo{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #F9EBEB;
+    margin: 10px 0;
+    padding: 10px;
+}
+#red-box-red
+{
+    background:none repeat scroll 0 0 #FFCFCF;
+    border:1px solid #EBBABA;
+    margin:10px 0;
+    padding:10px;
+}
+#input-wide input,
+#input-wide textarea { width: 250px }
+#red-profile-status p { margin-bottom: 10px }
+#red-profile-status a{color: #CC3E3E;}
+
+#twitter {
+background:none repeat scroll 0 0 #9AE4F1;
+padding:10px;
+word-wrap: break-word;
+display:block;
+}
+#yahoo {
+background:none repeat scroll 0 0 #F8FFB1;
+padding:10px;
+}
+#facebook {
+    background: none repeat scroll 0 0 #627AAD;
+    color: #FFFFFF;
+    display: block;
+    padding: 10px;
+}
+#facebook:hover{text-decoration:none;background:none repeat scroll 0 0 #3B5998;}
+#facebook a{    background: none repeat scroll 0 0 #FBFFD9;
+    color: #AAAAAA;}
+#connect-status li {
+    list-style: none outside none;
+    margin: 0 0 10px;
+}
+
+/*product*/
+#subinformation {
+    background-color: none repeat scroll 0 0 #FFF9E3;
+    border-bottom: 1px solid #F9EBEB;
+    padding-top: 5px;
+    padding-bottom:5px;
+}
+
+#subinformation:hover{background-color:  #FFFEDC;}
+#ajax-red-treeslider a:hover {
+      background: none repeat scroll 0 0 #fff;
+      color:#444;
+      text-decoration:none;
+}
+#subinformation #group{float: left;
+    max-width: 230px;
+    padding: 5px 10px;    background: none repeat scroll 0 0 #FEFFDE;}
+#ptime{
+    color: #C6A6A6;}
+#subname{    float: left;
+    max-width: 230px;
+    padding: 5px 10px;}
+#subuser{
+    float: left;
+    margin-left: 10px;
+    padding: 5px 10px;}
+#subtime{
+    color: #CCCCCC;
+    float: left;
+    font-size: 10px;
+    padding: 5px 10px;}
+#suboptions {
+    color: #CCCCCC;
+    float: right;
+    margin-right: 10px;
+    padding: 5px;
+}
+#suboptions a{
+    color: #CCCCCC;
+}
+#subname a,#subuser a{color: #CC3E3E;}
+
+#red-profile-guides {
+    background: none repeat scroll 0 0 #DEFFCF;
+    border: 1px solid #C9EBBA;
+    margin: 0 0 10px;
+    padding: 10px;
+}
+#red-profile-info{
+    background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #EAE3E3;
+    margin: 10px 0;
+    padding: 10px;  
+}
+/*messages*/
+#message{background:#fff;    border-bottom: 1px solid #F9EBEB;
+margin:5px 0;}
+#message:hover{background:#FFFEE3;}
+#archive{
+margin:5px 0;}
+#archive:hover{background:#FFFEE3;}
+
+#red-side-menu {
+    background: url("../img/Site/border-blog.png") no-repeat scroll left top transparent;
+    float: right;
+    min-height: 500px;
+    width: 170px;
+}
+#red-side-menu ul li {
+    border-bottom: 1px solid #F9EBEB;
+    list-style: none outside none;
+    margin-left: 0;
+    padding: 4px 10px;
+}
+
+#red-side-menu ul ul li:hover {
+    border-bottom:1px solid #F4E2E2;
+}
+/* dirty fix */
+#red-side-menu ul ul li {
+    list-style: none;
+    margin-left: 0px;
+    background: none repeat scroll 0 0 #FEFCF2;
+}
+#red-side-menu li a{ color:#444;text-decoration:none; }
+/*icon*/
+#red-side-menu ul ul li.iconhome{
+    background: url("../img/Icons/dashboard.png") no-repeat scroll left center #FFFFFF;
+    margin-left: 10px;
+    padding-left: 25px;
+}
+#red-side-menu ul ul li.iconedit{
+    background: url("../img/Icons/edit.png") no-repeat scroll left center #FFFFFF;
+    margin-left: 10px;
+    padding-left: 25px;
+}
+#red-side-menu ul ul li.iconfrontbox{
+    background: url("../img/Icons/frontbox.png") no-repeat scroll left center #FFFFFF;
+    margin-left: 10px;
+    padding-left: 25px;
+}
+#red-side-menu ul ul li.iconconnect{
+    background: url("../img/Icons/arrow_switch.png") no-repeat scroll left center #FFFFFF;
+    margin-left: 10px;
+    padding-left: 25px;
+}
+#red-side-menu ul ul li.iconadd{
+    background: url("../img/Icons/add.png") no-repeat scroll left center #FFFFFF;
+    margin-left: 10px;
+    padding-left: 25px;
+}
+#red-side-menu ul ul li.iconlist{
+    background: url("../img/Icons/list.png") no-repeat scroll left center #FFFFFF;
+    margin-left: 10px;
+    padding-left: 25px;
+}
+#red-side-menu ul ul li.iconhelp{
+    background: url("../img/Icons/help.png") no-repeat scroll left center #FFFFFF;
+    margin-left: 10px;
+    padding-left: 25px;
+}
+#red-side-menu ul ul li.icondashboard{
+    background: url("../img/Icons/dashboard.png") no-repeat scroll left center #FFFFFF;
+    margin-left: 10px;
+    padding-left: 25px;
+}
+#red-side-menu ul ul li.iconinsights{
+    background: url("../img/Icons/insights.png") no-repeat scroll left center #FFFFFF;
+    margin-left: 10px;
+    padding-left: 25px;
+}
+
+.iconproducts{
+    background-image: url("../img/Icons/lisat.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+#users-menu-information{
+     font-size: 11px;
+}
+.iconproduct{
+    background-image: url("../img/Icons/item.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+
+#ajax-red-treeslider {
+    border-color: #EEEEEE;
+    border-style: solid;
+    border-width: 1px 1px 0;
+    margin-top: 10px;
+}
+
+#message.iconmessage{
+    background-image: url("../img/Icons/Mail.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+
+#archive.iconarchive{
+    background-image: url("../img/Icons/Mail Open.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+
+/*DASBOARD*/
+
+#subfeed-meta{
+margin:5px 0;border-bottom: 1px solid #F9EBEB;}
+
+#red-dashboard {      font-family: Trebuchet MS; }
+#red-dashboard ul li{
+    float: left;
+    margin-right: 5px;
+    padding: 5px;}
+#red-dashboard ul .trustpoint{
+    float: right;
+    margin-right: 0;}
+#comments{  margin-top: 5px;}
+.comment{   
+   url("../img/Site/border-blog.png") no-repeat scroll left top transparent
+    margin-bottom: 5px;}
+.morecomments{        font-size: 11px; border-top: 1px dashed #EEEEEE;
+    color: #CCCCCC;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    padding: 2px 0 2px 10px;
+    text-align: right;}
+#subfeed-more  {   padding: 10px;}
+.bootstraps{
+    background: url("../img/Site/red-gradiant305.gif") repeat-x scroll left center #D32E2E;
+    border: 1px solid #A90000;
+    color: #7D1212;
+    float: left;
+    height: 305px;
+    margin-right: 20px;
+    margin-top: 15px;
+    width: 169px;}
+
+.bootstraps.ok .desc{border-top: 1px solid #308DEF;}
+.bootstraps.ok .image{ border-bottom: 1px solid #004EA0;}
+.bootstraps#last-child{
+        margin-right: 0px;
+}
+.bootstraps .image{    border-bottom: 1px solid #B30000;
+    /*font-size: 15px;*/
+    font-weight: bold;
+    height: 52px;
+    padding-top: 40px;
+    text-align: center;}
+.bootstraps .desc{    padding: 10px;       border-top: 1px solid #E35858;}
+.feeds {    margin-top: 15px;}    
+.feeds #subimage{
+    max-width: 150px;
+}
+
+.feeds #subimage img{
+    border: 1px solid #ddd;
+    padding: 2px;
+    box-shadow: 1px 1px 1px #F5F5F5;
+    
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+
+    transform: rotate(0deg) translate(0px, 0px) scale(1);
+    -moz-transform: rotate(0deg) translate(0px, 0px) scale(1);
+    -webkit-transform: rotate(0deg) translate(0px, 0px) scale(1);
+    -o-transform: rotate(0deg) translate(0px, 0px) scale(1);
+}
+.feeds #subimage img:hover {
+    border: 1px solid #939393;
+}
+
+.feeds #subimage img:hover {
+     transform: rotate(0deg) translate(0px, -2px) scale(1.030);
+    -moz-transform: rotate(0deg) translate(0px, -2px) scale(1.030);
+    -webkit-transform: rotate(0deg) translate(0px, -2px) scale(1.030);
+    -o-transform: rotate(0deg) translate(0px, -2px) scale(1.030);
+}
+ 
+
+.feeds #subcomments{  }
+.mentions{ 
+    margin: 5px 0;font-size:11px;
+    padding: 5px 0;}
+
+.mentions #d a{color: #CCCCCC;
+margin-left: 10px;opacity:0;}
+.mentions #l a{color: #D32E2E;
+margin-left: 10px;}
+
+.mentions:hover #d a{
+opacity:1;}
+
+/*AJAX*/
+#ajax-dashboard-refresh:hover{color:#444;}
+#ajax-information:hover{    background: none repeat scroll 0 0 #FFFDE1;
+    border: 1px solid #F1EEC5;}
+
+/*blog*/
+#waiting-approval{
+        background: none repeat scroll 0 0 #FFFDC6;
+    margin: 0 0 10px;
+    padding: 5px;
+}
+
+#blog-edit{    border: 1px solid #AAAAAA;
+    float: left;
+        margin-right: 28px;
+    padding: 5px;
+    text-align: center;
+    width: 345px;display:block;}
+#blog-del{    border: 1px solid #AAAAAA;
+    float: left;
+    padding: 5px;
+    width: 345px; display:block;   text-align: center;}

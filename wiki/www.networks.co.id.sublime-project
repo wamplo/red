@@ -1,0 +1,27 @@
+{
+	"build_systems":
+	[
+		{
+			"cmd":
+			[
+				"deploy.py"
+			],
+			"name": "List",
+			"windows":
+			{
+				"cmd":
+				[
+					"deploy.bat"
+				],
+				"working_dir": "${project_path:${folder}}/engine/scripts"
+			},
+			"working_dir": "${project_path:${folder}}/engine/scripts"
+		}
+	],
+	"folders":
+	[
+		{
+			"path": "/D/Project Storage/red/www/www.networks.co.id"
+		}
+	]
+}

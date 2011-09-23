@@ -1,0 +1,122 @@
+/* ERROR */
+label.ajax-error{
+    background: none repeat scroll 0 0 #FEFFCB;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-color: #C9C790 #DDDEA3 #DDDEA3;
+    border-style: solid;
+    border-width: 1px;
+    bottom: 7px;
+    font-size: 11px;
+    margin-left: 5px;
+    margin-right: 4px;
+    padding: 6px;
+    position: relative;
+}
+#red-error-box {
+    left: 20px;
+    margin: 0 auto 10px;
+    width: 960px;
+}
+#red-error-box a {
+    color: #444444;
+    text-decoration: underline;
+}
+.error-list{}
+.error-list #num {
+    float: left;
+    padding: 10px;
+}
+.error-list #description {
+    background: none repeat scroll 0 0 #FFFFE1;
+    float: left;
+    margin-left: 10px;
+    padding: 10px;
+    max-width: 890px;
+    color: #D32E2
+}
+.error a{color: #D32E2E;}
+
+/* PLUGIN */
+.example{color:#CCC;}
+input.ajax-valid {
+    background: none repeat scroll 0 0 #CDFFD2;
+}
+input.ajax-error {
+    background: none repeat scroll 0 0 #F9FFD2;
+}
+/* GLOBAL */
+#red-header{
+  background: none repeat scroll 0 0 #D32E2E;
+  border-bottom: 1px solid #780000;
+  color: #FFF;
+}
+
+#red-header li {
+    float: left;    
+    height: 22px;
+    padding: 10px;
+}
+
+#red-header #red-menu {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#red-header #red-menu #logo {
+    bottom: 3px;
+    position: relative;
+    width: 70px;
+    right: 18px;
+}
+
+#red-header #red-menu a { color: #fff;text-shadow: 0 -1px 0 #B11D1D;}
+#red-header #red-menu a:hover { text-decoration: none }
+#red-header #red-menu li.t:hover { background-color: #C52020 }
+
+#red-footer {
+	background: none repeat scroll 0 0 #F9F9F9;
+	background: -moz-linear-gradient(top, #F9FCF7 0%, #F5F9F0 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F9FCF7), color-stop(100%,#F5F9F0));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9fcf7', endColorstr='#f5f9f0',GradientType=0 );
+	border-top: 1px solid #EEE;
+	margin-top: 20px;	
+}
+#red-footer #red-footer-warp {
+	margin: 10px auto 0;
+	padding-bottom: 40px;
+	width: 960px;
+}
+
+#red-footer, #red-footer a {
+	color: #CCC;
+}
+
+#red-footer #red-copyright{
+	width: 390px;
+}
+
+#red-footer #red-footer-menu{
+	width: 570px;
+}
+
+#red-footer #red-copyright li{
+	float:right;
+}
+
+#red-footer #verified-business{
+	bottom: 5px;
+	position: relative;
+	right: 5px;
+}
+
+#red-content {
+	border-top: none;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+	max-width: 960px;
+	min-width: 700px;
+	min-height: 520px;
+}

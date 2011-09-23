@@ -1,0 +1,15 @@
+.boastful {
+  display: inline;
+}
+.boastful img{
+  width: 48px;
+  height: 48px;
+  margin: 3px;
+  border: 0;
+  border-top-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  -webkit-border-top-left-radius: 7px;
+  -webkit-border-bottom-right-radius: 7px;
+  -moz-border-radius-topleft: 7px;
+  -moz-border-radius-bottomright: 7px;
+}

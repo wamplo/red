@@ -1,0 +1,9 @@
+wiki/temp/*
+config/*
+
+# CYGWIN
+*.stackdump
+
+# WINDWOS
+Thumbs.db 
+Desktop.ini

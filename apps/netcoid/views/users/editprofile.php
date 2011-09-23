@@ -1,0 +1,51 @@
+
+<style type="text/css">
+.introduction{}
+#red-menu-dashboard {
+    background: none repeat scroll 0 0 #EEEEEE;
+    height: 50px;
+}
+.users-right50{width:480px;}
+.users-left50{width:480px;}
+#howto-informationbox{    
+	background: none repeat scroll 0 0 #8DD7E4;
+    border: 1px solid #70BFCD;
+    margin: 5px;
+    padding: 5px;
+}
+</style>
+<div id="red-menu-dashboard">
+<ul class="clearfix" style="width:960px;margin:0 auto;">
+	<li class="l" style="padding-top:17.5px"><a href="/dashboard"><?php $this->getIMG('netcoid','img/Icons/user_menu_groups.png') ?></a></li>
+	<li class="l" style="padding-top:17.5px;margin-left:25px"><a href="/edit/profile"><?php $this->getIMG('netcoid','img/Icons/edit.png') ?></a></li>
+</ul>
+</div>
+
+<?php $data['validation']->getErrors(); ?>
+
+<div class="clearfix" id="red-content">
+
+	<div class="users-left50 l form" id="red-wmd"><?php $data['forms']->openForm('red-wmd'); ?>
+		<ul>
+			<li id="form-header"><h3><strong>Profile</strong> <a style="font-size:12px;margin-left:10px" class="s" href="/<?php echo $data['username']; ?>">See Profile</a></h3></li>
+			<div class="clearfix" id="wmd-button-bar"></div>
+			<!-- INFORMATIONBOX -->
+			<li class="form-child"><?php $data['forms']->textarea('information',l('informationbox'), 
+				array( 
+					'data-error' => l('register_username_error'),
+					'class' => 't',
+					'id' => 'wmd-input',
+					'style' => 'width: 450px; height: 250px;',
+					'value'	=> $data['data']['information']
+				)); 
+			?></li>
+
+			<li><input type="hidden" name="information_html" id="wmd-content-html" value=""/></li>
+			<li class="form-button"><input type="submit" id="button" value="Edit"></li>
+		</ul>
+	<?php $data['forms']->closeForm('red-wmd'); ?></div>	
+
+	<div class="r users-right50">
+		<div id="howto-informationbox">Informasi yang anda masukan akan dimuat pada halaman depan profil anda</div>
+	</div>
+</div>

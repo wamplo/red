@@ -1,0 +1,337 @@
+<?php 
+
+if (! defined ( 'SECURE' ))
+    exit ( 'Hello, security@networks.co.id' );
+
+use Engine\libraries\Forms;
+use Engine\libraries\Security;
+use Engine\libraries\Validation;
+use Engine\libraries\Flash;
+use Engine\libraries\Sessions;
+
+class Api extends Engine\Red
+{
+    private $v;
+    private $f;
+    private $c;
+    private $e;
+    
+     // GLOBAL OBJ ( DIPAKE SEMUA FUNCTION )
+    public function __construct(){
+        $this->v = new Validation;
+        $this->f = new Forms;
+        $this->e = new Sessions;
+        $this->h = new Flash;
+    }
+
+    public function postRefresh(){
+       # echo $_GET['f'];
+
+        $p = new Apps\Netcoid\Models\Posts;
+        $g = new Apps\Netcoid\Models\Groups;
+
+        $follow_post = $p->getFollowingPost($this->e->get('uid'));
+        $follow_group = $g->getFollowingGroups($this->e->get('uid'));
+
+        # GABUNGIN PID YANG SAMA +  TYPE
+        foreach ($follow_post as $newfollow_post) {
+            $renderarr[$newfollow_post['PID']] = array(
+                'post' => $newfollow_post,
+                'type' => 'post'
+            );
+        }
+
+        foreach ($follow_group as $newfollow_group) {
+           $renderarr[$newfollow_group['PID']] = array(
+                'post' => $newfollow_group,
+                'type' => 'groups'
+            );
+        }
+
+        # SORT
+        krsort($renderarr);
+        #var_dump(key($renderarr));
+
+        if (key($renderarr) != $_GET['f']) {
+            #var_dump($p->getDiff($_GET['f'],$this->e->get('uid')));
+            echo json_encode(true);
+        }
+    }
+
+    public function checkUsername(){
+        $u = new Apps\Netcoid\Models\Users;
+        $e = $u->userexist($_POST['username']);
+        if (!empty($e)) {
+            echo json_encode(false);
+        }
+
+        if (empty($e)) {
+            echo json_encode(true);
+        }        
+    }
+
+    public function checkName(){
+        $u = new Apps\Netcoid\Models\Users;
+        $e = $u->companyexist($_POST['name']);
+        if (!empty($e)) {
+            echo json_encode(false);
+        }
+
+        if (empty($e)) {
+            echo json_encode(true);
+        }        
+    }
+
+    public function followUID(){
+        if (isset($_GET['id']) && $this->e->get('uid') && isset($_SERVER ['HTTP_REFERER'])) {
+
+            $o = new Apps\Netcoid\Models\Follow;
+            $u = new Apps\Netcoid\Models\Users;
+            
+            $status = $o->isFollowingUID($this->e->get('uid'), $_GET['id']);
+            $user = $u->getData($_GET['id']);
+
+            # SETTING UP FOR FOLLOW
+            $f['follow_uid'] = $this->e->get ( 'uid' );
+            $f['target_uid'] = $_GET ['id'];
+            
+            # @todo nanti diganti pake $_SERVER ['HTTP_REFERER'] aja? biar gak ambil dr database
+
+            if (empty($status)) {
+                $o->set($f);
+                $this->h->setMessage('Following '. $user['name'] .'!'); 
+                header('Location: ' . $_SERVER ['HTTP_REFERER']);
+            } else {
+                die('security@networks.co.id');
+            }
+        }
+    }
+
+    public function unfollowUID(){
+        if (isset($_GET['id']) && $this->e->get('uid') && isset($_SERVER ['HTTP_REFERER'])) {
+
+            $o = new Apps\Netcoid\Models\Follow;
+            $u = new Apps\Netcoid\Models\Users;
+
+            $status = $o->isFollowingUID($this->e->get('uid'), $_GET['id']);
+            $user = $u->getData($_GET['id']);
+
+            # SETTING UP FOR UNFOLLOW
+            $f['follow_uid'] = $this->e->get ( 'uid' );
+            $f['target_uid'] = $_GET ['id'];
+
+            if (!empty($status)) {
+                $o->unfollowUID($f);
+                $this->h->setMessage('Unfollowing '. $user['name'] .'!'); 
+                header('Location: ' . $_SERVER ['HTTP_REFERER']);
+            }
+        }
+    }
+
+    public function followGID(){
+        if (isset($_GET['id']) && $this->e->get('uid') && isset($_SERVER ['HTTP_REFERER'])) {
+
+            $o = new Apps\Netcoid\Models\Follow;
+            $g = new Apps\Netcoid\Models\Groups;
+
+            $status = $o->isFollowingGID($this->e->get('uid'), $_GET['id']);
+            $group = $g->getGroup($_GET['id']);
+
+            # SETTING UP FOR UNFOLLOW
+            $f['follow_uid'] = $this->e->get ( 'uid' );
+            $f['target_gid'] = $_GET ['id'];
+
+            if (empty($status)) {
+                $o->set($f);
+                $this->h->setMessage('Following '. $group['name'] .'!'); 
+                header('Location: ' . $_SERVER ['HTTP_REFERER']);
+            }
+        }
+    }
+
+    public function unfollowGID(){
+        if (isset($_GET['id']) && $this->e->get('uid') && isset($_SERVER ['HTTP_REFERER'])) {
+
+            $o = new Apps\Netcoid\Models\Follow;
+            $g = new Apps\Netcoid\Models\Groups;
+
+            $status = $o->isFollowingGID($this->e->get('uid'), $_GET['id']);
+            $group = $g->getGroup($_GET['id']);
+
+            # SETTING UP FOR UNFOLLOW
+            $f['follow_uid'] = $this->e->get ( 'uid' );
+            $f['target_gid'] = $_GET ['id'];
+
+            if (!empty($status)) {
+                $o->unfollowGID($f);
+                $this->h->setMessage('Unfollowing '. $group['name'] .'!'); 
+                header('Location: ' . $_SERVER ['HTTP_REFERER']);
+            }
+        }
+    }
+
+    /**
+     * OPEN Mentions
+     * - Check if its his comment
+     * - Set 0 to 1
+     *
+     * @url /api/m/open
+     * @arg2 $_POST['id']
+     * @author Adam Ramadhan
+     **/
+    public function openM(){
+        # check if its his comment
+        if (isset($_GET['id']) && $this->e->get('uid')) {
+            $m = new Apps\Netcoid\Models\Mentions;
+            # @todo perlu optimasi
+            $check = $m->getDatafromCIDandUID($_GET['id'], $this->e->get('uid'));
+            if ($this->e->get('uid') == $check['mention_UID']) {
+                $m->open($check['MID'], $this->e->get('uid'));
+                header('Location: /mentions');
+            } else {
+                die('security@networks.co.id');
+            }
+        }
+
+        else {
+            die('api@networks.co.id');
+        }
+    }
+
+    public function delC(){
+       if (isset($_GET['id']) && $this->e->get('uid')) {
+
+
+           $c = new Apps\Netcoid\Models\Comments;
+           $check = $c->getUIDbyCID($_GET['id']);
+           
+           if (isset($_SERVER ['HTTP_REFERER']) && $this->e->get('uid') == $check['comment_UID'])
+            {
+                $c->del($_GET['id']);
+                $this->h->setMessage('Comment Deleted'); 
+                header('Location: ' . $_SERVER ['HTTP_REFERER']);
+            }
+
+       } else {
+           die('api@networks.co.id');
+       }
+    }
+
+    /**
+     * SET COMMENT FOR POSTS
+     * - $this->__commentRender();
+     * - set comment
+     * - set mention
+     *
+     * @url /api/c/set
+     * @arg1 $_POST['comment']
+     * @arg2 $_POST['id']
+     * @author Adam Ramadhan
+     **/
+    public function setC(){
+
+        if (isset($_POST['comment']) && $this->e->get('uid')) {
+
+            $this->v->required($_POST['comment'], 'comment tidak boleh kosong');
+            $this->v->regex($_POST['comment'], '/^[a-zA-Z0-9_\s="!.,]{4,400}$/', 
+                '4-400 boleh berupa a-Z,0-9,=,!,",. dan spasi');
+
+            if(!sizeof($this->v->errors)) 
+            {
+                # CHECK POST IS HUMAN
+                if ($this->f->checkHumanPost(3)) {
+
+                    # RENDER COMMENT
+                    $r = $this->__commentRender($_POST['comment']);
+
+                    # SETTING UP
+                    $p['comment'] = $r['text'];
+                    $p['comment_UID'] = $this->e->get('uid');
+                    $p['comment_PID'] = $_POST['id'];            
+                    $time = new DateTime ( NULL, new DateTimeZone ( 'Asia/Jakarta' ) );
+                    $p['timecreate'] = $time->format('Y-m-d H:i:s');
+                    $m = new Apps\Netcoid\Models\Mentions;
+
+                    # SET COMMENT
+                    $c = new Apps\Netcoid\Models\Comments;
+                    $c->set($p);
+
+                    # SET MENTION IF THERE IS SOME USERNAME IN COMMENT
+                    if (!empty($r['usernames'])) {
+                        $m->set($c->getLastId(), $r['usernames']);
+                    }
+                    $this->h->setMessage('Comment Posted'); 
+                    header('Location: /post?id='.$_POST['id'] );
+                }           
+            }
+
+            if(sizeof($this->v->errors)) 
+            {
+                $this->h->setError($this->v->errors[0]); 
+                header('Location: /post?id='.$_POST['id'] );
+            }
+   
+        } else {
+            die('api@networks.co.id');
+        }
+    }
+
+    /**
+     * PARSE COMMENT TO ARR DATA
+     * @arg1 text
+     * @return arr(arr('usernames'),'comment');
+     * @author Adam Ramadhan
+     **/
+    private function __commentRender($text){
+
+        # IF THERE IS USERNAMES
+        $newdata = array();
+
+        # GET ALL USERNAME FROM TEXT =USERNAME
+        preg_match_all ("/=([a-zA-Z0-9_]+)/", $text, $usernames);
+
+        # @TODO SIMPLER AND MORE EFFICIENT
+        foreach($usernames[1] as $username) {
+            $u = new Apps\Netcoid\Models\Users;
+            $data = $u->getDataForComments($username);
+            if (!empty($data)) {
+                $newdata[$username] = array(
+                    'role'  => $data['role'], 
+                    'name'  => $data['name'], 
+                    'uid'   => $data['uid']
+                );
+            }
+        }
+
+        # @TODO SIMPLER AND MORE EFFICIENT
+        foreach ($newdata as $username => $values) {
+            switch ($values ['role']) {
+                case '1' :
+                    $text = preg_replace('/=(' . $username . ')/', '<a class="u" href="/'. strtolower ( '\1' ) .'">'. $values ['name'] .' &#x2714;</a>', $text);
+                    break;
+
+                case '5' :
+                    $text = preg_replace('/=(' . $username . ')/', 
+                    '<a class="u" href="/'. strtolower ( '\1' ) .'">*'. $values ['name'] .'</a>', $text);
+                    break;
+                
+                case '0' :
+                    $text = preg_replace('/=(' . $username . ')/', '<a class="u" href="/'. strtolower ( '\1' ) .'">'. $values ['name'] .'</a>', $text);
+                    break;
+                
+                default :
+                    $text = preg_replace('/=(' . $username . ')/', '<a class="u" href="/'. strtolower ( '\1' ) .'">'. $values ['name'] .'</a>', $text);
+                    break;
+            }
+        }
+
+        # SET RETURN
+        $return = array(
+            'usernames' => $newdata,
+            'text'      => $text 
+        );
+
+        return $return;
+    }
+}
+?>
