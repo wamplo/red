@@ -85,6 +85,7 @@ class Assets
 	public function getIMG($app, $src, $options = NULL) {
 
 		$app = strtolower($app);
+		var_dump($app);
 		if (! file_exists ( 'apps' . DS . $app . DS . 'assets' . DS . $src )) {
 			throw new \Exception ( "No such img as $path" );
 		}
