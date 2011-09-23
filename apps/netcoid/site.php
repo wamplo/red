@@ -153,7 +153,8 @@ class Site Extends Engine\Red
      * @version 1
      **/
     private function __Header(){
-        echo $this->a->getView('netcoid','Framework/Header.php',
+
+        echo $this->a->getView('netcoid','framework/header.php',
             array(
                 'title' => 'Netcoid &mdash; jejaring bisnis indonesia',
                 'description' => 'Netcoid, jejaring bisnis indonesia, menghubungkan pelaku bisnis indonesia' 
@@ -167,7 +168,7 @@ class Site Extends Engine\Red
         $this->r->branch(array(
             'src' => 
                 array(
-                    'html' => $this->a->getView('netcoid','Framework/Menu.php', $menudata),
+                    'html' => $this->a->getView('netcoid','framework/menu.php', $menudata),
                     'id' => 'rr-ajax-menu'
                 ),
             'css' => 
@@ -188,7 +189,7 @@ class Site Extends Engine\Red
         $this->r->branch(array(
         'src' => 
             array(
-                'html' => $this->a->getView('netcoid','Framework/Bottom.php'),
+                'html' => $this->a->getView('netcoid','framework/bottom.php'),
                 'id' => 'rr-ajax-footer'
             ),
         'css' => 
@@ -199,7 +200,7 @@ class Site Extends Engine\Red
          'cache' => 0
         ),2); # END
 
-        echo $this->a->getView('netcoid','Framework/Footer.php');
+        echo $this->a->getView('netcoid','framework/footer.php');
     }
 }
 ?>
