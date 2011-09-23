@@ -16,7 +16,7 @@ function __autoload_Engine($class){
 
     $file .= str_replace('_', DS, $class) . '.php';
     $file = strtolower($file);
-    var_dump($file);
+    
     if ( file_exists ( $file )) {
         include_once $file;
     }
