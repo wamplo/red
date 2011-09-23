@@ -62,11 +62,11 @@ class Assets
 
 		# DEVELOPMENT FOLDER
 		if ($this->config['development']) {
-			include 'apps' . DS . $app . DS . 'views' . DS . $file;
+			include strtolower('apps' . DS . $app . DS . 'views' . DS . $file);
 		}
 
 		if (!$this->config['development']) {
-			include 'www-static' . DS . $app . DS . 'views' . DS . $file;
+			include strtolower('www-static' . DS . $app . DS . 'views' . DS . $file);
 		}
 
 		$html = ob_get_clean();
