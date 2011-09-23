@@ -58,7 +58,7 @@ class Assets
 
 	public function getView( $app, $file, $data = NULL ){
 
-		ob_start(array ($this, 'compressor' ));
+		//ob_start(array ($this, 'compressor' ));
 
 		# DEVELOPMENT FOLDER
 		if ($this->config['development']) {
@@ -69,11 +69,11 @@ class Assets
 			include strtolower('www-static' . DS . $app . DS . 'views' . DS . $file);
 		}
 
-		$html = ob_get_clean();
+		//$html = ob_get_clean();
 
 		# NOT REALLY GOOD? munkin return aja cukup cuma agak berantakan karena
 		# banyak komentarnya
-		return $this->compressor($html);
+		//return $this->compressor($html);
 	}
 
 	/**
@@ -86,7 +86,7 @@ class Assets
 
 		$app = strtolower($app);
 		$src = strtolower($src);
-		
+
 		if (! file_exists ( 'apps' . DS . $app . DS . 'assets' . DS . $src )) {
 			throw new \Exception ( "No such img as $path" );
 		}
