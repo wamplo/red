@@ -15,9 +15,10 @@ class RedRiver extends Assets
 
 
 	function start(){
+
 		echo '
-	<script type="text/javascript" src="/apps/default/assets/js/jquery-1.6.2.js"></script>
-	<script type="text/javascript" src="/apps/default/assets/js/redriver.js?'.rand().'"></script>';
+	<script type="text/javascript" src="'.$this->getPath('default', 'js/jquery-1.6.2.js').'"></script>
+	<script type="text/javascript" src="'.$this->getPath('default', 'js/redriver.js').'?'.rand().'"></script>';
 	}
 
 	function branch($params, $status = 1){

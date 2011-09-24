@@ -19,7 +19,7 @@ class Validation {
 		if (sizeof ( $this->errors )) {
 			echo '<div id="red-error-box"><ul>';
 			echo '<li class="error-list clearfix">
-	        <span id="num">-' . count ( $this->errors ) . '.</span><span id="description">' . $this->errors [0] . '</span></li>';
+	        <span id="error-num">-' . count ( $this->errors ) . '.</span><span id="error-description">' . $this->errors [0] . '</span></li>';
 			echo '</ul></div>';
 		}
 	}

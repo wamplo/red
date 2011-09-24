@@ -84,7 +84,7 @@ class Auth Extends Engine\Red
             'js' =>
                 array(
                     array(
-                        $this->a->getPath('netcoid','js/jquery.validation.js')
+                        $this->a->getPath('netcoid','js/jquery/jquery.validation.js')
                     ),
                     array(
                         $this->a->getPath('netcoid','js/signin.js')               

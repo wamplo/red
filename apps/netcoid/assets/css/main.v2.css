@@ -23,11 +23,11 @@ label.ajax-error{
     text-decoration: underline;
 }
 .error-list{}
-.error-list #num {
+.error-list #error-num {
     float: left;
     padding: 10px;
 }
-.error-list #description {
+.error-list #error-description {
     background: none repeat scroll 0 0 #FFFFE1;
     float: left;
     margin-left: 10px;

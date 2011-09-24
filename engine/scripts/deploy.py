@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
 # DEVELOPMENT PATH
-PATH_ASSETS = '../../apps/*/assets'
-PATH_VIEWS = '../../apps/*/views/*/'
+PATH_APPS = '../../apps/*/'
+PATH_ASSETS = PATH_APPS + 'assets'
+PATH_VIEWS = PATH_APPS + 'views/*/'
 
 # PRODUCTION PATH
 PATH_PRODUCTION = '../../www-static/'
@@ -18,6 +19,7 @@ gitftp = 'bin/gitftp/git-ftp.py'
 cache = 'cache'
 debug = 0
 color = 1
+
 
 # HUMANIZE
 Athena = [
@@ -43,8 +45,17 @@ try:
 	import os
 	import fnmatch
 	import sys
+	import time
 	from random import randint
 	from clint.textui import colored
+	# IGNORE CSS
+	from ignorecss import *
+
+	''' kedepannya kaya gini
+	configs = []
+	for x in glob.glob(PATH_APPS + '__build__.py'):
+		configs.append(x)
+	'''
 
 except Exception as inst: # raise e
 	print 'Athena: run ./deploy.py setup'
@@ -63,7 +74,7 @@ def dump(obj):
 
 
 # CLEAR CACHE FOLDER
-def clearcache(file):
+def clearcache2(file):
 
 	if color == 0:
 		print 'cleaning up cache...  ' + file
@@ -73,7 +84,36 @@ def clearcache(file):
 	
 	os.unlink(file)
 
+def clearcache():
+	
+	import shutil
+	folders = os.listdir(PATH_PRODUCTION)
+	
+	if color == 0:
+		print 'Athena: Cleaning up www-static...'
+
+	if color == 1:
+		clint.textui.puts(colored.cyan('Athena: Cleaning up www-static...'))
+	
+	for x in folders:
+
+		# HUMINIZE START
+		if color == 0:
+			print 'Cleaning up... ' + x
+
+		if color == 1:
+			clint.textui.puts('Cleaning up... ' + colored.yellow(x))
+		# HUMANIZE END
+
+		if os.path.isdir(PATH_PRODUCTION + x) == True:
+			shutil.rmtree(PATH_PRODUCTION + x)
+		
+		else:
+			os.unlink(PATH_PRODUCTION + x)
+
+
 # IMAGE @todo warning cuma di windows.exe
+# PNG todo "*.png" -o -name "*.bmp" -o -name "*.pnm" -o -name "*.tiff"
 def images():
 
 	if color == 0:
@@ -82,39 +122,109 @@ def images():
 	if color == 1:
 		clint.textui.puts(colored.cyan('Athena: Rendering Images'))
 
-	# PNG todo "*.png" -o -name "*.bmp" -o -name "*.pnm" -o -name "*.tiff"
+	# START GET FILES	
+	png = []
 	for x in glob.glob(PATH_ASSETS + '/img/*.png'):
+		png.append(x)
 
-		# Get file names
-		segment1 = x.split('/')
-		filename = segment1[-1]
-		realname = filename.split('.png')
-		appfolder = segment1[-4]
-		folder = segment1[-2]
+	for x in glob.glob(PATH_ASSETS + '/img/*/*.png'):
+		png.append(x)
+	# END GET FILES
+
+	for x in png:
+
+		# GET FILE NAME START
+		import re
+		segment = re.split('/assets/img/', x)
+		fullpath = segment[-1]
+		folder = fullpath.split('/')
+		appseg = re.split('/apps/', segment[0])
+
+		PRODUCTION_ASSETS_FOLDER = PATH_PRODUCTION + appseg[-1] + os.sep + 'assets' + os.sep + 'img' + os.sep;
+		PRODUCTION_FULL_PATH = PRODUCTION_ASSETS_FOLDER + '/'.join(folder[0:-1]);
+		# GET FILE NAME END
 
 		if debug == 1:
 			opt = ' -v'
 		if debug == 0:
 			opt = ' -quiet'
 
-		# @todo Check kalo ada file yang sama
+		# HUMINIZE START
 		if color == 0:
-			print Athena[randint(0,len(Athena)-1)] + filename
+			print Athena[randint(0,len(Athena)-1)] + fullpath
 
 		if color == 1:
-			clint.textui.puts(Athena[randint(0,len(Athena)-1)] + colored.yellow(filename))
-
-			if not os.path.exists(PATH_PRODUCTION + appfolder + os.sep + 'assets' + os.sep + 'img'):
-		    		os.makedirs(PATH_PRODUCTION + appfolder + os.sep + 'assets' + os.sep + 'img')
+			clint.textui.puts(Athena[randint(0,len(Athena)-1)] + colored.yellow(fullpath))
+		# HUMANIZE END
 
 		# START RENDER
-		os.system( optipng + opt + ' '+ x +' -out ' + PATH_PRODUCTION + appfolder + 
-		os.sep + 'assets' + os.sep + 'img' + os.sep + filename )
+		if not os.path.exists(PRODUCTION_FULL_PATH):
+			os.makedirs(PRODUCTION_FULL_PATH)
+
+		# START RENDER
+		os.system( optipng + opt + ' ' + x + ' -out ' + PRODUCTION_ASSETS_FOLDER + fullpath)
 
 	print '\n'	
 
-	# PNG todo "*.png" -o -name "*.bmp" -o -name "*.pnm" -o -name "*.tiff"
+	# JPEG JPEG JPEG JPEG JPEG JPEG JPEG JPEG JPEG JPEG JPEG JPEG JPEG JPEG JPEG JPEG JPEG JPEG
+
+	# START GET FILES	
+	jpg = []
 	for x in glob.glob(PATH_ASSETS + '/img/*.jpg'):
+		jpg.append(x)
+
+	for x in glob.glob(PATH_ASSETS + '/img/*/*.jpg'):
+		jpg.append(x)
+	# END GET FILES
+
+	for x in jpg:
+
+		# GET FILE NAME START
+		import re
+		segment = re.split('/assets/img/', x)
+		fullpath = segment[-1]
+		folder = fullpath.split('/')
+		appseg = re.split('/apps/', segment[0])
+
+		PRODUCTION_ASSETS_FOLDER = PATH_PRODUCTION + appseg[-1] + os.sep + 'assets' + os.sep + 'img' + os.sep;
+		PRODUCTION_FULL_PATH = PRODUCTION_ASSETS_FOLDER + '/'.join(folder[0:-1]);
+		# GET FILE NAME END
+
+		if debug == 1:
+			opt = ' -verbose -optimize'
+		if debug == 0:
+			opt = ' -optimize'
+
+		# HUMINIZE START
+		if color == 0:
+			print Athena[randint(0,len(Athena)-1)] + fullpath
+
+		if color == 1:
+			clint.textui.puts(Athena[randint(0,len(Athena)-1)] + colored.yellow(fullpath))
+		# HUMANIZE END
+
+		# START RENDER
+		if not os.path.exists(PRODUCTION_FULL_PATH):
+			os.makedirs(PRODUCTION_FULL_PATH)
+
+		os.system( jpegtrans + opt + ' ' + x + ' ' + PRODUCTION_ASSETS_FOLDER + fullpath)
+
+	print '\n'
+
+# FONTS . ttf
+def fonts():
+
+	import shutil
+
+	# HUMANIZE START
+	if color == 0:
+		print 'Athena: Rendering FONTS'
+
+	if color == 1:
+		clint.textui.puts(colored.cyan('Athena: Rendering Javascripts'))
+	# HUMANIZE END
+
+	for x in glob.glob(PATH_ASSETS + '/font/*.ttf'):
 
 		# Get file names
 		segment1 = x.split('/')
@@ -123,27 +233,24 @@ def images():
 		appfolder = segment1[-4]
 		folder = segment1[-2]
 
-		if debug == 1:
-			opt = ' -verbose -optimize'
-		if debug == 0:
-			opt = ' -optimize'
-
-		# @todo Check kalo ada file yang sama
+		# HUMANIZE START
 		if color == 0:
 			print Athena[randint(0,len(Athena)-1)] + filename
 
 		if color == 1:
 			clint.textui.puts(Athena[randint(0,len(Athena)-1)] + colored.yellow(filename))
+		# HUMANIZE END 
 
-		
+		PRODUCTION_ASSETS_FOLDER = PATH_PRODUCTION + appfolder + os.sep + 'assets' + os.sep + 'font'
+		PRODUCTION_FULL_PATH = PRODUCTION_ASSETS_FOLDER + os.sep + filename
+
 		# START RENDER
-		if not os.path.exists(PATH_PRODUCTION + appfolder + os.sep + 'assets' + os.sep + 'img'):
-	    		os.makedirs(PATH_PRODUCTION + appfolder + os.sep + 'assets' + os.sep + 'img')
+		if not os.path.exists(PRODUCTION_ASSETS_FOLDER):
+			os.makedirs(PRODUCTION_ASSETS_FOLDER)
 
-		os.system( jpegtrans + opt + ' '+ x +' ' + PATH_PRODUCTION + appfolder + 
-		os.sep + 'assets' + os.sep + 'img' + os.sep + filename )
-
-	print '\n'
+		shutil.copy2(x, PRODUCTION_FULL_PATH);
+	
+	print '\n'	
 
 # JOBS
 def javascript():
@@ -208,9 +315,10 @@ def views():
 	views = [];
 	for x in glob.glob(PATH_VIEWS + '*.php'):
 		views.append(x)
-
-	os.system(muncher + ' --html '+ ','.join(views) +' --css '+ ','.join(css))
-
+	
+	# HARUS STR
+	os.system(muncher  + ' --html '+ ','.join(views) +' --css '+ ','.join(css) + ' --ignore ' + str(','.join(IGNORECSS)))
+	
 	# VIEWS
 	for x in glob.glob(PATH_VIEWS + '*.opt.php'):
 
@@ -258,7 +366,19 @@ def views():
 
 		os.system('java -jar '+ yuicompressor + ' ' + opt + ' ' + x +' -o ' + x)
 		shutil.move(x, PRODUCTION_ASSETS_CSS)
+	
+	print '\n'	
 
+def generatereadme():
+
+	# GENERATE
+	localtime = time.asctime( time.localtime(time.time()) )
+
+	# Open a file
+	fo = open(PATH_PRODUCTION + "README.markdown", "wb")
+	fo.write( "# Athena : BUILD " + localtime + "\n working great! \n");
+	# Close opend file
+	fo.close()
 
 # IF FROM COMMAND LINE
 if __name__ == '__main__':
@@ -283,14 +403,23 @@ if __name__ == '__main__':
 		if len(sys.argv) == 2:
 			if sys.argv[1] == 'all':
 				views() # css, and views
-				images() # images
-				javascript() # javascripts
+				images()
+				javascript()
+				fonts()
+				generatereadme()
 
 			if sys.argv[1] == 'deploy':
 				deploy()
 
 			if sys.argv[1] == 'setup':
 				setup()
+
+			if sys.argv[1] == 'flush':
+				clearcache()
+
+			if sys.argv[1] == 'test':
+				print 'helloworld'
+
 
 	except Exception as inst:
 		print 'Athena: ouch theres something in the way!'
