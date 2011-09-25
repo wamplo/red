@@ -1,4 +1,4 @@
-#!/usr/local/bin/php -q
+#/usr/local/lib/php –q
 <?php
  
 // read from stdin
