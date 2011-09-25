@@ -1,19 +1,26 @@
 <?php 
-/**
-* CORE NODE
-*/
+if (!defined('SECURE'))
+    exit('Hello, security@networks.co.id');
 
-use Engine\libraries\Assets;
-use Engine\libraries\RedRiver;
-use Engine\libraries\Memcached;
-use Engine\libraries\Social;
-use Engine\libraries\Forms;
-use Engine\libraries\Sessions;
+use Engine\Libraries\Assets;
+use Engine\Libraries\RedRiver;
+use Engine\Libraries\Memcached;
+use Engine\Libraries\Social;
+use Engine\Libraries\Forms;
+use Engine\Libraries\Sessions;
 
 class Site Extends Engine\Red
 {
     public $a, $r, $e;
 
+    /**
+     * GLOBAL FUNCTION
+     * Dependency load here, if a library is used in more then
+     * 2 Function put it here too, dont forget to put a private var
+     * above
+     * @author Adam Ramadhan
+     * @version 1
+     **/
     public function __construct(){
         $this->a = new Assets;
         $this->r = new RedRiver;
@@ -34,11 +41,12 @@ class Site Extends Engine\Red
 
     /**
      * FRAMEWORK __HEADER
+     * Header Element
      * @author Adam Ramadhan
      * @version 1
      **/
     private function __Header(){
-        echo $this->a->getView('netcoid','Framework/Header.php',
+        echo $this->a->getView('netcoid','framework/header.php',
             array(
                 'title' => 'Netcoid &mdash; jejaring bisnis indonesia',
                 'description' => 'Netcoid, jejaring bisnis indonesia, menghubungkan pelaku bisnis indonesia' 
@@ -52,7 +60,7 @@ class Site Extends Engine\Red
         $this->r->branch(array(
             'src' => 
                 array(
-                    'html' => $this->a->getView('netcoid','Framework/Menu.php', $menudata),
+                    'html' => $this->a->getView('netcoid','framework/menu.php', $menudata),
                     'id' => 'rr-ajax-menu'
                 ),
             'css' => 
@@ -66,6 +74,7 @@ class Site Extends Engine\Red
 
     /**
      * FRAMEWORK __FOOTER
+     * Footer Element
      * @author Adam Ramadhan
      * @version 1
      **/
@@ -73,7 +82,7 @@ class Site Extends Engine\Red
         $this->r->branch(array(
         'src' => 
             array(
-                'html' => $this->a->getView('netcoid','Framework/Bottom.php'),
+                'html' => $this->a->getView('netcoid','framework/bottom.php'),
                 'id' => 'rr-ajax-footer'
             ),
         'css' => 
@@ -84,7 +93,7 @@ class Site Extends Engine\Red
          'cache' => 0
         ),2); # END
 
-        echo $this->a->getView('netcoid','Framework/Footer.php');
+        echo $this->a->getView('netcoid','framework/footer.php');
     }
 }
 ?>

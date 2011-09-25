@@ -176,26 +176,34 @@
 			}
 		},
 		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/libraries/assets.php",
+			"file": "/D/Project Storage/red/www/www.networks.co.id/index.php",
 			"settings":
 			{
-				"buffer_size": 3088,
+				"buffer_size": 373,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/deploy.py",
+			"settings":
+			{
+				"buffer_size": 10115,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/index.php",
+			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/ignorecss.py",
 			"settings":
 			{
-				"buffer_size": 539,
-				"line_ending": "Unix"
+				"buffer_size": 177,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "/D/Project Storage/red/www/www.networks.co.id/config/engine.php",
 			"settings":
 			{
-				"buffer_size": 314,
+				"buffer_size": 315,
 				"line_ending": "Windows"
 			}
 		},
@@ -203,31 +211,7 @@
 			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/libraries/redriver.php",
 			"settings":
 			{
-				"buffer_size": 1655,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/framework/bottom.php",
-			"settings":
-			{
-				"buffer_size": 453,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/site/search2.php",
-			"settings":
-			{
-				"buffer_size": 963,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/site.php",
-			"settings":
-			{
-				"buffer_size": 5650,
+				"buffer_size": 1680,
 				"line_ending": "Windows"
 			}
 		},
@@ -235,31 +219,23 @@
 			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/auth.php",
 			"settings":
 			{
-				"buffer_size": 4855,
+				"buffer_size": 4862,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/users.php",
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/main.v2.css",
 			"settings":
 			{
-				"buffer_size": 7734,
+				"buffer_size": 2486,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/dashboard.php",
+			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/libraries/validation.php",
 			"settings":
 			{
-				"buffer_size": 4023,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/editprofile.php",
-			"settings":
-			{
-				"buffer_size": 1866,
+				"buffer_size": 2091,
 				"line_ending": "Windows"
 			}
 		}
@@ -296,11 +272,28 @@
 	},
 	"file_history":
 	[
+		"/D/Project Storage/red/www/www.networks.co.id/www-static/README.markdown",
+		"/D/Project Storage/red/www/www.networks.co.id/www-static/README.md",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/__build__.py",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/assets.php",
+		"/D/Project Storage/red/www/www.networks.co.id/index.php",
+		"/D/Project Storage/red/www/www.networks.co.id/config/engine.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/redriver.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/framework/bottom.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/site/search2.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/site.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/site/sitedev.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/auth.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/users.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/dashboard.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/editprofile.php",
+		"/D/Program Storage/start/Data/Packages/User/Base File.sublime-settings",
+		"/D/Program Storage/start/Data/Packages/Default/Base File.sublime-settings",
+		"/D/Program Storage/start/Data/Packages/User/JSON.sublime-settings",
+		"/D/Program Storage/start/Data/Packages/Default/Global.sublime-settings",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/forms.php",
 		"/D/Project Storage/wnmp/www/learn4/system/core/Router.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/site/login.php",
-		"/D/Project Storage/red/www/www.networks.co.id/config/engine.php",
-		"/D/Project Storage/red/www/www.networks.co.id/index.php",
 		"/D/Project Storage/red/www/www.networks.co.id/.git/config",
 		"/D/Project Storage/red/www/www.networks.co.id/wiki/config",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/migration/migrations_1.php",
@@ -308,8 +301,6 @@
 		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/migration/migrations_3.php",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/__init__.php",
 		"/D/Project Storage/red/www/www.networks.co.id/.gitignore",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/assets.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/site.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/framework/menu.php",
 		"/D/Project Storage/red/www/www.networks.co.id/.git/ftpdata",
 		"/D/ADAM/www.networks.co.id/git-deploy",
@@ -408,30 +399,15 @@
 		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/RedRiver.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/admin/admin.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/admin/assets/js/groups.js",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/Markdown.Converter.js",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/Markdown.Editor.js",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/Markdown.Sanitizer.js",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/Markdown.Red.js",
-		"/D/Project Storage/wnmp/www/netcoid/application/views/usersv2/profile.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/default/views/Framework/Form.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/forms.css",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Site/Login.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/default/assets/css/framework.css",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Framework/Menu.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/login.css",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/Login.php",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/Memcached.php",
-		"/D/Project Storage/red/www/www.networks.co.id/wiki/others/apps/netcoid/login.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/default/skel.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Users/Menuright.php"
+		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/Markdown.Converter.js"
 	],
 	"find":
 	{
-		"height": 36
+		"height": 39
 	},
 	"find_in_files":
 	{
-		"height": 0,
+		"height": 85,
 		"include_history":
 		[
 			""
@@ -450,6 +426,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"f",
 			"FOLDER",
 			"folder",
 			"remove",
@@ -576,8 +553,7 @@
 			"fakta",
 			"profile",
 			"start.pjax",
-			"#message",
-			"background-image"
+			"#message"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -625,7 +601,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -640,8 +616,8 @@
 						"selection":
 						[
 							[
-								239,
-								239
+								1107,
+								1107
 							]
 						],
 						"settings":
@@ -658,45 +634,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/libraries/assets.php",
-					"settings":
-					{
-						"buffer_size": 3088,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2225,
-								2225
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0,
-						"translation.y": 0,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "/D/Project Storage/red/www/www.networks.co.id/index.php",
 					"settings":
 					{
-						"buffer_size": 539,
+						"buffer_size": 373,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								334,
-								334
+								373,
+								373
 							]
 						],
 						"settings":
@@ -706,25 +655,78 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0,
-						"translation.y": 48,
+						"translation.y": 0,
 						"zoom_level": 1
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/config/engine.php",
+					"buffer": 2,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/deploy.py",
 					"settings":
 					{
-						"buffer_size": 314,
+						"buffer_size": 10115,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								225,
-								225
+								2420,
+								2420
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0,
+						"translation.y": 1285,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/ignorecss.py",
+					"settings":
+					{
+						"buffer_size": 177,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								172,
+								172
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/config/engine.php",
+					"settings":
+					{
+						"buffer_size": 315,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								260,
+								260
 							]
 						],
 						"settings":
@@ -738,46 +740,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/libraries/redriver.php",
 					"settings":
 					{
-						"buffer_size": 1655,
+						"buffer_size": 1680,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								490,
-								490
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0,
-						"translation.y": 192,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/framework/bottom.php",
-					"settings":
-					{
-						"buffer_size": 453,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								355,
-								361
+								389,
+								389
 							]
 						],
 						"settings":
@@ -793,156 +768,74 @@
 				},
 				{
 					"buffer": 6,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/site/search2.php",
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/auth.php",
 					"settings":
 					{
-						"buffer_size": 963,
+						"buffer_size": 4862,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								224,
-								224
+								2679,
+								2679
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0,
-						"translation.y": 144,
+						"translation.y": 960,
 						"zoom_level": 1
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 7,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/site.php",
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/main.v2.css",
 					"settings":
 					{
-						"buffer_size": 5650,
+						"buffer_size": 2486,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1845,
-								1845
+								556,
+								546
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0,
-						"translation.y": 864,
+						"translation.y": 96,
 						"zoom_level": 1
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 8,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/auth.php",
+					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/libraries/validation.php",
 					"settings":
 					{
-						"buffer_size": 4855,
+						"buffer_size": 2091,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1337,
-								1337
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0,
-						"translation.y": 480,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/users.php",
-					"settings":
-					{
-						"buffer_size": 7734,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4489,
-								4489
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0,
-						"translation.y": 2112,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/dashboard.php",
-					"settings":
-					{
-						"buffer_size": 4023,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								243,
-								243
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0,
-						"translation.y": 0,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/editprofile.php",
-					"settings":
-					{
-						"buffer_size": 1866,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								808,
-								808
+								468,
+								468
 							]
 						],
 						"settings":

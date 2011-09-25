@@ -6,5 +6,6 @@ IGNORECSS = [
 	'#red-error-box',
 	'.error-list',
 	'.error-list #error-num',
-	'.error-list #error-description'
+	'.error-list #error-description',
+	'.clearfix'
 ];

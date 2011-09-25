@@ -1,5 +1,6 @@
 wiki/temp/*
 config/*
+*.sublime-workspace
 
 # CYGWIN
 *.stackdump

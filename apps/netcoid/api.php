@@ -3,20 +3,16 @@
 if (! defined ( 'SECURE' ))
     exit ( 'Hello, security@networks.co.id' );
 
-use Engine\libraries\Forms;
-use Engine\libraries\Security;
-use Engine\libraries\Validation;
-use Engine\libraries\Flash;
-use Engine\libraries\Sessions;
+use Engine\Libraries\Forms;
+use Engine\Libraries\Security;
+use Engine\Libraries\Validation;
+use Engine\Libraries\Flash;
+use Engine\Libraries\Sessions;
 
 class Api extends Engine\Red
 {
-    private $v;
-    private $f;
-    private $c;
-    private $e;
+    private $v, $f, $e, $f;
     
-     // GLOBAL OBJ ( DIPAKE SEMUA FUNCTION )
     public function __construct(){
         $this->v = new Validation;
         $this->f = new Forms;

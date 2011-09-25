@@ -15,7 +15,7 @@ label.ajax-error{
 }
 #red-error-box {
     left: 20px;
-    margin: 0 auto 10px;
+    margin: 0 auto 0;
     width: 960px;
 }
 #red-error-box a {
