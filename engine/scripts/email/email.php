@@ -1,4 +1,4 @@
-#!/usr/local/bin/php
+#!/usr/local/bin/phpa
 <?php
 $fd = fopen("php://stdin", "r");
 $email = "";
