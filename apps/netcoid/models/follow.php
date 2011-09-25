@@ -24,7 +24,7 @@ class Follow extends \Engine\libraries\Database {
 	}
 
 	function isFollowingUID($follower, $target) {
-		$status = $this->fetch ( 'SELECT follow_uid FROM follow WHERE follow_uid = :follow_uid AND target_uid = :target_uid LIMIT 1', array ('follow_uid' => $follower, 'target_uid' => $target ) );
+		$status = $this->fetch ( 'SELECT follow_uid FROM follow WHERE follow_uid = :follow_uid AND target_uid = :target_uid LIMIT 1', array ('follow_uid' => $follower, 'target_uid' => $target ));
 		return $status['follow_uid'];
 	}
 

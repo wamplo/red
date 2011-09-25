@@ -15,9 +15,8 @@ class Site Extends Engine\Red
 
     /**
      * GLOBAL FUNCTION
-     * Dependency load here, if a library is used in more then
-     * 2 Function put it here too, dont forget to put a private var
-     * above
+     * Dependency load here, if a library is used in all the function
+     * put it here, dont forget to put a private var above
      * @author Adam Ramadhan
      * @version 1
      **/

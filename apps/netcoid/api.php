@@ -11,7 +11,7 @@ use Engine\Libraries\Sessions;
 
 class Api extends Engine\Red
 {
-    private $v, $f, $e, $f;
+    private $v, $f, $e, $h;
     
     public function __construct(){
         $this->v = new Validation;
@@ -20,8 +20,16 @@ class Api extends Engine\Red
         $this->h = new Flash;
     }
 
+    /**
+     * postRefresh()
+     * a post refresh checks if there is any update
+     * on a user feed
+     * @param $_GET['f'], Sessions(UID)
+     * @return TRUE (new changes), FALSE (no changes)
+     * @author Adam Ramadhan
+     * @version 1
+     **/
     public function postRefresh(){
-       # echo $_GET['f'];
 
         $p = new Apps\Netcoid\Models\Posts;
         $g = new Apps\Netcoid\Models\Groups;
@@ -29,7 +37,7 @@ class Api extends Engine\Red
         $follow_post = $p->getFollowingPost($this->e->get('uid'));
         $follow_group = $g->getFollowingGroups($this->e->get('uid'));
 
-        # GABUNGIN PID YANG SAMA +  TYPE
+        # JOIN PID YANG SAMA +  TYPE
         foreach ($follow_post as $newfollow_post) {
             $renderarr[$newfollow_post['PID']] = array(
                 'post' => $newfollow_post,
@@ -44,16 +52,31 @@ class Api extends Engine\Red
             );
         }
 
-        # SORT
-        krsort($renderarr);
-        #var_dump(key($renderarr));
+        # SORT THE ARRAY
+        krsort($renderarr); # var_dump(key($renderarr));
 
+        # IF DIFFRENT
         if (key($renderarr) != $_GET['f']) {
-            #var_dump($p->getDiff($_GET['f'],$this->e->get('uid')));
             echo json_encode(true);
         }
+
+        # IF STILL THE SAME
+        if (key($renderarr) == $_GET['f']) {
+            echo json_encode(false); 
+        }
+
+        # var_dump($p->getDiff($_GET['f'],$this->e->get('uid')));
+        #var_dump($p->getDiff($_GET['f'],$this->e->get('uid')));
     }
 
+    /**
+     * checkUsername()
+     * checks for a username if exist
+     * @param $_POST['username']
+     * @return TRUE (doesn`t exist), FALSE (user exist)
+     * @author Adam Ramadhan
+     * @version 1
+     **/
     public function checkUsername(){
         $u = new Apps\Netcoid\Models\Users;
         $e = $u->userexist($_POST['username']);
@@ -66,6 +89,14 @@ class Api extends Engine\Red
         }        
     }
 
+    /**
+     * checkName()
+     * checks for a name if exist
+     * @param $_POST['name']
+     * @return TRUE (doesn`t exist), FALSE (user exist)
+     * @author Adam Ramadhan
+     * @version 1
+     **/
     public function checkName(){
         $u = new Apps\Netcoid\Models\Users;
         $e = $u->companyexist($_POST['name']);
@@ -78,8 +109,21 @@ class Api extends Engine\Red
         }        
     }
 
+    /**
+     * followUID()
+     * follows an UID if not follow
+     * @param $_POST['name'], Sessions(UID)
+     * @return TRUE (doesn`t exist), FALSE (user exist)
+     * @author Adam Ramadhan
+     * @version 1
+     **/
     public function followUID(){
         if (isset($_GET['id']) && $this->e->get('uid') && isset($_SERVER ['HTTP_REFERER'])) {
+
+            # YOU CANT FOLLOW YOUR SELF
+            if ($this->e->get('uid') === $_GET['id']) {
+                die('security@networks.co.id');
+            }
 
             $o = new Apps\Netcoid\Models\Follow;
             $u = new Apps\Netcoid\Models\Users;
@@ -92,7 +136,6 @@ class Api extends Engine\Red
             $f['target_uid'] = $_GET ['id'];
             
             # @todo nanti diganti pake $_SERVER ['HTTP_REFERER'] aja? biar gak ambil dr database
-
             if (empty($status)) {
                 $o->set($f);
                 $this->h->setMessage('Following '. $user['name'] .'!'); 

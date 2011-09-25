@@ -13,7 +13,7 @@ Class Engine
     public function register()
     {
         $config = array(
-            'development'	=> FALSE
+            'development'	=> TRUE
         );
         
         return $config;
