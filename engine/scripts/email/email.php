@@ -1,4 +1,4 @@
-#!/usr/bin/php –q
+#!/usr/local/bin/php -q
 <?
 /* Read the message from STDIN */
 $fd = fopen("php://stdin", "r"); 
