@@ -5,7 +5,7 @@
 		[
 			[
 				"_",
-				"$_: GET['…']"
+				"$_: POST['…']"
 			],
 			[
 				"strtolowe",
@@ -168,6 +168,70 @@
 	"buffers":
 	[
 		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/api.php",
+			"settings":
+			{
+				"buffer_size": 12138,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/elephantmarkdown.php",
+			"settings":
+			{
+				"buffer_size": 71977,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/show.php",
+			"settings":
+			{
+				"buffer_size": 3270,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/posts.php",
+			"settings":
+			{
+				"buffer_size": 18692,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/js/timeago.js",
+			"settings":
+			{
+				"buffer_size": 75,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/comments.css",
+			"settings":
+			{
+				"buffer_size": 1277,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/js/jquery/jquery.timeago.js",
+			"settings":
+			{
+				"buffer_size": 4543,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/vendors/htmlpurifier/HTMLPurifier.php",
+			"settings":
+			{
+				"buffer_size": 8831,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/profiles/index.php",
 			"settings":
 			{
@@ -192,14 +256,6 @@
 			}
 		},
 		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/api.php",
-			"settings":
-			{
-				"buffer_size": 11799,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/README.markdown",
 			"settings":
 			{
@@ -220,6 +276,94 @@
 			"settings":
 			{
 				"buffer_size": 19,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/default/assets/css/framework.css",
+			"settings":
+			{
+				"buffer_size": 7264,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/any.php",
+			"settings":
+			{
+				"buffer_size": 1354,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/posts.css",
+			"settings":
+			{
+				"buffer_size": 332,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/edit.php",
+			"settings":
+			{
+				"buffer_size": 1473,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/offer.php",
+			"settings":
+			{
+				"buffer_size": 1355,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/request.php",
+			"settings":
+			{
+				"buffer_size": 1357,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/comments.php",
+			"settings":
+			{
+				"buffer_size": 1810,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/migration/migrations_3.php",
+			"settings":
+			{
+				"buffer_size": 1662,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/showpost.css",
+			"settings":
+			{
+				"buffer_size": 279,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/admin/admin.php",
+			"settings":
+			{
+				"buffer_size": 4733,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/robots.txt",
+			"settings":
+			{
+				"buffer_size": 277,
 				"line_ending": "Windows"
 			}
 		}
@@ -256,6 +400,12 @@
 	},
 	"file_history":
 	[
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/show-post.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/htmlpurifier/HTMLPurifier.standalone.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/ElephantMarkdown.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/show.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/Markdown.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/posts.php",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/email.php",
 		"/D/Project Storage/Web Projects/www/kriuq/app/webroot/js/apps.js",
 		"/D/Project Storage/Web Projects/www/kriuq/app/views/elements/dashboard.ctp",
@@ -377,13 +527,7 @@
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Profiles/Offers.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Profiles/Request.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/pagination.css",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/groups.css",
-		"/D/Project Storage/wnmp/www/netcoid/wiki/blogpost7",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/Flash.php",
-		"/D/Project Storage/red/www/www.networks.co.id/wiki/others/apps/netcoid/views/show.php",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/Forms.php",
-		"/D/Project Storage/red/www/www.networks.co.id/wiki/others/apps/netcoid/posts.php",
-		"/D/Project Storage/wnmp/www/netcoid/application/views/products/all.php"
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/groups.css"
 	],
 	"find":
 	{
@@ -410,6 +554,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"#post-menu",
+			"NO_ENTITIES",
+			"NO_MARKUP",
+			"xss",
 			"isFollowingUID",
 			"#red-error-box",
 			"f",
@@ -533,11 +681,7 @@
 			"get_html",
 			".feeds #subimage img",
 			"aaa",
-			"faktanyadalah",
-			"faktanyaadalah",
-			"faktanyaadlaah",
-			"fakta",
-			"profile"
+			"faktanyadalah"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -585,11 +729,232 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/api.php",
+					"settings":
+					{
+						"buffer_size": 12138,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8752,
+								8752
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0,
+						"translation.y": 4272,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/elephantmarkdown.php",
+					"settings":
+					{
+						"buffer_size": 71977,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								26616,
+								26627
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0,
+						"translation.y": 234,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/show.php",
+					"settings":
+					{
+						"buffer_size": 3270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								24,
+								24
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/posts.php",
+					"settings":
+					{
+						"buffer_size": 18692,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5043,
+								5043
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0,
+						"translation.y": 2074,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/js/timeago.js",
+					"settings":
+					{
+						"buffer_size": 75,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								75,
+								75
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/comments.css",
+					"settings":
+					{
+						"buffer_size": 1277,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								372,
+								372
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/js/jquery/jquery.timeago.js",
+					"settings":
+					{
+						"buffer_size": 4543,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4543,
+								4543
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0,
+						"translation.y": 240,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/vendors/htmlpurifier/HTMLPurifier.php",
+					"settings":
+					{
+						"buffer_size": 8831,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0,
+						"translation.y": 960,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/profiles/index.php",
 					"settings":
 					{
@@ -616,7 +981,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 9,
 					"file": "/D/Project Storage/red/www/www.networks.co.id/config/engine.php",
 					"settings":
 					{
@@ -642,7 +1007,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 10,
 					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/follow.php",
 					"settings":
 					{
@@ -663,41 +1028,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0,
-						"translation.y": 96,
+						"translation.y": 32,
 						"zoom_level": 1
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/api.php",
-					"settings":
-					{
-						"buffer_size": 11799,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3634,
-								3634
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0,
-						"translation.y": 2064,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
+					"buffer": 11,
 					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/README.markdown",
 					"settings":
 					{
@@ -723,7 +1060,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 12,
 					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/email.php",
 					"settings":
 					{
@@ -740,7 +1077,9 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0,
 						"translation.y": 528,
@@ -749,7 +1088,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 13,
 					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/check.php",
 					"settings":
 					{
@@ -767,6 +1106,303 @@
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/default/assets/css/framework.css",
+					"settings":
+					{
+						"buffer_size": 7264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2444,
+								2444
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0,
+						"translation.y": 1260,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/any.php",
+					"settings":
+					{
+						"buffer_size": 1354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/posts.css",
+					"settings":
+					{
+						"buffer_size": 332,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								332,
+								332
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/edit.php",
+					"settings":
+					{
+						"buffer_size": 1473,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/offer.php",
+					"settings":
+					{
+						"buffer_size": 1355,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/request.php",
+					"settings":
+					{
+						"buffer_size": 1357,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/comments.php",
+					"settings":
+					{
+						"buffer_size": 1810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								997,
+								1007
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0,
+						"translation.y": 272,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/migration/migrations_3.php",
+					"settings":
+					{
+						"buffer_size": 1662,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								570,
+								16
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/showpost.css",
+					"settings":
+					{
+						"buffer_size": 279,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								253,
+								253
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/admin/admin.php",
+					"settings":
+					{
+						"buffer_size": 4733,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								503,
+								503
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0,
+						"translation.y": 96,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/robots.txt",
+					"settings":
+					{
+						"buffer_size": 277,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								139,
+								139
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0,
 						"translation.y": 0,
@@ -841,6 +1477,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 237,
+	"side_bar_width": 306,
 	"status_bar_visible": true
 }
