@@ -423,7 +423,7 @@ class Posts Extends Engine\Red
         if ($this->f->checkHumanPost(1)) {
 
             $p['title'] = $_POST['title'];
-            $p['content'] = $_POST['content']; #savenya gimana?
+            $p['content'] = $this->v->safe($_POST['content']);
 
             # FALLBACK
             if (empty($_POST['content_html'])) {
@@ -432,7 +432,7 @@ class Posts Extends Engine\Red
             }
 
             # THIS IS NOT SAFE! @todo
-            $p['content_html'] = $_POST['content_html'];
+            $p['content_html'] = $m->netcoid_safe_parse($p['comment']);
 
             $time = new DateTime(NULL, new DateTimeZone('Asia/Jakarta'));
 
