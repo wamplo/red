@@ -2,22 +2,6 @@
 # contact us here: robots@networks.co.id we will send
 # tos & confirmation right away
 
-User-agent: Googlebot
-
-# folders
-Disallow: /www-static
-Disallow: /libraries
-Disallow: /application
-Disallow: /middleware
-Disallow: /wiki
-
-# links
-Disallow: /verify
-Disallow: /messages
-Disallow: /mentions
-Disallow: /edit
-Disallow: /area51
-
 # missing todo
 
 User-agent: *
