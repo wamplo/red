@@ -131,6 +131,7 @@ input, textarea {
 h1, h2, h3, h4, h5, h6 {
     clear: both;
     font-weight: 400;
+    font-family: trebuchet MS;
 }
 h1 {
     font-size: 24px;
@@ -298,19 +299,19 @@ label {
   font-family: 'Verdana';
   font-style: normal;
   font-weight: normal;
-  src: url('/www-static/fonts/verdana.ttf') format("truetype");
+  src: url('/www-static/default/assets/font/verdana.ttf') format("truetype");
 }
 
 @font-face {
   font-family: 'Droid Sans';
   font-style: normal;
   font-weight: normal;
-  src: url('/www-static/fonts/DroidSans.ttf') format("truetype");
+  src: url('/www-static/default/assets/font/DroidSans.ttf') format("truetype");
 }
 
 @font-face {
   font-family: 'Pacifico';
   font-style: normal;
   font-weight: normal;
-  src: local('Pacifico'), url('/www-static/fonts/Pacifico.ttf') format('truetype');
+  src: local('Pacifico'), url('/www-static/default/assets/font/Pacifico.ttf') format('truetype');
 }

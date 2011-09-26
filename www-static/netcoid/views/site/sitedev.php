@@ -1,4 +1,4 @@
-<div class="o" id="red-content">
+<div class="m" id="red-content">
 
 	<div style="
 	    font-family: Droid sans;

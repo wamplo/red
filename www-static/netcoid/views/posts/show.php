@@ -1,21 +1,8 @@
 <style type="text/css">
-#post-header {
-	border-bottom: 1px solid #DDD;
-	padding: 5px 0;
-}
-#post-menu {
-    background: none repeat scroll 0 0 #6CE645;
-    border: 1px solid #41C118;
-    margin: 10px 0;
-    padding: 5px;
-}
-#post-menu a{    color: #158B3B;}
-#post-menu li{
-    margin-right: 10px;
-}
+
 </style>
-<div class="o" id="red-content">
-	<div class="o" id="post-header">
+<div class="m" id="red-content">
+	<div class="m" id="post-header">
 		<div class="dz" style="width:700px">
 			<ul>
 				<li><b><?php echo $data['post']['title']; ?></b></li>
@@ -25,8 +12,8 @@
 	</div>
 
 	<?php if ($data['login'] == $data['post']['post_UID']) : ?>
-		<div class="o" id="post-menu">
-			<ul class="dz o">
+		<div class="m" id="post-menu">
+			<ul class="dz m">
 				<li class="dz"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
 			</ul>
 			<ul class="ec">
@@ -40,7 +27,7 @@
 	<?php endif ?>
 
 	<!-- START CONTENT -->
-	<div class="o blog-post">
+	<div class="m blog-post">
 		<h1 style="text-align: center;margin-bottom: 10px;"><a href="/post?id=<?php echo $_GET['id']; ?>"><?php echo $data['post']['title']; ?></a></h1>
 		<?php echo $data['post']['content_html']; ?>
 	</div>
@@ -88,15 +75,17 @@
 		<ul>
 		<?php foreach ($data['comments'] as $comment): ?>
 			<?php 
-			echo "<li class='f' id='comment-".$comment['CID']."'>";
-			echo "<span id='comment'>".$comment['comment']."</span>";
-			echo "<span id='name'><span id='says'>says</span> <a class='dj' href='/".$comment['username']."'>".$comment['name']."</a></span>";
+			echo "<li class='e m' id='comment-".$comment['CID']."'>";
+			echo "<div id='comment'>".$comment['comment_html']."</div>";
+			echo "<div id='comment-meta'>";
+			echo "<span id='name'><a class='dj' href='/".$comment['username']."'>".$comment['name']."</a></span>";
+			echo '<time class="timeago" datetime="'.$comment['timecreate'].'">July 17, 2008</time>';
 
 			# DELETE LINK
 			if ($data['login'] == $comment['comment_UID']) {
 				echo "<span id='d'><a href='/api/c/del?id=".$comment['CID']."'>x</a></span>";
 			}
-
+			echo "</div>";
 			echo "</li>";
 			?>
 		<?php endforeach ?>
@@ -105,7 +94,7 @@
 	</div>
 <!-- 
 <style type="text/css">
-#oracle-social-comments .f {
+#oracle-social-comments .e {
     border-bottom: 1px solid #EEEEEE;
     padding: 2.5px 0;
 }

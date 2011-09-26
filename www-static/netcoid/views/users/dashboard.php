@@ -1,5 +1,5 @@
 <style type="text/css">
-.j{}
+.x{}
 #red-menu-dashboard {
     background: none repeat scroll 0 0 #EEEEEE;
     height: 50px;
@@ -14,12 +14,12 @@
 }
 </style>
 <div id="red-menu-dashboard">
-<ul class="o" style="width:960px;margin:0 auto;">
+<ul class="m" style="width:960px;margin:0 auto;">
 	<li class="dz" style="padding-top:17.5px"><a href="/dashboard"><?php $this->getIMG('netcoid','img/icons/user_menu_groups.png') ?></a></li>
 	<li class="dz" style="padding-top:17.5px;margin-left:25px"><a href="/edit/profile"><?php $this->getIMG('netcoid','img/icons/edit.png') ?></a></li>
 </ul>
 </div>
-<div class="o" id="red-content">
+<div class="m" id="red-content">
 
 	<!-- IF UPDATE -->
 	<div id="ajax-update-following"></div>

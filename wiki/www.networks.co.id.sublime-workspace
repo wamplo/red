@@ -4,16 +4,16 @@
 		"selected_items":
 		[
 			[
+				"_",
+				"$_: GET['…']"
+			],
+			[
 				"strtolowe",
 				"strtolower"
 			],
 			[
 				"in_a",
 				"in_array"
-			],
-			[
-				"_",
-				"$_: GET['…']"
 			],
 			[
 				"fun",
@@ -168,34 +168,10 @@
 	"buffers":
 	[
 		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/router.php",
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/profiles/index.php",
 			"settings":
 			{
-				"buffer_size": 4411,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/index.php",
-			"settings":
-			{
-				"buffer_size": 373,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/deploy.py",
-			"settings":
-			{
-				"buffer_size": 10115,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/ignorecss.py",
-			"settings":
-			{
-				"buffer_size": 177,
+				"buffer_size": 1642,
 				"line_ending": "Windows"
 			}
 		},
@@ -203,39 +179,47 @@
 			"file": "/D/Project Storage/red/www/www.networks.co.id/config/engine.php",
 			"settings":
 			{
-				"buffer_size": 315,
+				"buffer_size": 314,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/libraries/redriver.php",
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/follow.php",
 			"settings":
 			{
-				"buffer_size": 1680,
+				"buffer_size": 1191,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/auth.php",
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/api.php",
 			"settings":
 			{
-				"buffer_size": 4862,
+				"buffer_size": 11799,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/main.v2.css",
+			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/README.markdown",
 			"settings":
 			{
-				"buffer_size": 2486,
+				"buffer_size": 173,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/libraries/validation.php",
+			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/email.php",
 			"settings":
 			{
-				"buffer_size": 2091,
+				"buffer_size": 1397,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/check.php",
+			"settings":
+			{
+				"buffer_size": 19,
 				"line_ending": "Windows"
 			}
 		}
@@ -272,18 +256,39 @@
 	},
 	"file_history":
 	[
+		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/email.php",
+		"/D/Project Storage/Web Projects/www/kriuq/app/webroot/js/apps.js",
+		"/D/Project Storage/Web Projects/www/kriuq/app/views/elements/dashboard.ctp",
+		"/D/Project Storage/Web Projects/www/kriuq/app/config/core.php",
+		"/D/Project Storage/Web Projects/www/kriuq/app/controllers/components/jq_imgcrop.php",
+		"/D/Project Storage/Web Projects/www/kriuq/app/controllers/masters_controller.php",
+		"/D/Project Storage/Web Projects/www/kriuq/app/controllers/posts_controller.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/views/profile/index.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/router.php",
+		"/D/Project Storage/red/www/www.networks.co.id/index.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/deploy.py",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/ignorecss.py",
+		"/D/Project Storage/red/www/www.networks.co.id/config/engine.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/redriver.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/auth.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/main.v2.css",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/validation.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/api.php",
+		"/D/Project Storage/red/PhpDocumentor-1.4.3/phpDocumentor.ini",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/default/skel.php",
+		"/D/Project Storage/red/www/www.networks.co.id/wiki/wiki.newpage.markdown",
+		"/D/Project Storage/red/www/www.networks.co.id/.gitignore",
+		"/D/Project Storage/red/PhpDocumentor-1.4.3/Documentation/tests/bug-loseunknowntags.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/default/defaults.php",
+		"/D/Program Storage/start/Data/Packages/Default/Default (Windows).sublime-keymap",
 		"/D/Project Storage/red/www/www.networks.co.id/www-static/README.markdown",
 		"/D/Project Storage/red/www/www.networks.co.id/www-static/README.md",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/__build__.py",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/assets.php",
-		"/D/Project Storage/red/www/www.networks.co.id/index.php",
-		"/D/Project Storage/red/www/www.networks.co.id/config/engine.php",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/redriver.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/framework/bottom.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/site/search2.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/site.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/site/sitedev.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/auth.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/users.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/dashboard.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/editprofile.php",
@@ -300,7 +305,6 @@
 		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/migration/migrations_2.php",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/migration/migrations_3.php",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/__init__.php",
-		"/D/Project Storage/red/www/www.networks.co.id/.gitignore",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/framework/menu.php",
 		"/D/Project Storage/red/www/www.networks.co.id/.git/ftpdata",
 		"/D/ADAM/www.networks.co.id/git-deploy",
@@ -370,7 +374,6 @@
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/Support.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Profiles/Posts.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/README.txt",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/default/defaults.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Profiles/Offers.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Profiles/Request.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/pagination.css",
@@ -380,26 +383,7 @@
 		"/D/Project Storage/red/www/www.networks.co.id/wiki/others/apps/netcoid/views/show.php",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/Forms.php",
 		"/D/Project Storage/red/www/www.networks.co.id/wiki/others/apps/netcoid/posts.php",
-		"/D/Project Storage/wnmp/www/netcoid/application/views/products/all.php",
-		"/D/Project Storage/wnmp/www/netcoid/www-static/assets/css/product.css",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Posts/Any.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Posts/Offer.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/Posts/Request.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/js/Posts/wmd-addon.js",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/Assets.php",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/Validation.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/product.css",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/default/assets/js/redriver.js",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/main.v2.css",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/admin/views/groups/New.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/js/wmd.js",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/languages/indonesia.php",
-		"/D/Project Storage/red/server/php-5.3.6/php.ini",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/demo/browser/demo.html",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/RedRiver.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/admin/admin.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/admin/assets/js/groups.js",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/stackexchangeinc/wmd/Markdown.Converter.js"
+		"/D/Project Storage/wnmp/www/netcoid/application/views/products/all.php"
 	],
 	"find":
 	{
@@ -426,6 +410,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"isFollowingUID",
+			"#red-error-box",
 			"f",
 			"FOLDER",
 			"folder",
@@ -551,9 +537,7 @@
 			"faktanyaadalah",
 			"faktanyaadlaah",
 			"fakta",
-			"profile",
-			"start.pjax",
-			"#message"
+			"profile"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -601,132 +585,50 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/router.php",
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/profiles/index.php",
 					"settings":
 					{
-						"buffer_size": 4411,
+						"buffer_size": 1642,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1107,
-								1107
+								426,
+								426
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0,
-						"translation.y": 192,
+						"translation.y": 0,
 						"zoom_level": 1
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/index.php",
-					"settings":
-					{
-						"buffer_size": 373,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								373,
-								373
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0,
-						"translation.y": 0,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/deploy.py",
-					"settings":
-					{
-						"buffer_size": 10115,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2420,
-								2420
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0,
-						"translation.y": 1285,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/ignorecss.py",
-					"settings":
-					{
-						"buffer_size": 177,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								172,
-								172
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0,
-						"translation.y": 0,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "/D/Project Storage/red/www/www.networks.co.id/config/engine.php",
 					"settings":
 					{
-						"buffer_size": 315,
+						"buffer_size": 314,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								260,
-								260
+								259,
+								259
 							]
 						],
 						"settings":
@@ -740,81 +642,25 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/libraries/redriver.php",
+					"buffer": 2,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/follow.php",
 					"settings":
 					{
-						"buffer_size": 1680,
+						"buffer_size": 1191,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								389,
-								389
+								686,
+								686
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0,
-						"translation.y": 0,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/auth.php",
-					"settings":
-					{
-						"buffer_size": 4862,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2679,
-								2679
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0,
-						"translation.y": 960,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/main.v2.css",
-					"settings":
-					{
-						"buffer_size": 2486,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								556,
-								546
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0,
 						"translation.y": 96,
@@ -823,25 +669,104 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/libraries/validation.php",
+					"buffer": 3,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/api.php",
 					"settings":
 					{
-						"buffer_size": 2091,
+						"buffer_size": 11799,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								468,
-								468
+								3634,
+								3634
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0,
+						"translation.y": 2064,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/README.markdown",
+					"settings":
+					{
+						"buffer_size": 173,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								62,
+								62
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 0,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/email.php",
+					"settings":
+					{
+						"buffer_size": 1397,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1201,
+								1201
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0,
+						"translation.y": 528,
+						"zoom_level": 1
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/check.php",
+					"settings":
+					{
+						"buffer_size": 19,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16,
+								16
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0,
 						"translation.y": 0,

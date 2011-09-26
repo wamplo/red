@@ -48,7 +48,7 @@ for ($i=0; $i < count($lines); $i++) {
     }
 }
 
-$fheaders  = 'From: Netcoid <hermes-the-messenger@netcoid.com>;charset=UTF-8;Content-Type: text/html';
+$fheaders  = 'From: Netcoid <hermes-the-messenger@netcoid.com>; charset=UTF-8; Content-Type: text/html';
 
 $fmessage = $message;
 $fsubject = 'Re: ' . $subject;

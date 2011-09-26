@@ -10,7 +10,7 @@
 </style>
 <?php #var_dump($data); ?>
 <div id="red-content">
-	<div class="o" id="profiles-header">
+	<div class="m" id="profiles-header">
 		<div class="dz" style="width:700px">
 		<ul id="profiles-menu">
 
@@ -40,7 +40,7 @@
 		<div class="ec"><a class="dj" href="/<?php echo $data['user']['username']; ?>"><?php echo $data['user']['name'];  ?></a></div>
 	</div>
 
-	<div class="blog-post o profile-content" id="css-<?php echo $data['user']['username']; ?>">
+	<div class="blog-post m profile-content" id="css-<?php echo $data['user']['username']; ?>">
 	
 	<?php echo $data['user']['information_html']; ?>
 	

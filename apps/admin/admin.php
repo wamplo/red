@@ -21,6 +21,8 @@ class Admin Extends Engine\Red
 
         $this->v = new Validation;
         $this->f = new Forms;
+        header('Location: /404');
+        die();
     }
 
     /**

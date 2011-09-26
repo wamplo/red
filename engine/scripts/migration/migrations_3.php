@@ -5,6 +5,7 @@ $up = "
 CREATE  TABLE IF NOT EXISTS `comments` (
   `CID` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
   `comment` TEXT NOT NULL ,
+  `comment_html` TEXT NOT NULL,
   `comment_PID` INT UNSIGNED NOT NULL ,
   `comment_UID` INT UNSIGNED NOT NULL ,
   `comment_CID` INT UNSIGNED NULL ,
@@ -44,13 +45,15 @@ COLLATE = utf8_unicode_ci;
 ";
   
 $down = "
-DROP TABLE `users`
+DROP TABLE `comments`
 ";
 
 $test = "SELECT * FROM `users`";
 
 $dbh = new PDO('mysql:host=localhost;dbname=netcoid', 'root', '');
 
-$dbh->exec($test) 
+#$dbh->exec($up)
+#$dbh->exec($down)
+$dbh->exec($test)
 or die(print_r($dbh->errorInfo(), true));
 ?>

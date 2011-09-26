@@ -1,14 +1,14 @@
 
 <?php $data['validation']->getErrors(); ?>
-<div class="o" id="red-content">
+<div class="m" id="red-content">
 	<div class="dz" style="width: 450px;">
 		<?php $data['forms']->openForm('red-groups-new'); ?>
 		 	<div class="wmd-panel">
 			<h3>New Post</h3>
-			<ul class="o">
+			<ul class="m">
 				<li><?php $data['forms']->textinput('name',l('group_name'), array( 'data-error' => l('group_name_error'), 'class' => 't', 'id' => 'wmd-name', 'style' => 'width:420px')); ?></li>
 				<li><?php $data['forms']->textinput('parent','Parent', array( 'data-error' => l('group_description_html_error'), 'class' => 't', 'id' => 'wmd-tag', 'style' => 'width:420px')); ?></li>
-				<div class="o" id="wmd-button-bar"></div>
+				<div class="m" id="wmd-button-bar"></div>
 				<li><?php $data['forms']->textarea('description',l('description'), array( 'data-error' => l('group_description_error'), 'class' => 't', 'id' => 'wmd-input', 'style' => 'width:420px;height:500px')); ?></li>
 				<li><?php $data['forms']->textinput('status','Status', array( 'data-error' => l('group_status_error'), 'class' => 't', 'style' => 'width:420px')); ?></li>
 				<li><input type="hidden" name="description_html" id="wmd-content-html" value=""/></li>

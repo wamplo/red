@@ -272,8 +272,8 @@ class Api extends Engine\Red
         if (isset($_POST['comment']) && $this->e->get('uid')) {
 
             $this->v->required($_POST['comment'], 'comment tidak boleh kosong');
-            $this->v->regex($_POST['comment'], '/^[a-zA-Z0-9_\s="!.,]{4,400}$/', 
-                '4-400 boleh berupa a-Z,0-9,=,!,",. dan spasi');
+            $this->v->regex($_POST['comment'], '/^.{4,400}$/',  # nanti dihapus
+                '4-400 boleh berupa a-Z,0-9,=,!,",.,?,\' dan spasi');
 
             if(!sizeof($this->v->errors)) 
             {
@@ -285,6 +285,13 @@ class Api extends Engine\Red
 
                     # SETTING UP
                     $p['comment'] = $r['text'];
+
+                    # START PLUGIN
+                    $m = new Engine\Vendors\Stackexchangeinc\wmd\ElephantMarkdown;
+                    $p['comment_html'] = $m->netcoid_safe_parse($p['comment']);
+                    #$p['comment_html'] = filter_var($unsafe['comment_html'], FILTER_SANITIZE_STRING);
+                    # END PLUGIN
+
                     $p['comment_UID'] = $this->e->get('uid');
                     $p['comment_PID'] = $_POST['id'];            
                     $time = new DateTime ( NULL, new DateTimeZone ( 'Asia/Jakarta' ) );

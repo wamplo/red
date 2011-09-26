@@ -5,7 +5,7 @@
 
 </style>
 
-<div class="o" id="red-content">
+<div class="m" id="red-content">
 
 	<div class="dz" style="width: 480px;">
 

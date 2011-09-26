@@ -1,17 +1,3 @@
-
-<style type="text/css">
-.introduction{}
-#red-menu-dashboard {
-    background: none repeat scroll 0 0 #EEEEEE;
-    height: 50px;
-}
-.users-right50{width:480px;}
-.users-left50{width:480px;}
-#howto-informationbox{    background: none repeat scroll 0 0 #8DD7E4;
-    border: 1px solid #70BFCD;
-    margin: 5px;
-    padding: 5px;}
-</style>
 <div id="red-menu-dashboard">
 </div>
 

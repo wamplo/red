@@ -1,6 +1,6 @@
 <!-- START FOOTER  -->
 <div id="red-footer">
-	<div class="o" id="red-footer-warp">
+	<div class="m" id="red-footer-warp">
 		<ul class="dz" id="red-footer-menu">
 			<li id="hint"><?php $this->href('/HQ',l('contactus')); ?></li>
 		</ul>

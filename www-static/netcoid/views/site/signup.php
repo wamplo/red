@@ -1,4 +1,4 @@
-<div class="o" id="red-content">
+<div class="m" id="red-content">
 	<div class="dz" style="width: 715px;">
 
 	<style type="text/css">
@@ -11,16 +11,16 @@
 #type-buy {
     font-weight: bold;
 }
-	#ba li {
+	#az li {
 	    margin-bottom: 5px;
 	}
-	#af{text-decoration:italic;}
+	#ag{text-decoration:italic;}
 	</style>
-	<ul id="ba">
+	<ul id="az">
 	<?php 
 
 	foreach ($data['posts'] as $posts) {
-		echo '<li class="o">';
+		echo '<li class="m">';
 
 		if ($posts['status'] == 0) {
 			echo '<div class="dz" style="margin-right: 10px;"><span id="type-news">Artikel</span></div>';
@@ -34,7 +34,7 @@
 			echo '<div class="dz" style="margin-right: 10px;"><span id="type-buy">Permintaan</span></div>';
 		}
 
-		echo '<div class="dz" style="width: 610px;"><a class="di" href="post?id='.$posts['PID'].'">'.$posts['title'].'</a> oleh <a href="'.$posts['username'].'" class="dj">@'.$posts['name'].'</a> di <i><span id="af" class="gid-'.$posts['post_GID'].'">'.$posts['group'].'</span></i></div></li>';
+		echo '<div class="dz" style="width: 610px;"><a class="di" href="post?id='.$posts['PID'].'">'.$posts['title'].'</a> oleh <a href="'.$posts['username'].'" class="dj">@'.$posts['name'].'</a> di <i><span id="ag" class="gid-'.$posts['post_GID'].'">'.$posts['group'].'</span></i></div></li>';
 	}
 	
 	?>
@@ -44,7 +44,7 @@
 		<?php $data['forms']->openForm('red-register',array('action' => '/register')); ?>
 			<h3><strong>Pendaftaran</strong></h3>
 			<i>Hello!, are you registered?</i>
-			<ul class="o">
+			<ul class="m">
 				<li><?php $data['forms']->textinput('username',l('username'), array( 'data-error' => l('register_username_error'), 'class' => 't', 'id' => 'input-username')); ?><p id="red-register-information">http://networks.co.id/<span id="url-suffix" style="word-wrap: break-word;" /></span></p></li>
 				<li><?php $data['forms']->password('password',l('password'), array( 'data-error' => l('register_password_empty'), 'class' => 't','id' => 'input-password')); ?><p id="red-register-information">"Kata Sandi Yang Kuat"</p></li>
 				<hr>

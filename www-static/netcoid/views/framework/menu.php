@@ -1,5 +1,5 @@
 <div id="red-header">
-	<div class="o" id="red-menu">
+	<div class="m" id="red-menu">
 		<ul class="dz">
 
 		<?php if ($data['sessions']->get('uid')): ?>

@@ -10,7 +10,7 @@ li.df{
 }
 </style>
 
-<div class="o" id="red-content">
+<div class="m" id="red-content">
 
 		<?php 
 

@@ -1,11 +1,11 @@
 	<?php $data['validation']->getErrors(); ?>
 	<div id="red-error-box"></div>
 	<!-- CONTENT START -->
-	<div class="o ca" id="red-content">
+	<div class="m ca" id="red-content">
 		<div id="red-login">
 		<?php $data['forms']->openForm('red-login'); ?>
 			<h3><strong>Masuk</strong></h3>
-			<ul class="o">
+			<ul class="m">
 				<li><?php $data['forms']->textinput('username',l('username'), array( 'data-error' => l('register_username_error'), 'class' => 't', 'id' => 'input-username')); ?></li>
 				<li><?php $data['forms']->password('password',l('password'), array( 'data-error' => l('register_password_empty'), 'class' => 't', 'id' => 'input-password')); ?></li>
 			</ul>

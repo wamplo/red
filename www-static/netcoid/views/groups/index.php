@@ -11,7 +11,7 @@ li.type-2 a.di{    color: #47C937;}
 <?php #var_dump($data); ?>
 <div id="red-content">
 
-	<div class="o" id="groups-header">
+	<div class="m" id="groups-header">
 		<div class="dz" style="width:700px">
 		<ul id="groups-menu">
 			<?php if ($data['status']['permission']['post'] && $data['login'] && 
@@ -38,7 +38,7 @@ li.type-2 a.di{    color: #47C937;}
 		<div class="ec"><?php echo $data['info']['name']; ?></div>
 	</div>
 
-	<div class="o" id="groups-content">
+	<div class="m" id="groups-content">
 
 		<?php
 			$data['pagination']->createHtml();

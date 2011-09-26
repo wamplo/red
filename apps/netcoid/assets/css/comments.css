@@ -5,11 +5,19 @@
 }
 #comments .comments #name{margin-right: 10px;}
 #comments .comments #comment{margin-right: 5px;}
-#comments .comments #time{  color: #E6CDAD;}
+#comments .comments time{      margin-right: 10px;color: #E6CDAD;}
+
+#comments .comments{
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 6px;
+    padding: 5px 0;
+}
+/*
 #comments .comments {
     border-bottom: 1px solid #EEEEEE;
     padding: 2.5px 0;
-}
+}*/
+
 #comments #says{    color: #CCCCCC;
     font-style: italic;}
 /*#comments .comments:nth-child(odd){background: none repeat scroll 0 0 #FFFFD5;}
@@ -20,17 +28,24 @@
     padding: 5px;}
    
 /*COMMENTS*/
-.comments #d a{color: #CCCCCC;
+#comments .comments #d a{color: #CCCCCC;
 opacity:0;}
-.comments:hover #d a{
-opacity:1;}
-.comments:target {
+#comments .comments:hover #d a{
+opacity:1;
+}
+#comments .comments:target {
     background: none repeat scroll 0 0 #FCFF92;
 }
 
-.comments:target a.u{
+#comments .comments:target #comment a.u{
    background:  none repeat scroll 0 0 #FFFFFF;
 }
-.comments:target #time{
+#comments .comments:target #time{
    color:#C0C56E !important;    
+}
+
+#comments .comments #comment-meta{   text-align: left;}
+
+#comments img {
+    max-height: 500px;
 }

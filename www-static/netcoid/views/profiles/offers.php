@@ -13,7 +13,7 @@
 	?>
 
 
-	<div class="o" id="profiles-header">
+	<div class="m" id="profiles-header">
 		<div class="dz" style="width:700px">
 		<ul id="profiles-menu">
 

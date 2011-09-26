@@ -1,10 +1,10 @@
 <?php $data['validation']->getErrors(); ?>
-<div class="o" id="red-content">
+<div class="m" id="red-content">
 	<div class="dz" style="width: 450px;">
 		<?php $data['forms']->openForm('red-post-new'); ?>
 		 	<div class="wmd-panel">
 			<h3>Permintaan Baru</h3>
-			<ul class="o">
+			<ul class="m">
 				<li><?php $data['forms']->textinput('title',l('title'), array( 'data-error' => l('news_title_error'), 'class' => 't', 'id' => 'wmd-title', 'style' => 'width:420px')); ?></li>
 				<li>
 				<label for="tag">Group</label>
@@ -27,7 +27,7 @@
 				</select>
 				</div>
 				</li>
-				<div class="o" id="wmd-button-bar"></div>
+				<div class="m" id="wmd-button-bar"></div>
 				<li><?php $data['forms']->textarea('content',l('article'), array( 'data-error' => l('news_content_empty'), 'class' => 't', 'id' => 'wmd-input', 'style' => 'width:420px;height:500px')); ?></li>
 				<li><input type="hidden" name="content_html" id="wmd-content-html" value=""/></li>
 			</ul>

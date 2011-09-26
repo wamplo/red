@@ -89,6 +89,7 @@ class Posts Extends Engine\Red
                     $this->a->getPath('netcoid','css/forms.css'),
                     $this->a->getPath('netcoid','css/users.css'),
                     $this->a->getPath('netcoid','css/blog.css'),
+                    $this->a->getPath('netcoid','css/posts.css'),
                     '/engine/vendors/stackexchangeinc/wmd/demo.css'
                 ),
             'js' =>
@@ -148,19 +149,23 @@ class Posts Extends Engine\Red
                     $this->a->getPath('netcoid','css/main.v2.css'),
                     $this->a->getPath('netcoid','css/comments.css'),
                     $this->a->getPath('netcoid','css/blog.css'),
+                    $this->a->getPath('netcoid','css/showpost.css')
                     #'/engine/vendors/github/holman-boastful-7423621/netcoid.boastful.css'
-                ),/*
+                ),
             'js' =>
                 array(
+                    /*
                     array(
                        '/engine/vendors/github/holman-boastful-7423621/jquery.boastful.js'
                     ),
+                    */
                     array(
-                       '/engine/vendors/github/holman-boastful-7423621/netcoid.boastful.js'
+                       $this->a->getPath('netcoid','js/jquery/jquery.timeago.js'),
+                       $this->a->getPath('netcoid','js/timeago.js')
                     )
-                ),*/
+                ),
             'cache' => 0
-        ),1); # START
+        ),1);
 
         $this->__Footer();
     }
@@ -198,6 +203,7 @@ class Posts Extends Engine\Red
                     $this->a->getPath('netcoid','css/forms.css'),
                     $this->a->getPath('netcoid','css/users.css'),
                     $this->a->getPath('netcoid','css/blog.css'),
+                    $this->a->getPath('netcoid','css/posts.css'),
                     '/engine/vendors/stackexchangeinc/wmd/demo.css'
                 ),
             'js' =>
@@ -257,6 +263,7 @@ class Posts Extends Engine\Red
                     $this->a->getPath('netcoid','css/forms.css'),
                     $this->a->getPath('netcoid','css/users.css'),
                     $this->a->getPath('netcoid','css/blog.css'),
+                    $this->a->getPath('netcoid','css/posts.css'),
                     '/engine/vendors/stackexchangeinc/wmd/demo.css'
                 ),
             'js' =>
@@ -316,6 +323,7 @@ class Posts Extends Engine\Red
                     $this->a->getPath('netcoid','css/forms.css'),
                     $this->a->getPath('netcoid','css/users.css'),
                     $this->a->getPath('netcoid','css/blog.css'),
+                    $this->a->getPath('netcoid','css/posts.css'),
                     '/engine/vendors/stackexchangeinc/wmd/demo.css'
                 ),
             'js' =>
@@ -416,6 +424,14 @@ class Posts Extends Engine\Red
 
             $p['title'] = $_POST['title'];
             $p['content'] = $this->v->safe($_POST['content']);
+
+            # FALLBACK
+            if (empty($_POST['content_html'])) {
+                $m = new Engine\Vendors\Stackexchangeinc\wmd\ElephantMarkdown;
+                $p['content_html'] = $m->netcoid_safe_parse($p['comment']);
+            }
+
+            # THIS IS NOT SAFE! @todo
             $p['content_html'] = $_POST['content_html'];
 
             $time = new DateTime(NULL, new DateTimeZone('Asia/Jakarta'));

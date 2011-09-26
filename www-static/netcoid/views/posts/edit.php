@@ -1,23 +1,9 @@
-
-<style type="text/css">
-.j{}
-#red-menu-dashboard {
-    background: none repeat scroll 0 0 #EEEEEE;
-    height: 50px;
-}
-.users-right50{width:480px;}
-.users-left50{width:480px;}
-#howto-informationbox{    background: none repeat scroll 0 0 #8DD7E4;
-    border: 1px solid #70BFCD;
-    margin: 5px;
-    padding: 5px;}
-</style>
 <div id="red-menu-dashboard">
 </div>
 
 <?php $data['validation']->getErrors(); ?>
 
-<div class="o" id="red-content">
+<div class="m" id="red-content">
 
 	<div class="users-left50 dz dn" id="red-wmd"><?php $data['forms']->openForm('red-wmd'); ?>
 		<ul>
@@ -35,7 +21,7 @@
 			?></li>
 
 			<!-- MENU -->
-			<div class="o" id="wmd-button-bar"></div>
+			<div class="m" id="wmd-button-bar"></div>
 						
 			<!-- INFORMATIONBOX -->
 			<li class="form-child"><?php $data['forms']->textarea('content','Post', 

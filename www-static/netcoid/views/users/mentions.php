@@ -1,6 +1,6 @@
-<div class="o" id="red-content">
+<div class="m" id="red-content">
 	<?php foreach ($data['mentions'] as $mention): ?>
-		<li class="k">
+		<li class="j">
 			<span>@<?php echo $mention['name']; ?></span> 
 			<?php echo $mention['comment']; ?>
 			<?php echo "<span id='l'><a href='/post?id=".$mention['comment_PID']."#comment-".$mention['CID']."'>see</a></span>"; ?>
