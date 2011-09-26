@@ -423,7 +423,7 @@ class Posts Extends Engine\Red
         if ($this->f->checkHumanPost(1)) {
 
             $p['title'] = $_POST['title'];
-            $p['content'] = $this->v->safe($_POST['content']);
+            $p['content'] = $_POST['content']; #savenya gimana?
 
             # FALLBACK
             if (empty($_POST['content_html'])) {
