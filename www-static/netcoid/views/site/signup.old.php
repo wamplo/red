@@ -1,5 +1,46 @@
 <div class="m" id="red-content">
-	<div>
+	<div class="dz" style="width: 715px;">
+
+	<style type="text/css">
+	#type-news{
+    font-weight: bold;
+	}
+#type-sell {
+    font-weight: bold;
+}
+#type-buy {
+    font-weight: bold;
+}
+	#az li {
+	    margin-bottom: 5px;
+	}
+	#ag{text-decoration:italic;}
+	</style>
+	<ul id="az">
+	<?php 
+
+	foreach ($data['posts'] as $posts) {
+		echo '<li class="m">';
+
+		if ($posts['status'] == 0) {
+			echo '<div class="dz" style="margin-right: 10px;"><span id="type-news">Artikel</span></div>';
+		}
+
+		if ($posts['status'] == 1) {
+			echo '<div class="dz" style="margin-right: 10px;"><span id="type-sell">Penawaran</span></div>';
+		}
+
+		if ($posts['status'] == 2) {
+			echo '<div class="dz" style="margin-right: 10px;"><span id="type-buy">Permintaan</span></div>';
+		}
+
+		echo '<div class="dz" style="width: 610px;"><a class="di" href="post?id='.$posts['PID'].'">'.$posts['title'].'</a> oleh <a href="'.$posts['username'].'" class="dj">@'.$posts['name'].'</a> di <i><span id="ag" class="gid-'.$posts['post_GID'].'">'.$posts['group'].'</span></i></div></li>';
+	}
+	
+	?>
+	</ul>
+	</div>
+	<div class="ec" style="width: 245px;">
 		<?php $data['forms']->openForm('red-register',array('action' => '/register')); ?>
 			<h3><strong>Pendaftaran</strong></h3>
 			<i>Hello!, are you registered?</i>
@@ -8,7 +49,6 @@
 				<li><?php $data['forms']->password('password',l('password'), array( 'data-error' => l('register_password_empty'), 'class' => 't','id' => 'input-password')); ?><p id="red-register-information">"Kata Sandi Yang Kuat"</p></li>
 				<hr>
 				<li><?php $data['forms']->textinput('name',l('name'), array( 'data-error' => l('register_name_error'), 'class' => 't','id' => 'input-name')); ?><p id="red-register-information">Jika berawalan PT atau CV akan kami kontak paling lambat 2x24 untuk verifikasi</p></li>
-				<li><?php $data['forms']->textinput('email',l('email'), array( 'data-error' => l('register_email_error'), 'class' => 't','id' => 'input-email')); ?><p id="red-register-information">Email digunakan untuk mengaktifkan fitur replay</p></li>
 				<li><?php $data['forms']->textinput('phone',l('phone'), array( 'data-error' => l('register_phone_error'), 'class' => 't','id' => 'input-phone')); ?><p id="red-register-information">format: <code style="background: none repeat scroll 0pt 0pt rgb(254, 255, 203);">0123-1234567</code> atau <code style="background: none repeat scroll 0pt 0pt rgb(254, 255, 203);">08123456789</code></p></li>
 			</ul>
 			<hr>

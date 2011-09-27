@@ -1,5 +1,5 @@
 <style type="text/css">
-.az{
+.ba{
 	margin-bottom: 10px;
 }
 .de {
@@ -18,7 +18,7 @@ li.df{
 		echo '<div class="dz" style="width:320px">';
 		foreach ($data['g'] as $value) {
 
-			echo '<ul id="cat-'.$value['GID'].'" class="az">';
+			echo '<ul id="cat-'.$value['GID'].'" class="ba">';
 			echo '<li class="cat-title"><h3>'.$value['name'].'</h3></li>';
 
 			if (isset($value['children'])) {
