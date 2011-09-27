@@ -37,6 +37,7 @@ class Register extends Engine\Red
             $data['password'] = $s->HashPassword($_POST['password']);
             $data['name'] = $_POST ['name'];
             $data['phone'] = $_POST ['phone'];
+            $data['email'] = $_POST ['email'];
             $data['timelogin'] = $time->format ('Y-m-d H:i:s');
             $data['timeregister'] = $time->format ('Y-m-d H:i:s');
             $data['role'] = '0';
@@ -45,6 +46,7 @@ class Register extends Engine\Red
             $v->required($data['password'], l('register_password_empty'));
             $v->regex($data['name'], '/^[a-zA-Z0-9_\s]{6,30}$/', l('register_name_error'));
             $v->regex($data['phone'], '/^([0]([0-9]{2}|[0-9]{3})[-][0-9]{6,8}|[0][8]([0-9]{8,12}))$/', l ('register_phone_error'));
+            $v->regex($data['email'], '/^[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/', l('register_email_error'));
 
             # check username
             # @todo ajaxnya blm & routes check
@@ -59,6 +61,17 @@ class Register extends Engine\Red
             {
                 $status = $u->register($data);
                 if ($status) {
+
+                    # START EMAIL
+                    $fheaders  = 'From: Netcoid <hermes-the-messenger@netcoid.com>; charset=UTF-8; Content-Type: text/html';
+
+                    $fmessage = 'Anda terdaftar dengan username, <b>' . $data['username']. '</b> dengan password <b>' . $data['password'] . '</b>. anda dapat langsung login di www.netcoid.com/login. *Segera hapus email ini demi keamanan, jika anda merasa email ini salah kirim tolong hubungi security@netcoid.com';
+
+                    $fsubject = 'Hallo!, Selamat bergabung di Netcoid Indonesia! [rahasia]';
+                    $to = $data['email'];
+                    mail($to, $fsubject, $fmessage, $fheaders);
+                    # START EMAIL
+
                     $this->welcome();
                 }
                 if (!$status) {

@@ -19,26 +19,54 @@ class Site Extends Engine\Red
         $this->e = new Sessions;
     }
 
+
     /**
-     * www.networks.co.id
+     * netcoid.com
      * Index Page Netcoid
      * @author Adam Ramadhan
      * @version 1
      **/
     public function Index(){
+        $this->__Header();
+
+        $this->r->branch(array(
+            'src' => 
+                array(
+                    'html' => $this->a->getView('netcoid','site/sitedev.php'),
+                    'id' => 'rr-hello'
+                ),
+            'css' => 
+                array(
+                    $this->a->getPath('default','css/framework.css'),
+                    $this->a->getPath('netcoid','css/main.v2.css'),
+                    $this->a->getPath('netcoid','css/signup.css'),
+                    $this->a->getPath('netcoid','css/buttons.css')
+                ),
+            'cache' => 0
+        ));
+
+        $this->__Footer();
+    }
+
+    /**
+     * netcoid.com/signup
+     * Signup Page Netcoid
+     * @author Adam Ramadhan
+     * @version 1
+     **/
+    public function Signup(){
         
-        $p = new Apps\Netcoid\Models\Posts;
         $this->__Header();
 
         $signupdata = array(
-            'forms' => new Forms, 
-            'posts' => $p->getLastPost(10)
+            'forms' => new Forms
         );
 
         $this->r->branch(array(
         'src' => 
             array(
-                'html' => $this->a->getView('netcoid','site/sitedev.php',$signupdata),
+                #'html' => $this->a->getView('netcoid','site/sitedev.php',$signupdata),
+                'html' => $this->a->getView('netcoid','site/signup.php',$signupdata),
                 'id' => 'rr-ajax-signup'
             ),
         'css' => 

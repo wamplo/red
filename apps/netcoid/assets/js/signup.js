@@ -9,6 +9,7 @@ $(document).ready(function() {
 	/* time ago plugin start */
 	$('input#input-name').example('PT, CV atau Pribadi');
 	$('input#input-phone').example('021-1234567 / HP');
+	$('input#input-email').example('Alamat@domain.com');
 
 	/* validator plugin start */
 	$.validator.addMethod(
@@ -74,6 +75,16 @@ $(document).ready(function() {
 		 	regex: $("#input-name").data("error"),
 		 	required: $("#input-name").data("error"),
 		 	remote: 'Nama telah digunakan, hubungi hello@networks.co.id untuk support'
+		}
+	});
+
+	// EMAIL ERROR
+	$("#input-email").rules("add", { 
+		regex: /^[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+		required : true,
+		messages: {
+		 	regex: $("#input-email").data("error"),
+		 	required: $("#input-email").data("error")
 		}
 	});
 

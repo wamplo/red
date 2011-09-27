@@ -78,6 +78,7 @@ $l['informationbox'] = 'Kotak Informasi <sup>1</sup>';
 // Error language
 $l['register_username_error'] = 'Username Anda Harus Berformat 6-20 Huruf atau Angka';
 $l['register_password_empty'] = 'Password Anda tidak diperbolehkan kosong';
+$l['register_email_error'] = 'Email Harus Berformat anda@domain.com & diharuskan untuk diisi';
 $l['register_name_error'] = 'Nama Harus Berformat 6-30 Kata atau Spasi, Untuk Organisasi Bisnis / Non Profit Lainnya Silahkan Hubungi <a class="a" href="/help">Pusat Bantuan</a>';
 $l['register_phone_error'] = 'Nomer Kontak Harus Berformat 123-123456, 1234-12345678 atau 0812345678912, Untuk Lainnya Silahkan Hubungi <a class="a" href="/help">Pusat Bantuan</a>';
 $l['register_username_used'] = 'Username Anda telah digunakan. Silahkan gunakan nama username yang lain';

@@ -8,6 +8,7 @@ $routes = array(
     '^([a-zA-Z0-9_]{6,20})/requests$' =>  'Profiles:Requests',
 
     'index' 			=>  'site:Index',
+    'signup'            =>  'site:Signup',
     'search'            =>  'site:Search',
     'group'             =>  'Groups:Index',
     'register' 			=>  'register:Index',

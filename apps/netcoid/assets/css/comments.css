@@ -48,4 +48,6 @@ opacity:1;
 
 #comments img {
     max-height: 500px;
+    padding-left: 10px;
+    border-left: 1px solid #EEE;
 }
