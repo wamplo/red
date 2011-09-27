@@ -14,7 +14,7 @@ class ElephantMarkdown
 {
     const NESTED_BRACKETS_DEPHT = 6;
     const NESTED_URL_PARENTHESIS_DEPHT = 4;
-    const ESCAPE_CHARS = '[\\`\*_\{\}\[\]\(\)\>#\+\-\.\!\:\|]';
+    const ESCAPE_CHARS = '[\\`\*_\{\}\[\]\(\)\>#\+\-\.\!\:\|]\'';
     const TAB_WIDTH = 4;
     const NO_MARKUP = false;
     const NO_ENTITIES = false;
