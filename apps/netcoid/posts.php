@@ -432,6 +432,8 @@ class Posts Extends Engine\Red
             }
 
             # THIS IS NOT SAFE! @todo
+
+            $m = new Engine\Vendors\Stackexchangeinc\wmd\ElephantMarkdown;
             $p['content_html'] = $m->netcoid_safe_parse($p['comment']);
 
             $time = new DateTime(NULL, new DateTimeZone('Asia/Jakarta'));

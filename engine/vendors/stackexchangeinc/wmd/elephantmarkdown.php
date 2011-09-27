@@ -54,7 +54,7 @@ class ElephantMarkdown
         $md = new static;
 
         # http://stackoverflow.com/questions/885532/safe-markdown-processor-for-php
-        $md->NO_MARKUP = false;
+        $md->NO_MARKUP = true;
         $md->NO_ENTITIES = false;
 
         return $md->transform($text);        
