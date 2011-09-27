@@ -3,7 +3,10 @@
 
 riset
 */
-.blog-post img{width:100%;}
+.blog-post img {
+max-width: 960px;
+max-height: 1500px;
+}
 .blog-post h1,.blog-post h2,.blog-post h3,.blog-post h4,.blog-post h5,.blog-post h6 {
     font-family:'Droid Sans',verdana,ariel,serif;
     clear: both;

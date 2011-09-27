@@ -388,7 +388,7 @@ def updateandupload():
 	fonts()
 	generatereadme()
 	os.system('git addremove');
-	os.system('git commit -m " auto build at' + time.asctime( time.localtime(time.time())) + '"')
+	os.system('git commit -m "Anthena: Auto build on ' + time.asctime( time.localtime(time.time())) + '"')
 	deploy()
 	os.system('git push');
 

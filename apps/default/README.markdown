@@ -1,5 +1,5 @@
-# MAIN DEVELOPMENT
-disini semua perubahan dilakukan
+# DEFAULT APPLICATION
+do not edit if not on team
 
 ### team
-lihat pada folder masing2
+rama@networks.co.id
