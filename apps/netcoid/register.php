@@ -62,17 +62,17 @@ class Register extends Engine\Red
                 $status = $u->register($data);
                 if ($status) {
 
+                    $this->welcome();
+                    
                     # START EMAIL
                     $fheaders  = 'From: Netcoid <hermes-the-messenger@netcoid.com>; charset=UTF-8; Content-Type: text/html';
 
-                    $fmessage = 'Anda terdaftar dengan username, <b>' . $data['username']. '</b> dengan password <b>' . $data['password'] . '</b>. anda dapat langsung login di www.netcoid.com/login. *Segera hapus email ini demi keamanan, jika anda merasa email ini salah kirim tolong hubungi security@netcoid.com';
+                    $fmessage = 'Anda terdaftar dengan username, <b>' . $data['username']. '</b> dengan password <b>' . $_POST['password'] . '</b>. anda dapat langsung login di www.netcoid.com/login. *Segera hapus email ini demi keamanan, jika anda merasa email ini salah kirim tolong hubungi security@netcoid.com';
 
                     $fsubject = 'Hallo!, Selamat bergabung di Netcoid Indonesia! [rahasia]';
                     $to = $data['email'];
                     mail($to, $fsubject, $fmessage, $fheaders);
                     # START EMAIL
-
-                    $this->welcome();
                 }
                 if (!$status) {
                     die('registrasi gagal, support@networks.co.id');
