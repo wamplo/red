@@ -3,12 +3,12 @@
 		<ul class="dz">
 
 		<?php if ($data['sessions']->get('uid')): ?>
-			<li id="bf"><a href="/dashboard"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
+			<li id="be"><a href="/dashboard"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
 			<li class="dt"><?php $this->href('/mentions','Mentions'); ?></li>
 		<?php endif ?>
 
 		<?php if (!$data['sessions']->get('uid')): ?>
-			<li id="bf"><a href="/"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
+			<li id="be"><a href="/"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
 		<?php endif ?>
 			
 			<li class="dt"><?php $this->href('/search',l('search')); ?></li>

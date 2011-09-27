@@ -35,7 +35,7 @@
 
 		<?php foreach ($data['comments'] as $comment): ?>
 			<?php 
-			echo "<li class='e' id='comment-".$comment['CID']."'>";
+			echo "<li class='f' id='comment-".$comment['CID']."'>";
 			echo "<span id='comment'>".$comment['comment']."</span>";
 			echo "<span id='name'><span id='says'>says</span> <a href='/".$comment['username']."'>".$comment['name']."</a></span>";
 			echo "</li>";

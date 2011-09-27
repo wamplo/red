@@ -78,8 +78,8 @@
 			echo "<li class='comments clearfix' id='comment-".$comment['CID']."'>";
 			echo "<div id='comment'>".$comment['comment_html']."</div>";
 			echo "<div id='comment-meta'>";
-			echo "<span id='name'><a class='u' href='/".$comment['username']."'>".$comment['name']."</a></span>";
-			echo '<time class="timeago" datetime="'.$comment['timecreate'].'">July 17, 2008</time>';
+			echo "<span id='comment-meta-name'><a class='u' href='/".$comment['username']."'>".$comment['name']."</a></span>";
+			echo '<time datetime="'.$comment['timecreate'].'">July 17, 2008</time>';
 
 			# DELETE LINK
 			if ($data['login'] == $comment['comment_UID']) {
