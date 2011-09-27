@@ -390,6 +390,7 @@ def updateandupload():
 	os.system('git addremove');
 	os.system('git commit -m " auto build at' + time.asctime( time.localtime(time.time())) + '"')
 	deploy()
+	os.system('git push');
 
 # IF FROM COMMAND LINE
 if __name__ == '__main__':
