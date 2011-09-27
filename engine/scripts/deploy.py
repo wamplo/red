@@ -380,6 +380,17 @@ def generatereadme():
 	# Close opend file
 	fo.close()
 
+def updateandupload():
+	clearcache()
+	views() # css, and views
+	images()
+	javascript()
+	fonts()
+	generatereadme()
+	os.system('git addremove');
+	os.system('git commit -m " auto build at' + time.asctime( time.localtime(time.time())) + '"')
+	deploy()
+
 # IF FROM COMMAND LINE
 if __name__ == '__main__':
 	
@@ -419,6 +430,7 @@ if __name__ == '__main__':
 
 			if sys.argv[1] == 'test':
 				print 'helloworld'
+				updateandupload()
 
 
 	except Exception as inst:
