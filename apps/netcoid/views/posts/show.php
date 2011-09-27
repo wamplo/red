@@ -1,6 +1,4 @@
-<style type="text/css">
-
-</style>
+<?php #var_dump($data); ?>
 <div class="clearfix" id="red-content">
 	<div class="clearfix" id="post-header">
 		<div class="l" style="width:700px">

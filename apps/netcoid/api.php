@@ -272,8 +272,8 @@ class Api extends Engine\Red
         if (isset($_POST['comment']) && $this->e->get('uid')) {
 
             $this->v->required($_POST['comment'], 'comment tidak boleh kosong');
-            $this->v->regex($_POST['comment'], '/^.{4,400}$/',  # nanti dihapus
-                '4-400 boleh berupa a-Z,0-9,=,!,",.,?,\' dan spasi');
+            $this->v->regex($_POST['comment'], '/^(.|\n){4,400}$/',  # nanti dihapus
+                '4-400 any dan spasi');
 
             if(!sizeof($this->v->errors)) 
             {

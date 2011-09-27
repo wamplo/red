@@ -24,7 +24,7 @@
 			tatap muka.</p>				
 		</div>
 		<div class="m"></div>
-		<span class="bu">
+		<span class="bw">
 		Setelah anda membaca, anda dapat langsung "masuk" dari menu atas kanan.</span>
 	</div>
 	<!-- CONTENT END -->

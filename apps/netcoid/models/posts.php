@@ -97,7 +97,7 @@ class Posts extends \Engine\libraries\Database {
 	}
 
 	function getFollowingPost($uid, $limit = 20) {
-		$data = $this->fetchAll ( "SELECT posts.PID, posts.title, posts.status, users.name, users.username
+		$data = $this->fetchAll ( "SELECT posts.PID, posts.post_GID, posts.title, posts.status, users.name, users.username
 		FROM posts
 		INNER JOIN follow ON follow.target_UID = posts.post_UID
 		INNER JOIN users ON users.UID = follow.target_UID AND users.UID != :uid

@@ -17,13 +17,24 @@
 		<div class="l" style="width:700px">
 		<ul id="profiles-menu">
 
-			<?php if ($data['login']): ?>
-				<li><a class="a" href="/api/social/follow?id=<?php echo $data['user']['uid'];; ?>">Ikuti</a></li>
+			<?php if ($data['login'] == $data['user']['uid']): ?>
+				<li><a class="u" href="/edit/profile">Edit Profil Anda</a></li>	
+			<?php endif ?>
+
+			<?php if ($data['login'] && $data['login'] != $data['user']['uid']): ?>
+				<?php if (empty($data['follow'])): ?>
+					<li><a class="a" href="/api/s/u/follow?id=<?php echo $data['user']['uid']; ?>">Ikuti</a></li>
+				<?php endif ?>
+
+				<?php if (!empty($data['follow'])): ?>
+					<li><a class="a" href="/api/s/u/unfollow?id=<?php echo $data['user']['uid']; ?>">Tidak Ikuti</a></li>
+				<?php endif ?>
 			<?php endif ?>
 
 			<?php if (!$data['login']): ?>
 				<li><a class="a" href="/login">Masuk untuk mengikuti</a></li>
 			<?php endif ?>
+
 			
 			<li><a class="a" href="/<?php echo $data['user']['username']; ?>/posts">Posts</a></li>
 			<li><a class="a" href="/<?php echo $data['user']['username']; ?>/offers">Penawaran</a></li>

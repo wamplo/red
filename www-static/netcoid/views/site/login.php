@@ -1,7 +1,7 @@
 	<?php $data['validation']->getErrors(); ?>
 	<div id="red-error-box"></div>
 	<!-- CONTENT START -->
-	<div class="m ca" id="red-content">
+	<div class="m cc" id="red-content">
 		<div id="red-login">
 		<?php $data['forms']->openForm('red-login'); ?>
 			<h3><strong>Masuk</strong></h3>

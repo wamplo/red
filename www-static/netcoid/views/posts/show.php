@@ -1,6 +1,4 @@
-<style type="text/css">
-
-</style>
+<?php #var_dump($data); ?>
 <div class="m" id="red-content">
 	<div class="m" id="post-header">
 		<div class="dz" style="width:700px">

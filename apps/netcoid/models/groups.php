@@ -58,7 +58,7 @@ class Groups extends \Engine\libraries\Database {
 	# BUKAN YANG SUDAH DIFOLLOW
 	function getFollowingGroups($uid, $limit = 20) {
 		$data = $this->fetchAll ( 
-		"SELECT posts.PID, groups.name as groupname, posts.title, posts.status, users.name, users.username
+		"SELECT posts.PID, posts.post_GID, groups.name as groupname, posts.title, posts.status, users.name, users.username
 		FROM posts
 		INNER JOIN groups ON groups.GID = posts.post_GID
 		INNER JOIN follow ON follow.target_GID = posts.post_GID

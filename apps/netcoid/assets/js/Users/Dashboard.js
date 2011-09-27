@@ -11,8 +11,8 @@ function getNewFeed(){
             url: '/api/p/refresh',
             data: { f: datalastid },
             success: function(data) {
-            	console.log(data);
-            	if (data) {
+            	//console.log(data);
+            	if (data == 'true') {
             		// LOAD SOMETHING
             		$('#ajax-update-following').html('<a id="ajax-refresh" href="#">Something is changing!</a>');
 
