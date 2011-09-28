@@ -7,12 +7,18 @@ $routes = array(
     '^([a-zA-Z0-9_]{6,20})/offers$' =>  'Profiles:Offers',
     '^([a-zA-Z0-9_]{6,20})/requests$' =>  'Profiles:Requests',
 
+    'verify'    =>  'test:Offline',
+    'HQ'        =>  'test:Offline',
+
     'index' 			=>  'site:Index',
     'signup'            =>  'site:Signup',
     'search'            =>  'site:Search',
     'group'             =>  'Groups:Index',
     'register' 			=>  'register:Index',
-    'development'       =>  'site:Development',
+    'development'       =>  'test:Offline',
+
+
+    'send/message'      =>  'Message:Index',
 
     'api/c/username' 	=>  'Api:checkUsername',
     'api/c/name' 		=>  'Api:checkName',
@@ -23,6 +29,7 @@ $routes = array(
     'dashboard'         =>  'Users:Dashboard',
     'edit/profile'		=>	'Users:editProfile',
     'mentions'          =>  'Users:Mentions',
+    'messages'          =>  'Users:Messages',
 
     'post'				=> 	'posts:showPost',
     'post/edit'         =>  'posts:editPost',

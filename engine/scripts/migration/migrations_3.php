@@ -1,6 +1,35 @@
 <?php 
 
 $up = "
+CREATE TABLE `messages` (
+  `MID` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `SUID` INT UNSIGNED NOT NULL ,
+  `RUID` INT UNSIGNED NOT NULL ,
+  `subject` VARCHAR(255) NOT NULL ,
+  `message` TEXT NULL ,
+  `type` TINYINT(1)  NOT NULL ,
+  `timecreate` DATETIME NULL,
+  PRIMARY KEY (`MID`) ,
+  UNIQUE INDEX `MID_UNIQUE` (`MID` ASC) ,
+  INDEX `fk_message.suid.users.uid` (`SUID` ASC) ,
+  INDEX `fk_message.ruid.users.uid` (`RUID` ASC) ,
+    
+  CONSTRAINT `fk_message.suid.users.uid`
+    FOREIGN KEY (`SUID` )
+    REFERENCES `users` (`UID` )
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_message.ruid.users.uid`
+    FOREIGN KEY (`RUID` )
+    REFERENCES `users` (`UID` )
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+
+COLLATE = utf8_unicode_ci;
+
+
 /*NOT CORE */
 CREATE  TABLE IF NOT EXISTS `comments` (
   `CID` INT UNSIGNED NOT NULL AUTO_INCREMENT ,

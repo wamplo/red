@@ -209,6 +209,30 @@ class Users Extends Engine\Red
         $this->__Footer();
     }
 
+    public function Messages(){
+        $this->__Header();
+
+        $m = new Apps\Netcoid\Models\Messages;
+        $messagesdata = array(
+            'messages' => $m->getListMessages($this->e->get('uid'))
+        );
+
+        $this->r->branch(array(
+            'src' => 
+                array(
+                    'html' => $this->a->getView('netcoid','users/messages.php', $messagesdata),
+                    'id' => 'rr-ajax-messages'
+                ),
+            'css' => 
+                array(
+                    $this->a->getPath('default','css/framework.css'),
+                    $this->a->getPath('netcoid','css/main.v2.css')
+                ),
+            'cache' => 0
+        ));
+        $this->__Footer();
+    }
+
     /**
      * FRAMEWORK __HEADER
      * @author Adam Ramadhan

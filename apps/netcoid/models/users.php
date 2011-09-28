@@ -1,5 +1,6 @@
 <?php
 namespace Apps\Netcoid\Models;
+
 if (! defined ( 'SECURE' ))
 	exit ( 'Hello, security@networks.co.id' );
 

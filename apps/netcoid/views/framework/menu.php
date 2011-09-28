@@ -5,6 +5,7 @@
 		<?php if ($data['sessions']->get('uid')): ?>
 			<li id="logo"><a href="/dashboard"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
 			<li class="t"><?php $this->href('/mentions','Mentions'); ?></li>
+			<li class="t"><?php $this->href('/messages','Pesan'); ?></li>
 		<?php endif ?>
 
 		<?php if (!$data['sessions']->get('uid')): ?>

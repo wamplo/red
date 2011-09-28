@@ -18,6 +18,7 @@
 				<li><a class="u" href="/edit/profile">Edit Profil Anda</a></li>	
 			<?php endif ?>
 
+
 			<?php if ($data['login'] && $data['login'] != $data['user']['uid']): ?>
 				<?php if (empty($data['follow'])): ?>
 					<li><a class="a" href="/api/s/u/follow?id=<?php echo $data['user']['uid']; ?>">Ikuti</a></li>
@@ -26,6 +27,11 @@
 				<?php if (!empty($data['follow'])): ?>
 					<li><a class="a" href="/api/s/u/unfollow?id=<?php echo $data['user']['uid']; ?>">Tidak Ikuti</a></li>
 				<?php endif ?>
+			<?php endif ?>
+
+
+			<?php if ($data['login'] != $data['user']['uid']): ?>
+				<li><a class="a" href="/send/message?id=<?php echo $data['user']['uid']; ?>">Kirim pesan</a></li>	
 			<?php endif ?>
 
 			<?php if (!$data['login']): ?>
