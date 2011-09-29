@@ -8,6 +8,6 @@ IGNORECSS = [
 	'.error-list #error-num',
 	'.error-list #error-description',
 	'.clearfix',
-	'a.u',
+	'.u',
 	'.example'
 ];
