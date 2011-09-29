@@ -194,7 +194,7 @@ class Profiles Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Profiles/Index.php',$profiledata),
-                    'id' => 'rr-ajax-profiles'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
