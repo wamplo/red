@@ -18,7 +18,7 @@
 			
 			<?php if ($data['sessions']->get('uid')): ?>
 			<li class="t"><a data-pjax='#rr-2' href="<?php echo '/'.$data['sessions']->get('username') ?>"><?php echo $data['sessions']->get('name') ?></a></li>
-				<li class="t"><a data-pjax='#rr-2' href="/logout"><?php echo l('logout'); ?></a></li>
+				<li class="t"><a href="/logout"><?php echo l('logout'); ?></a></li>
 			<?php endif ?>
 
 			<?php if (!$data['sessions']->get('uid')): ?>
