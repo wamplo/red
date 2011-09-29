@@ -23,11 +23,11 @@ li.db{
 
 			if (isset($value['children'])) {
 				foreach ($value['children'] as $children) {
-					echo '<li class="db"><a href="/group?id='.$children['GID'].'" class="df">'.$children['name'].'</a></li>';
+					echo '<li class="db"><a data-pjax="#rr-2" href="/group?id='.$children['GID'].'" class="df">'.$children['name'].'</a></li>';
 
 					if (isset($children['children'])) {
 						foreach ($children['children'] as $children) {
-							echo '<span class="da"><a href="/group?id='.$children['GID'].'">'.$children['name'].'</a></span> ';
+							echo '<span class="da"><a data-pjax="#rr-2" href="/group?id='.$children['GID'].'">'.$children['name'].'</a></span> ';
 						}
 					}
 				}

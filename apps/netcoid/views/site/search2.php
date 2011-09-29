@@ -23,11 +23,11 @@ li.level2{
 
 			if (isset($value['children'])) {
 				foreach ($value['children'] as $children) {
-					echo '<li class="level2"><a href="/group?id='.$children['GID'].'" class="a">'.$children['name'].'</a></li>';
+					echo '<li class="level2"><a data-pjax="#rr-2" href="/group?id='.$children['GID'].'" class="a">'.$children['name'].'</a></li>';
 
 					if (isset($children['children'])) {
 						foreach ($children['children'] as $children) {
-							echo '<span class="level3"><a href="/group?id='.$children['GID'].'">'.$children['name'].'</a></span> ';
+							echo '<span class="level3"><a data-pjax="#rr-2" href="/group?id='.$children['GID'].'">'.$children['name'].'</a></span> ';
 						}
 					}
 				}
