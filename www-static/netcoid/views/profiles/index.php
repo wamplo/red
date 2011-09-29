@@ -30,9 +30,12 @@
 			<?php endif ?>
 
 
-			<?php if ($data['login'] != $data['user']['uid']): ?>
-				<li><a class="di" href="/send/message?id=<?php echo $data['user']['uid']; ?>">Kirim pesan</a></li>	
+			<?php if ($data['login']): ?>
+				<?php if ($data['login'] != $data['user']['uid']): ?>
+					<li><a class="di" href="/send/message?id=<?php echo $data['user']['uid']; ?>">Kirim pesan</a></li>	
+				<?php endif ?>				
 			<?php endif ?>
+
 
 			<?php if (!$data['login']): ?>
 				<li><a class="di" href="/login">Masuk untuk mengikuti</a></li>

@@ -3,26 +3,26 @@
 		<ul class="l">
 
 		<?php if ($data['sessions']->get('uid')): ?>
-			<li id="logo"><a href="/dashboard"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
-			<li class="t"><?php $this->href('/mentions','Mentions'); ?></li>
-			<li class="t"><?php $this->href('/messages','Pesan'); ?></li>
+			<li id="logo"><a data-pjax='#red-content' href="/dashboard"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
+			<li class="t"><a data-pjax='#red-content' href="/mentions">Mentions</a></li>
+			<li class="t"><a data-pjax='#red-content' href="/messages">Pesan</a></li>
 		<?php endif ?>
 
 		<?php if (!$data['sessions']->get('uid')): ?>
-			<li id="logo"><a href="/"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
+			<li id="logo"><a data-pjax='#red-content' href="/"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
 		<?php endif ?>
 			
-			<li class="t"><?php $this->href('/search',l('search')); ?></li>
+			<li class="t"><a data-pjax='#red-content' href="/search">search</a></li>
 		</ul>
 		<ul class="r">
 			
 			<?php if ($data['sessions']->get('uid')): ?>
-				<li class="t"><?php $this->href('/'.$data['sessions']->get('username'),$data['sessions']->get('name')); ?></li>
-				<li class="t"><?php $this->href('/logout',l('logout')); ?></li>
+			<li class="t"><a data-pjax='#red-content' href="<?php echo '/'.$data['sessions']->get('username') ?>"><?php echo $data['sessions']->get('name') ?></a></li>
+				<li class="t"><a data-pjax='#red-content' href="/logout"><?php echo l('logout'); ?></a></li>
 			<?php endif ?>
 
 			<?php if (!$data['sessions']->get('uid')): ?>
-				<li class="t"><?php $this->href('/login',l('login')); ?></li>
+				<li class="t"><a data-pjax='#red-content' href="/login"><?php echo l('login'); ?></a></li>
 			<?php endif ?>
 		</ul>
 	</div>

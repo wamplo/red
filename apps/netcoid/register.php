@@ -116,33 +116,41 @@ class Register extends Engine\Red
     /**
      * FRAMEWORK __HEADER
      * @author Adam Ramadhan
-     * @version 1
+     * @version 1 + PJAX
      **/
-    private function __Header(){
-        echo $this->a->getView('netcoid','Framework/Header.php',
-            array(
-                'title' => 'Netcoid &mdash; jejaring bisnis indonesia',
-                'description' => 'Netcoid, jejaring bisnis indonesia, menghubungkan pelaku bisnis indonesia' 
-            )
-        );
+    private function __Header($title = 'Netcoid &mdash; jejaring bisnis indonesia', $desc = 'Netcoid, jejaring bisnis indonesia, menghubungkan pelaku bisnis indonesia'){
 
-        $menudata = array(
-            'sessions' => $this->e
-        );
+        if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest" ) {
+            
+            # AN AJAX REQUEAST && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == $request 
+            # var_dump($_SERVER);
+            
+        } else {    
+            echo $this->a->getView('netcoid','framework/header.php',
+                array(
+                    'title' => $title,
+                    'description' => $desc 
+                )
+            );
 
-        $this->r->branch(array(
-            'src' => 
-                array(
-                    'html' => $this->a->getView('netcoid','Framework/Menu.php', $menudata),
-                    'id' => 'rr-ajax-menu'
-                ),
-            'css' => 
-                array(
-                    $this->a->getPath('default','css/framework.css'),
-                    $this->a->getPath('netcoid','css/main.v2.css')
-                ),
-            'cache' => 0
-        ),0); # START
+            $menudata = array(
+                'sessions' => $this->e
+            );
+
+            $this->r->branch(array(
+                'src' => 
+                    array(
+                        'html' => $this->a->getView('netcoid','framework/menu.php', $menudata),
+                        'id' => 'rr-ajax-menu'
+                    ),
+                'css' => 
+                    array(
+                        $this->a->getPath('default','css/framework.css'),
+                        $this->a->getPath('netcoid','css/main.v2.css')
+                    ),
+                'cache' => 0
+            ),0); # START
+        }
     }
 
     /**

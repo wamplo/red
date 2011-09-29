@@ -18,7 +18,9 @@ class RedRiver extends Assets
 
 		echo '
 	<script type="text/javascript" src="'.$this->getPath('default', 'js/jquery-1.6.2.js').'"></script>
-	<script type="text/javascript" src="'.$this->getPath('default', 'js/redriver.js').'?'.rand().'"></script>';
+	<script type="text/javascript" src="'.$this->getPath('default', 'js/redriver.js').'?'.rand().'"></script>
+	<script type="text/javascript" src="/engine/vendors/github/defunkt-jquery-pjax-7d9841e/jquery.pjax.js"></script>
+	<script type="text/javascript" src="/engine/vendors/github/defunkt-jquery-pjax-7d9841e/netcoid.pjax.js?'.rand().'"></script>';
 	}
 
 	function branch($params, $status = 1){
