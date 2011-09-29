@@ -254,7 +254,7 @@ class Posts Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Posts/Offer.php',$postdata),
-                    'id' => 'rr-2
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
