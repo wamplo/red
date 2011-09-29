@@ -6,7 +6,7 @@
 				<li><b><?php echo $data['post']['title']; ?></b></li>
 			</ul>
 		</div>
-		<div class="ec"><a href="<?php echo $data['post']['username']; ?>" class="dj"><?php echo $data['post']['name']; ?></a></div>
+		<div class="ec"><a href="<?php echo $data['post']['username']; ?>" class="dt"><?php echo $data['post']['name']; ?></a></div>
 	</div>
 
 	<?php if ($data['login'] == $data['post']['post_UID']) : ?>
@@ -76,7 +76,7 @@
 			echo "<li class='f m' id='comment-".$comment['CID']."'>";
 			echo "<div id='comment'>".$comment['comment_html']."</div>";
 			echo "<div id='comment-meta'>";
-			echo "<span id='comment-meta-name'><a class='dj' href='/".$comment['username']."'>".$comment['name']."</a></span>";
+			echo "<span id='comment-meta-name'><a class='dt' href='/".$comment['username']."'>".$comment['name']."</a></span>";
 			echo '<time datetime="'.$comment['timecreate'].'">July 17, 2008</time>';
 
 			# DELETE LINK

@@ -18,7 +18,7 @@
 		<ul id="profiles-menu">
 
 			<?php if ($data['login'] == $data['user']['uid']): ?>
-				<li><a class="dj" href="/edit/profile">Edit Profil Anda</a></li>	
+				<li><a class="dt" href="/edit/profile">Edit Profil Anda</a></li>	
 			<?php endif ?>
 
 			<?php if ($data['login'] && $data['login'] != $data['user']['uid']): ?>
@@ -41,7 +41,7 @@
 			<li><a class="di" href="/<?php echo $data['user']['username']; ?>/requests">Permintaan</a></li>
 		</ul>
 		</div>
-		<div class="ec"><a class="dj" href="/<?php echo $data['user']['username']; ?>"><?php echo $data['user']['name'];  ?></a></div>
+		<div class="ec"><a class="dt" href="/<?php echo $data['user']['username']; ?>"><?php echo $data['user']['name'];  ?></a></div>
 	</div>
 
 	<div>
@@ -50,7 +50,7 @@
 			<?php
 			echo '<li class="type-1">';
 			echo '<a class="di" href="/post?id='.$post['PID'].'">'.$post['title'].'</a> 
-			<i>by</i> <a class="dj"href="/'.$post['username'].'">'.$post['name'].'</a>';
+			<i>by</i> <a class="dt"href="/'.$post['username'].'">'.$post['name'].'</a>';
 			?>
 		<?php endforeach ?>
 		</ul>

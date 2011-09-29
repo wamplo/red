@@ -53,7 +53,7 @@ li.type-2 a.di{    color: #47C937;}
 				echo '<li class="type-'.$post['status'].'">';
 
 				echo '<a class="di" href="post?id='.$post['PID'].'">'.$post['title'].'</a> 
-				<i>by</i> <a class="dj"href="'.$post['username'].'">'.$post['name'].'</a>';
+				<i>by</i> <a class="dt"href="'.$post['username'].'">'.$post['name'].'</a>';
 				echo "</li>";
 
 				?>

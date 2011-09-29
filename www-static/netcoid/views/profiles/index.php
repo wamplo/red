@@ -15,7 +15,7 @@
 		<ul id="profiles-menu">
 
 			<?php if ($data['login'] == $data['user']['uid']): ?>
-				<li><a class="dj" href="/edit/profile">Edit Profil Anda</a></li>	
+				<li><a class="dt" href="/edit/profile">Edit Profil Anda</a></li>	
 			<?php endif ?>
 
 
@@ -46,7 +46,7 @@
 			<li><a class="di" href="/<?php echo $data['user']['username']; ?>/requests">Permintaan</a></li>
 		</ul>
 		</div>
-		<div class="ec"><a class="dj" href="/<?php echo $data['user']['username']; ?>"><?php echo $data['user']['name'];  ?></a></div>
+		<div class="ec"><a class="dt" href="/<?php echo $data['user']['username']; ?>"><?php echo $data['user']['name'];  ?></a></div>
 	</div>
 
 	<div class="blog-post m profile-content" id="css-<?php echo $data['user']['username']; ?>">
