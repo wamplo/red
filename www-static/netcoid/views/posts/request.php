@@ -5,7 +5,7 @@
 
 <div class="m" id="red-content">
 
-	<div class="users-left50 dz dm" id="red-wmd"><?php $data['forms']->openForm('red-wmd'); ?>
+	<div class="users-left50 dv di" id="red-wmd"><?php $data['forms']->openForm('red-wmd'); ?>
 		<ul>
 			<li id="form-header"><h3><strong>Request</strong> <a style="font-size:12px;margin-left:10px" class="s" href="/<?php echo $data['username']; ?>">See rules</a></h3></li>
 
@@ -37,7 +37,7 @@
 		</ul>
 	<?php $data['forms']->closeForm('red-wmd'); ?></div>	
 
-	<div class="ec users-right50">
+	<div class="dy users-right50">
 		<h1 class="blog-post" id="wmd-title-preview"></h1>
 		<div class="blog-post" id="wmd-preview"></div>
 	</div>

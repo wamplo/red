@@ -46,10 +46,10 @@ class Profiles Extends Engine\Red
 
         $p = new Apps\Netcoid\Models\Posts;
 
-        $this->__Header();
-
         $userdata = $this->u->getData($username);
-        
+             
+        $this->__Header($userdata['name'] . '&mdash; Posts');
+
         $postdata = array(
             'user' => $userdata,
             'posts' => $p->getPostbyUID($userdata['uid'], 20, $this->i->curroffset),
@@ -64,7 +64,7 @@ class Profiles Extends Engine\Red
         $this->r->branch(array(
             'src' => 
                 array(
-                    'html' => $this->a->getView('netcoid','Profiles/Posts.php',$postdata),
+                    'html' => $this->a->getView('netcoid','profiles/posts.php',$postdata),
                     'id' => 'rr-2'
                 ),
             'css' => 
@@ -91,9 +91,10 @@ class Profiles Extends Engine\Red
 
         $p = new Apps\Netcoid\Models\Posts;
 
-        $this->__Header();
-
         $userdata = $this->u->getData($username);
+
+        $this->__Header($userdata['name'] . '&mdash; Penawaran');
+
         $offerdata = array(
             'user' => $userdata,
             'posts' => $p->getPostbyUID($userdata['uid'], 20, $this->i->curroffset,1),
@@ -108,7 +109,7 @@ class Profiles Extends Engine\Red
         $this->r->branch(array(
             'src' => 
                 array(
-                    'html' => $this->a->getView('netcoid','Profiles/Offers.php',$offerdata),
+                    'html' => $this->a->getView('netcoid','profiles/posts.php',$offerdata),
                     'id' => 'rr-2'
                 ),
             'css' => 
@@ -135,9 +136,10 @@ class Profiles Extends Engine\Red
 
         $p = new Apps\Netcoid\Models\Posts;
 
-        $this->__Header();
-
         $userdata = $this->u->getData($username);
+
+        $this->__Header($userdata['name'] . '&mdash; Permintaan');
+        
         $offerdata = array(
             'user' => $userdata,
             'posts' => $p->getPostbyUID($userdata['uid'], 20, $this->i->curroffset,2),
@@ -152,7 +154,7 @@ class Profiles Extends Engine\Red
         $this->r->branch(array(
             'src' => 
                 array(
-                    'html' => $this->a->getView('netcoid','Profiles/Offers.php',$offerdata),
+                    'html' => $this->a->getView('netcoid','profiles/posts.php',$offerdata),
                     'id' => 'rr-2'
                 ),
             'css' => 
@@ -177,13 +179,13 @@ class Profiles Extends Engine\Red
     public function Index($username){
         $this->__securitycheck($username);
 
-        $this->__Header();
-
-        $this->h->showAll(); # SHOW FLASH
-        
         $o = new Apps\Netcoid\Models\Follow;
         $user = $this->u->getData($username);
 
+        $this->__Header($user['name']);
+        $this->h->showAll(); # SHOW FLASH
+
+        # @TODO OPTIMASI DATANYA
         $profiledata = array(
             'user' => $user,
             'login' => $this->e->get('uid'),
@@ -193,7 +195,7 @@ class Profiles Extends Engine\Red
         $this->r->branch(array(
             'src' => 
                 array(
-                    'html' => $this->a->getView('netcoid','Profiles/Index.php',$profiledata),
+                    'html' => $this->a->getView('netcoid','profiles/index.php',$profiledata),
                     'id' => 'rr-2'
                 ),
             'css' => 

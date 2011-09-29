@@ -1,25 +1,25 @@
 <?php #var_dump($data); ?>
 <div class="m" id="red-content">
 	<div class="m" id="post-header">
-		<div class="dz" style="width:700px">
+		<div class="dv" style="width:700px">
 			<ul>
 				<li><b><?php echo $data['post']['title']; ?></b></li>
 			</ul>
 		</div>
-		<div class="ec"><a href="<?php echo $data['post']['username']; ?>" class="dt"><?php echo $data['post']['name']; ?></a></div>
+		<div class="dy"><a href="<?php echo $data['post']['username']; ?>" class="dp"><?php echo $data['post']['name']; ?></a></div>
 	</div>
 
 	<?php if ($data['login'] == $data['post']['post_UID']) : ?>
 		<div class="m" id="post-menu">
-			<ul class="dz m">
-				<li class="dz"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
+			<ul class="dv m">
+				<li class="dv"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
 			</ul>
-			<ul class="ec">
+			<ul class="dy">
 				
 				<?php if (strtotime($data['post']['time_bump']) < strtotime('-1 Hour')): ?>
-					<li class="dz"><a href="/post/bump?id=<?php echo $_GET['id']; ?>">Bump</a></li>
+					<li class="dv"><a href="/post/bump?id=<?php echo $_GET['id']; ?>">Bump</a></li>
 				<?php endif ?>
-				<li class="dz"><a href="/post/delete?id=<?php echo $_GET['id']; ?>">x</a></li>
+				<li class="dv"><a href="/post/delete?id=<?php echo $_GET['id']; ?>">x</a></li>
 			</ul>
 		</div>
 	<?php endif ?>
@@ -76,7 +76,7 @@
 			echo "<li class='f m' id='comment-".$comment['CID']."'>";
 			echo "<div id='comment'>".$comment['comment_html']."</div>";
 			echo "<div id='comment-meta'>";
-			echo "<span id='comment-meta-name'><a class='dt' href='/".$comment['username']."'>".$comment['name']."</a></span>";
+			echo "<span id='comment-meta-name'><a class='dp' href='/".$comment['username']."'>".$comment['name']."</a></span>";
 			echo '<time datetime="'.$comment['timecreate'].'">July 17, 2008</time>';
 
 			# DELETE LINK

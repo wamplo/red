@@ -1,11 +1,11 @@
 <!-- START FOOTER  -->
 <div id="red-footer">
 	<div class="m" id="red-footer-warp">
-		<ul class="dz" id="red-footer-menu">
+		<ul class="dv" id="red-footer-menu">
 			<li id="hint"><?php $this->href('/HQ',l('contactus')); ?></li>
 		</ul>
 		
-		<ul class="ec" id="red-copyright">
+		<ul class="dy" id="red-copyright">
 			<li><p><?php echo l('copyright'); ?></p></li>
 			<li id="verified-business"><a href="/verify"><?php 
 			$this->getIMG('netcoid','img/site/verified.png'); ?></a></li>

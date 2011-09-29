@@ -23,8 +23,12 @@ class Pagination {
 		$this->__getPage();
 	}
 
-	public function createHtml(){
+	public function createHtml($options = array()){
 
+		$params = '';
+		foreach ( $options as $key => $value ) {
+			$params .= " $key = '$value'";
+		}
 		#var_dump($this->currrow,$this->totalrow,$this->maxperpage,$this->curroffset);
 
 		# BACK
@@ -33,7 +37,7 @@ class Pagination {
 			$dataURL = parse_url($_SERVER['REQUEST_URI']); // $x = $dataURL['path'];
 			$buildQuery = http_build_query( Array( 'offset' => $this->curroffset - 1 ) + $_GET );
 
-			echo '<a id="arrow-link" href="'. $dataURL['path'] .'?'. $buildQuery .'" ><div id="pagination-to-back"><span class="arrow"><</span></div></a>';
+			echo '<a id="arrow-link" href="'. $dataURL['path'] .'?'. $buildQuery .'" '.$params.'><div id="pagination-to-back"><span class="arrow"><</span></div></a>';
 		}
 
 		# NEXT
@@ -44,7 +48,7 @@ class Pagination {
 			$dataURL = parse_url($_SERVER['REQUEST_URI']); // $x = $dataURL['path'];
 			$buildQuery = http_build_query( Array( 'offset' => $this->curroffset + 1 ) + $_GET );
 
-			echo '<a id="arrow-link" href="'. $dataURL['path'] .'?'. $buildQuery .'" ><div id="pagination-to-next"><span class="arrow">></span></div></a>';				
+			echo '<a id="arrow-link" href="'. $dataURL['path'] .'?'. $buildQuery .'" '.$params.'><div id="pagination-to-next"><span class="arrow">></span></div></a>';				
 		}
 	}
 
