@@ -141,7 +141,7 @@ class Register extends Engine\Red
                 'src' => 
                     array(
                         'html' => $this->a->getView('netcoid','framework/menu.php', $menudata),
-                        'id' => 'rr-ajax-menu'
+                        'id' => 'rr-1'
                     ),
                 'css' => 
                     array(
@@ -163,7 +163,7 @@ class Register extends Engine\Red
         'src' => 
             array(
                 'html' => $this->a->getView('netcoid','Framework/Bottom.php'),
-                'id' => 'rr-ajax-footer'
+                'id' => 'rr-3'
             ),
         'css' => 
             array(

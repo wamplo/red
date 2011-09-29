@@ -90,7 +90,7 @@ class Message Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','send/message.php', $messagedata),
-                    'id' => 'rr-message'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -131,7 +131,7 @@ class Message Extends Engine\Red
                 'src' => 
                     array(
                         'html' => $this->a->getView('netcoid','framework/menu.php', $menudata),
-                        'id' => 'rr-ajax-menu'
+                        'id' => 'rr-1'
                     ),
                 'css' => 
                     array(
@@ -154,7 +154,7 @@ class Message Extends Engine\Red
         'src' => 
             array(
                 'html' => $this->a->getView('netcoid','framework/bottom.php'),
-                'id' => 'rr-ajax-footer'
+                'id' => 'rr-3'
             ),
         'css' => 
             array(

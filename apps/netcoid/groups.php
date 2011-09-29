@@ -59,7 +59,7 @@ class Groups Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Groups/Index.php',$indexdata),
-                    'id' => 'rr-ajax-groups'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -95,7 +95,7 @@ class Groups Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Framework/Menu.php', $menudata),
-                    'id' => 'rr-ajax-menu'
+                    'id' => 'rr-1'
                 ),
             'css' => 
                 array(
@@ -116,7 +116,7 @@ class Groups Extends Engine\Red
         'src' => 
             array(
                 'html' => $this->a->getView('netcoid','Framework/Bottom.php'),
-                'id' => 'rr-ajax-footer'
+                'id' => 'rr-3'
             ),
         'css' => 
             array(

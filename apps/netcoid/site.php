@@ -33,7 +33,7 @@ class Site Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','site/sitedev.php'),
-                    'id' => 'rr-hello'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -67,7 +67,7 @@ class Site Extends Engine\Red
             array(
                 #'html' => $this->a->getView('netcoid','site/sitedev.php',$signupdata),
                 'html' => $this->a->getView('netcoid','site/signup.php',$signupdata),
-                'id' => 'rr-ajax-signup'
+                'id' => 'rr-2'
             ),
         'css' => 
             array(
@@ -133,7 +133,7 @@ class Site Extends Engine\Red
         'src' => 
             array(
                 'html' => $this->a->getView('netcoid','Site/Search2.php',$searchdata),
-                'id' => 'rr-ajax-signup'
+                'id' => 'rr-2'
             ),
         'css' => 
             array(
@@ -165,7 +165,7 @@ class Site Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Site/Development.php', $devdata),
-                    'id' => 'rr-ajax-development'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -210,7 +210,7 @@ class Site Extends Engine\Red
                 'src' => 
                     array(
                         'html' => $this->a->getView('netcoid','framework/menu.php', $menudata),
-                        'id' => 'rr-ajax-menu'
+                        'id' => 'rr-1'
                     ),
                 'css' => 
                     array(
@@ -232,7 +232,7 @@ class Site Extends Engine\Red
         'src' => 
             array(
                 'html' => $this->a->getView('netcoid','framework/bottom.php'),
-                'id' => 'rr-ajax-footer'
+                'id' => 'rr-3'
             ),
         'css' => 
             array(

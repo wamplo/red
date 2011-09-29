@@ -81,7 +81,7 @@ class Users Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Users/Dashboard.php', $dashboarddata),
-                    'id' => 'rr-ajax-dashboard'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -121,7 +121,7 @@ class Users Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Users/Mentions.php', $mentiondata),
-                    'id' => 'rr-ajax-mentions'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -176,7 +176,7 @@ class Users Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Users/Editprofile.php',$editprofile),
-                    'id' => 'rr-ajax-edit'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -221,7 +221,7 @@ class Users Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','users/messages.php', $messagesdata),
-                    'id' => 'rr-ajax-messages'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -261,7 +261,7 @@ class Users Extends Engine\Red
                 'src' => 
                     array(
                         'html' => $this->a->getView('netcoid','framework/menu.php', $menudata),
-                        'id' => 'rr-ajax-menu'
+                        'id' => 'rr-1'
                     ),
                 'css' => 
                     array(
@@ -283,7 +283,7 @@ class Users Extends Engine\Red
         'src' => 
             array(
                 'html' => $this->a->getView('netcoid','Framework/Bottom.php'),
-                'id' => 'rr-ajax-footer'
+                'id' => 'rr-3'
             ),
         'css' => 
             array(

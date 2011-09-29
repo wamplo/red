@@ -80,7 +80,7 @@ class Posts Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Posts/Edit.php',$editdata),
-                    'id' => 'rr-posts-any'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -141,7 +141,7 @@ class Posts Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Posts/Show.php', $postdata),
-                    'id' => 'rr-ajax-post'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -194,7 +194,7 @@ class Posts Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Posts/Any.php',$postdata),
-                    'id' => 'rr-posts-any'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -254,7 +254,7 @@ class Posts Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Posts/Offer.php',$postdata),
-                    'id' => 'rr-posts-any'
+                    'id' => 'rr-2
                 ),
             'css' => 
                 array(
@@ -314,7 +314,7 @@ class Posts Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Posts/Request.php',$postdata),
-                    'id' => 'rr-posts-any'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -378,7 +378,7 @@ class Posts Extends Engine\Red
                 'src' => 
                     array(
                         'html' => $this->a->getView('netcoid','framework/menu.php', $menudata),
-                        'id' => 'rr-ajax-menu'
+                        'id' => 'rr-1'
                     ),
                 'css' => 
                     array(
@@ -400,7 +400,7 @@ class Posts Extends Engine\Red
         'src' => 
             array(
                 'html' => $this->a->getView('netcoid','Framework/Bottom.php'),
-                'id' => 'rr-ajax-footer'
+                'id' => 'rr-3'
             ),
         'css' => 
             array(

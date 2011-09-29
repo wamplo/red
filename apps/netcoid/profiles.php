@@ -65,7 +65,7 @@ class Profiles Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Profiles/Posts.php',$postdata),
-                    'id' => 'rr-ajax-profiles'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -109,7 +109,7 @@ class Profiles Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Profiles/Offers.php',$offerdata),
-                    'id' => 'rr-ajax-profiles'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -153,7 +153,7 @@ class Profiles Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Profiles/Offers.php',$offerdata),
-                    'id' => 'rr-ajax-profiles'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -237,7 +237,7 @@ class Profiles Extends Engine\Red
                 'src' => 
                     array(
                         'html' => $this->a->getView('netcoid','framework/menu.php', $menudata),
-                        'id' => 'rr-ajax-menu'
+                        'id' => 'rr-1'
                     ),
                 'css' => 
                     array(
@@ -259,7 +259,7 @@ class Profiles Extends Engine\Red
         'src' => 
             array(
                 'html' => $this->a->getView('netcoid','Framework/Bottom.php'),
-                'id' => 'rr-ajax-footer'
+                'id' => 'rr-3'
             ),
         'css' => 
             array(

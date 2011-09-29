@@ -72,7 +72,7 @@ class Auth Extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('netcoid','Site/Login.php',$signindata),
-                    'id' => 'rr-ajax-login'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(
@@ -137,7 +137,7 @@ class Auth Extends Engine\Red
                 'src' => 
                     array(
                         'html' => $this->a->getView('netcoid','framework/menu.php', $menudata),
-                        'id' => 'rr-ajax-menu'
+                        'id' => 'rr-1'
                     ),
                 'css' => 
                     array(
@@ -159,7 +159,7 @@ class Auth Extends Engine\Red
         'src' => 
             array(
                 'html' => $this->a->getView('netcoid','Framework/Bottom.php'),
-                'id' => 'rr-ajax-footer'
+                'id' => 'rr-3'
             ),
         'css' => 
             array(
