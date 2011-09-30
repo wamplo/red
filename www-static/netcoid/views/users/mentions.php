@@ -1,4 +1,4 @@
-<div class="m" id="red-content">
+<div class="clearfix" id="red-content">
 	<?php foreach ($data['mentions'] as $mention): ?>
 		<li class="k">
 			<span>@<?php echo $mention['name']; ?></span> 

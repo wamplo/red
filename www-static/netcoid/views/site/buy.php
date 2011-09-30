@@ -1,10 +1,10 @@
 <?php $data['validation']->getErrors(); ?>
-<div class="m" id="red-content">
-	<div class="dw" style="width: 450px;">
+<div class="clearfix" id="red-content">
+	<div class="dr" style="width: 450px;">
 		<?php $data['forms']->openForm('red-post-new'); ?>
 		 	<div class="wmd-panel">
 			<h3>Permintaan Baru</h3>
-			<ul class="m">
+			<ul class="clearfix">
 				<li><?php $data['forms']->textinput('title',l('title'), array( 'data-error' => l('news_title_error'), 'class' => 't', 'id' => 'wmd-title', 'style' => 'width:420px')); ?></li>
 				<li>
 				<label for="tag">Group</label>
@@ -27,7 +27,7 @@
 				</select>
 				</div>
 				</li>
-				<div class="m" id="wmd-button-bar"></div>
+				<div class="clearfix" id="wmd-button-bar"></div>
 				<li><?php $data['forms']->textarea('content',l('article'), array( 'data-error' => l('news_content_empty'), 'class' => 't', 'id' => 'wmd-input', 'style' => 'width:420px;height:500px')); ?></li>
 				<li><input type="hidden" name="content_html" id="wmd-content-html" value=""/></li>
 			</ul>
@@ -35,7 +35,7 @@
 			<p style="text-align: center; margin-top: 10px;"><input type="submit" id="button" name="register" value="Post" class="b cupid-green"></p>
 		<?php $data['forms']->closeForm('red-post-new'); ?>
 	</div>
-	<div class="dz" style="width: 450px;">
+	<div class="du" style="width: 450px;">
 		<h3>Preview</h3>
 		<h1 class="blog-post" id="wmd-title-preview"></h1>
 		<div class="blog-post" id="wmd-preview"></div>

@@ -1,9 +1,9 @@
-<div class="m" id="red-content">
+<div class="clearfix" id="red-content">
 	<div>
 		<?php $data['forms']->openForm('red-register',array('action' => '/register')); ?>
 			<h3><strong>Pendaftaran</strong></h3>
 			<i>Hello!, are you registered?</i>
-			<ul class="m">
+			<ul class="clearfix">
 				<li><?php $data['forms']->textinput('username',l('username'), array( 'data-error' => l('register_username_error'), 'class' => 't', 'id' => 'input-username')); ?><p id="red-register-information">http://networks.co.id/<span id="url-suffix" style="word-wrap: break-word;" /></span></p></li>
 				<li><?php $data['forms']->password('password',l('password'), array( 'data-error' => l('register_password_empty'), 'class' => 't','id' => 'input-password')); ?><p id="red-register-information">"Kata Sandi Yang Kuat"</p></li>
 				<hr>

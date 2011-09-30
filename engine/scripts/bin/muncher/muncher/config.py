@@ -120,6 +120,8 @@ class Config(object):
             elif key == "--js":
                 self.setJsFiles(value)
             elif key == "--ignore":
+                print 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+                print value
                 self.setIgnore(value)
             elif key == "--view-ext":
                 self.view_extension = value

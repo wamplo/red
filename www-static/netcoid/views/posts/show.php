@@ -6,33 +6,33 @@ if (strlen($data['post']['title']) > 60) {
 }
 
 ?>
-<div class="m" id="red-content">
-	<div class="m" id="post-header">
-		<div class="dw" style="width:700px">
+<div class="clearfix" id="red-content">
+	<div class="clearfix" id="post-header">
+		<div class="dr" style="width:700px">
 			<ul>
 				<li><b><?php echo $data['post']['title']; ?></b></li>
 			</ul>
 		</div>
-		<div class="dz"><a data-pjax="#rr-2" href="<?php echo $data['post']['username']; ?>" class="dq"><?php echo $data['post']['name']; ?></a></div>
+		<div class="du"><a data-pjax="#rr-2" href="<?php echo $data['post']['username']; ?>" class="u"><?php echo $data['post']['name']; ?></a></div>
 	</div>
 
 	<?php if ($data['login'] == $data['post']['post_UID']) : ?>
-		<div class="m" id="post-menu">
-			<ul class="dw m">
-				<li class="dw"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
+		<div class="clearfix" id="post-menu">
+			<ul class="dr clearfix">
+				<li class="dr"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
 			</ul>
-			<ul class="dz">
+			<ul class="du">
 				
 				<?php if (strtotime($data['post']['time_bump']) < strtotime('-1 Hour')): ?>
-					<li class="dw"><a href="/post/bump?id=<?php echo $_GET['id']; ?>">Bump</a></li>
+					<li class="dr"><a href="/post/bump?id=<?php echo $_GET['id']; ?>">Bump</a></li>
 				<?php endif ?>
-				<li class="dw"><a href="/post/delete?id=<?php echo $_GET['id']; ?>">x</a></li>
+				<li class="dr"><a href="/post/delete?id=<?php echo $_GET['id']; ?>">x</a></li>
 			</ul>
 		</div>
 	<?php endif ?>
 
 	<!-- START CONTENT -->
-	<div class="m blog-post">
+	<div class="clearfix blog-post">
 		<h1 style="word-wrap: break-word;text-align: center;margin-bottom: 10px;"><a href="/post?id=<?php echo $_GET['id']; ?>"><?php echo $data['post']['fulltitle']; ?></a></h1>
 		<?php echo $data['post']['content_html']; ?>
 	</div>
@@ -80,10 +80,10 @@ if (strlen($data['post']['title']) > 60) {
 		<ul>
 		<?php foreach ($data['comments'] as $comment): ?>
 			<?php 
-			echo "<li class='f m' id='comment-".$comment['CID']."'>";
+			echo "<li class='f clearfix' id='comment-".$comment['CID']."'>";
 			echo "<div id='comment'>".$comment['comment_html']."</div>";
 			echo "<div id='comment-meta'>";
-			echo "<span id='comment-meta-name'><a class='dq' href='/".$comment['username']."'>".$comment['name']."</a></span>";
+			echo "<span id='comment-meta-name'><a class='u' href='/".$comment['username']."'>".$comment['name']."</a></span>";
 			echo '<time datetime="'.$comment['timecreate'].'">July 17, 2008</time>';
 
 			# DELETE LINK

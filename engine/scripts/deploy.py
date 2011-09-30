@@ -318,7 +318,7 @@ def views():
 	
 	# HARUS STR 
 	print ','.join(IGNORECSS);
-	os.system(muncher + ' --css ' + ','.join(css) + ' --html ' + ','.join(views) + ' --view-ext php ' + ','.join(IGNORECSS))
+	os.system(muncher + ' --css ' + ','.join(css) + ' --views ' + ','.join(views) + ' --ignore ' + ','.join(IGNORECSS))
 	
 	# VIEWS
 	for x in glob.glob(PATH_VIEWS + '*.opt.php'):
@@ -332,6 +332,12 @@ def views():
 
 		PRODUCTION_VIEWS_FOLDER = PATH_PRODUCTION + appfolder + os.sep + 'views' + os.sep + folder ;
 		PRODUCTION_VIEWS = PRODUCTION_VIEWS_FOLDER + os.sep + realname[0] + '.php';
+
+		if color == 0:
+			print Athena[randint(0,len(Athena)-1)] + realname
+
+		if color == 1:
+			clint.textui.puts(Athena[randint(0,len(Athena)-1)] + colored.yellow(realname[0] + '.php'))
 
 		if not os.path.exists(PRODUCTION_VIEWS_FOLDER):
 		    os.makedirs(PRODUCTION_VIEWS_FOLDER)

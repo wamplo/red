@@ -1,5 +1,5 @@
-<div class="m" id="red-content">
-	<div class="dw" style="width: 715px;">
+<div class="clearfix" id="red-content">
+	<div class="dr" style="width: 715px;">
 
 	<style type="text/css">
 	#type-news{
@@ -20,31 +20,31 @@
 	<?php 
 
 	foreach ($data['posts'] as $posts) {
-		echo '<li class="m">';
+		echo '<li class="clearfix">';
 
 		if ($posts['status'] == 0) {
-			echo '<div class="dw" style="margin-right: 10px;"><span id="type-news">Artikel</span></div>';
+			echo '<div class="dr" style="margin-right: 10px;"><span id="type-news">Artikel</span></div>';
 		}
 
 		if ($posts['status'] == 1) {
-			echo '<div class="dw" style="margin-right: 10px;"><span id="type-sell">Penawaran</span></div>';
+			echo '<div class="dr" style="margin-right: 10px;"><span id="type-sell">Penawaran</span></div>';
 		}
 
 		if ($posts['status'] == 2) {
-			echo '<div class="dw" style="margin-right: 10px;"><span id="type-buy">Permintaan</span></div>';
+			echo '<div class="dr" style="margin-right: 10px;"><span id="type-buy">Permintaan</span></div>';
 		}
 
-		echo '<div class="dw" style="width: 610px;"><a class="dg" href="post?id='.$posts['PID'].'">'.$posts['title'].'</a> oleh <a href="'.$posts['username'].'" class="dq">@'.$posts['name'].'</a> di <i><span id="ab" class="gid-'.$posts['post_GID'].'">'.$posts['group'].'</span></i></div></li>';
+		echo '<div class="dr" style="width: 610px;"><a class="dc" href="post?id='.$posts['PID'].'">'.$posts['title'].'</a> oleh <a href="'.$posts['username'].'" class="u">@'.$posts['name'].'</a> di <i><span id="ab" class="gid-'.$posts['post_GID'].'">'.$posts['group'].'</span></i></div></li>';
 	}
 	
 	?>
 	</ul>
 	</div>
-	<div class="dz" style="width: 245px;">
+	<div class="du" style="width: 245px;">
 		<?php $data['forms']->openForm('red-register',array('action' => '/register')); ?>
 			<h3><strong>Pendaftaran</strong></h3>
 			<i>Hello!, are you registered?</i>
-			<ul class="m">
+			<ul class="clearfix">
 				<li><?php $data['forms']->textinput('username',l('username'), array( 'data-error' => l('register_username_error'), 'class' => 't', 'id' => 'input-username')); ?><p id="red-register-information">http://networks.co.id/<span id="url-suffix" style="word-wrap: break-word;" /></span></p></li>
 				<li><?php $data['forms']->password('password',l('password'), array( 'data-error' => l('register_password_empty'), 'class' => 't','id' => 'input-password')); ?><p id="red-register-information">"Kata Sandi Yang Kuat"</p></li>
 				<hr>

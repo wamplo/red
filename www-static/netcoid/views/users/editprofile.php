@@ -1,6 +1,6 @@
 
 <style type="text/css">
-.w{}
+.u{}
 #red-menu-dashboard {
     background: none repeat scroll 0 0 #EEEEEE;
     height: 50px;
@@ -15,20 +15,20 @@
 }
 </style>
 <div id="red-menu-dashboard">
-<ul class="m" style="width:960px;margin:0 auto;">
-	<li class="dw" style="padding-top:17.5px"><a href="/dashboard"><?php $this->getIMG('netcoid','img/icons/user_menu_groups.png') ?></a></li>
-	<li class="dw" style="padding-top:17.5px;margin-left:25px"><a href="/edit/profile"><?php $this->getIMG('netcoid','img/icons/edit.png') ?></a></li>
+<ul class="clearfix" style="width:960px;margin:0 auto;">
+	<li class="dr" style="padding-top:17.5px"><a href="/dashboard"><?php $this->getIMG('netcoid','img/icons/user_menu_groups.png') ?></a></li>
+	<li class="dr" style="padding-top:17.5px;margin-left:25px"><a href="/edit/profile"><?php $this->getIMG('netcoid','img/icons/edit.png') ?></a></li>
 </ul>
 </div>
 
 <?php $data['validation']->getErrors(); ?>
 
-<div class="m" id="red-content">
+<div class="clearfix" id="red-content">
 
-	<div class="users-left50 dw dj" id="red-wmd"><?php $data['forms']->openForm('red-wmd'); ?>
+	<div class="users-left50 dr df" id="red-wmd"><?php $data['forms']->openForm('red-wmd'); ?>
 		<ul>
 			<li id="form-header"><h3><strong>Profile</strong> <a style="font-size:12px;margin-left:10px" class="s" href="/<?php echo $data['username']; ?>">See Profile</a></h3></li>
-			<div class="m" id="wmd-button-bar"></div>
+			<div class="clearfix" id="wmd-button-bar"></div>
 			<!-- INFORMATIONBOX -->
 			<li class="form-child"><?php $data['forms']->textarea('information',l('informationbox'), 
 				array( 
@@ -45,7 +45,7 @@
 		</ul>
 	<?php $data['forms']->closeForm('red-wmd'); ?></div>	
 
-	<div class="dz users-right50">
+	<div class="du users-right50">
 		<div id="howto-informationbox">Informasi yang anda masukan akan dimuat pada halaman depan profil anda</div>
 	</div>
 </div>

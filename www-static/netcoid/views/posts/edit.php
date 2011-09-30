@@ -3,9 +3,9 @@
 
 <?php $data['validation']->getErrors(); ?>
 
-<div class="m" id="red-content">
+<div class="clearfix" id="red-content">
 
-	<div class="users-left50 dw dj" id="red-wmd"><?php $data['forms']->openForm('red-wmd'); ?>
+	<div class="users-left50 dr df" id="red-wmd"><?php $data['forms']->openForm('red-wmd'); ?>
 		<ul>
 			<li id="form-header"><h3><strong>Edit</strong> <a style="font-size:12px;margin-left:10px" class="s" href="/<?php echo $data['username']; ?>">See rules</a></h3></li>
 
@@ -21,7 +21,7 @@
 			?></li>
 
 			<!-- MENU -->
-			<div class="m" id="wmd-button-bar"></div>
+			<div class="clearfix" id="wmd-button-bar"></div>
 						
 			<!-- INFORMATIONBOX -->
 			<li class="form-child"><?php $data['forms']->textarea('content','Post', 
@@ -39,7 +39,7 @@
 		</ul>
 	<?php $data['forms']->closeForm('red-wmd'); ?></div>	
 
-	<div class="dz users-right50">
+	<div class="du users-right50">
 		<h1 class="blog-post" id="wmd-title-preview"><?php echo $data['post']['title']; ?></h1>
 		<div class="blog-post" id="wmd-preview"></div>
 	</div>

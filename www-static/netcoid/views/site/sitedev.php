@@ -1,4 +1,4 @@
-<div class="m" id="red-content">
+<div class="clearfix" id="red-content">
 
 	<div style="
 	    font-family: Droid sans;
