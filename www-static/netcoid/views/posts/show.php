@@ -1,4 +1,11 @@
-<?php #var_dump($data); ?>
+<?php
+$data['post']['fulltitle'] = $data['post']['title'];
+if (strlen($data['post']['title']) > 60) {
+	#var_dump(strlen($post['title']));
+	$data['post']['title'] = substr($data['post']['title'], 0, 60) . '(...)';
+}
+
+?>
 <div class="m" id="red-content">
 	<div class="m" id="post-header">
 		<div class="dv" style="width:700px">
@@ -26,7 +33,7 @@
 
 	<!-- START CONTENT -->
 	<div class="m blog-post">
-		<h1 style="text-align: center;margin-bottom: 10px;"><a href="/post?id=<?php echo $_GET['id']; ?>"><?php echo $data['post']['title']; ?></a></h1>
+		<h1 style="word-wrap: break-word;text-align: center;margin-bottom: 10px;"><a href="/post?id=<?php echo $_GET['id']; ?>"><?php echo $data['post']['fulltitle']; ?></a></h1>
 		<?php echo $data['post']['content_html']; ?>
 	</div>
 

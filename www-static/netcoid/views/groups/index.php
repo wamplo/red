@@ -56,8 +56,7 @@ li.type-2 a.df{    color: #47C937;}
 				if (strlen($post['title']) > 60) {
 					#var_dump(strlen($post['title']));
 					$post['title'] = substr($post['title'], 0, 60) . '(...)';
-				}
-				
+				}			
 
 				echo '<li class="type-'.$post['status'].'">';
 
