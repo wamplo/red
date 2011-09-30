@@ -34,7 +34,7 @@
     -o-transition: all 0.2s ease-in;
 }
 
-.arrow{
+#pagination-to-next-arrow{
     display: block;
     font-family: Trebuchet MS;
     font-size: 60px;

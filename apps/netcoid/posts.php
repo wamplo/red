@@ -118,7 +118,6 @@ class Posts Extends Engine\Red
 
     public function showPost(){
 
-        $this->__Header();
         $post = $this->p->getPostbyPID($_GET['id']);
 
         if (!$post) {
@@ -126,6 +125,8 @@ class Posts Extends Engine\Red
             echo '404';
             die();            
         }
+
+        $this->__Header($post['title']);
 
         $this->h->showAll(); # SHOW FLASH
 

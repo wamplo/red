@@ -14,8 +14,13 @@
 		<ul>
 		<?php foreach ($data['posts'] as $post): ?>
 			<?php
+
+			if (strlen($post['title']) > 60) {
+				$post['title'] = substr($post['title'], 0, 60) . '(...)';
+			}
+
 			echo '<li class="type-0">';
-			echo '<a class="a" href="/post?id='.$post['PID'].'">'.$post['title'].'</a> 
+			echo '<a data-pjax="rr-2" href="/post?id='.$post['PID'].'" class="a">'.$post['title'].'</a> 
 			<i>by</i> <a class="u"href="/'.$post['username'].'">'.$post['name'].'</a>';
 			?>
 		<?php endforeach ?>

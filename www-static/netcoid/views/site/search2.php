@@ -2,10 +2,10 @@
 .ax{
 	margin-bottom: 10px;
 }
-.cx {
+.cw {
     font-size: 11px;
 }
-li.cy{
+li.cx{
 	
 }
 </style>
@@ -23,11 +23,11 @@ li.cy{
 
 			if (isset($value['children'])) {
 				foreach ($value['children'] as $children) {
-					echo '<li class="cy"><a data-pjax="#rr-2" href="/group?id='.$children['GID'].'" class="dc">'.$children['name'].'</a></li>';
+					echo '<li class="cx"><a data-pjax="#rr-2" href="/group?id='.$children['GID'].'" class="db">'.$children['name'].'</a></li>';
 
 					if (isset($children['children'])) {
 						foreach ($children['children'] as $children) {
-							echo '<span class="cx"><a data-pjax="#rr-2" href="/group?id='.$children['GID'].'">'.$children['name'].'</a></span> ';
+							echo '<span class="cw"><a data-pjax="#rr-2" href="/group?id='.$children['GID'].'">'.$children['name'].'</a></span> ';
 						}
 					}
 				}

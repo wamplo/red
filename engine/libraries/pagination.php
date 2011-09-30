@@ -37,7 +37,7 @@ class Pagination {
 			$dataURL = parse_url($_SERVER['REQUEST_URI']); // $x = $dataURL['path'];
 			$buildQuery = http_build_query( Array( 'offset' => $this->curroffset - 1 ) + $_GET );
 
-			echo '<a id="arrow-link" href="'. $dataURL['path'] .'?'. $buildQuery .'" '.$params.'><div id="pagination-to-back"><span class="arrow"><</span></div></a>';
+			echo '<a id="arrow-link" href="'. $dataURL['path'] .'?'. $buildQuery .'" '.$params.'><div id="pagination-to-back"><span id="pagination-to-next-arrow"><</span></div></a>';
 		}
 
 		# NEXT
@@ -48,7 +48,7 @@ class Pagination {
 			$dataURL = parse_url($_SERVER['REQUEST_URI']); // $x = $dataURL['path'];
 			$buildQuery = http_build_query( Array( 'offset' => $this->curroffset + 1 ) + $_GET );
 
-			echo '<a id="arrow-link" href="'. $dataURL['path'] .'?'. $buildQuery .'" '.$params.'><div id="pagination-to-next"><span class="arrow">></span></div></a>';				
+			echo '<a id="arrow-link" href="'. $dataURL['path'] .'?'. $buildQuery .'" '.$params.'><div id="pagination-to-next"><span id="pagination-to-next-arrow">></span></div></a>';				
 		}
 	}
 
