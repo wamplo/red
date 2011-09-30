@@ -41,7 +41,9 @@ li.type-2 a.a{    color: #47C937;}
 	<div class="clearfix" id="groups-content">
 
 		<?php
-			$data['pagination']->createHtml();
+			$data['pagination']->createHtml(array(
+				'data-pjax' => '#groups-content'
+			));
 		?>
 
 		<div style="padding: 5px 0pt 0pt; width: 700px;" class="l">
@@ -50,9 +52,16 @@ li.type-2 a.a{    color: #47C937;}
 			<ul>
 			<?php foreach ($data['posts'] as $post): ?>
 				<?php
+
+				if (strlen($post['title']) > 60) {
+					#var_dump(strlen($post['title']));
+					$post['title'] = substr($post['title'], 0, 60) . '(...)';
+				}
+				
+
 				echo '<li class="type-'.$post['status'].'">';
 
-				echo '<a class="a" href="post?id='.$post['PID'].'">'.$post['title'].'</a> 
+				echo '<a class="a" title="'.$post['title'].'" href="post?id='.$post['PID'].'">'.$post['title'].'</a> 
 				<i>by</i> <a class="u"href="'.$post['username'].'">'.$post['name'].'</a>';
 				echo "</li>";
 

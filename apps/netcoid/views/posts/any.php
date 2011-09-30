@@ -39,6 +39,7 @@
 
 	<div class="r users-right50">
 		<h1 class="blog-post" id="wmd-title-preview"></h1>
+		<p><i id="wmd-title-readmore-preview"></i></p>
 		<div class="blog-post" id="wmd-preview"></div>
 	</div>
 </div>

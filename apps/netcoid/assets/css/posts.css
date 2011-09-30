@@ -13,3 +13,6 @@
     border: 1px solid #70BFCD;
     margin: 5px;
     padding: 5px;}
+
+#wmd-title-preview{word-wrap: break-word;}
+#wmd-title-readmore-preview{word-wrap: break-word;}

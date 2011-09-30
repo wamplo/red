@@ -1,4 +1,4 @@
-/* ERROR */
+    /* ERROR */
 label.ajax-error{
     background: none repeat scroll 0 0 #FEFFCB;
     border-bottom-left-radius: 3px;
@@ -17,12 +17,12 @@ label.ajax-error{
     left: 20px;
     margin: 0 auto 0;
     width: 960px;
+    height: 35px;
 }
 #red-error-box a {
     color: #444444;
     text-decoration: underline;
 }
-.error-list{}
 .error-list #error-num {
     float: left;
     padding: 10px;
@@ -36,7 +36,10 @@ label.ajax-error{
     color: #D32E2
 }
 .error a{color: #D32E2E;}
-
+.error{
+    background: none repeat scroll 0 0 #FFFFE1;
+    color: #D32E2E;
+}
 /* PLUGIN */
 .example{color:#CCC;}
 input.ajax-valid {
