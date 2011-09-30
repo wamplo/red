@@ -60,7 +60,7 @@ li.type-2 a.a{    color: #47C937;}
 
 				echo '<li class="type-'.$post['status'].'">';
 
-				echo '<a class="a" title="'.$post['title'].'" href="post?id='.$post['PID'].'">'.$post['title'].'</a> 
+				echo '<a data-pjax="#rr-2" class="a" title="'.$post['title'].'" href="post?id='.$post['PID'].'">'.$post['title'].'</a> 
 				<i>by</i> <a class="u"href="'.$post['username'].'">'.$post['name'].'</a>';
 				echo "</li>";
 

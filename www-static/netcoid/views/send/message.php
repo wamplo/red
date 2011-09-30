@@ -1,6 +1,6 @@
 <div id="red-content">
 
-<div class="di" id="red-x"><?php $data['forms']->openForm('red-x'); ?>
+<div class="dj" id="red-x"><?php $data['forms']->openForm('red-x'); ?>
 	<ul>
 		<li id="form-header"><h3><strong>Kirim Pesan</strong></h3></li>
 

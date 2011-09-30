@@ -316,8 +316,9 @@ def views():
 	for x in glob.glob(PATH_VIEWS + '*.php'):
 		views.append(x)
 	
-	# HARUS STR
-	os.system(muncher  + ' --html '+ ','.join(views) +' --css '+ ','.join(css) + ' --ignore ' + str(','.join(IGNORECSS)))
+	# HARUS STR 
+	print ','.join(IGNORECSS);
+	os.system(muncher + ' --css ' + ','.join(css) + ' --html ' + ','.join(views) + ' --view-ext php ' + ','.join(IGNORECSS))
 	
 	# VIEWS
 	for x in glob.glob(PATH_VIEWS + '*.opt.php'):
@@ -392,6 +393,9 @@ def updateandupload():
 	deploy()
 	os.system('git push');
 
+def updatelocal():
+	views() # css, and views
+
 # IF FROM COMMAND LINE
 if __name__ == '__main__':
 	
@@ -428,6 +432,9 @@ if __name__ == '__main__':
 
 			if sys.argv[1] == 'flush':
 				clearcache()
+
+			if sys.argv[1] == 'update':
+				updatelocal()
 
 			if sys.argv[1] == 'test':
 				print 'helloworld'

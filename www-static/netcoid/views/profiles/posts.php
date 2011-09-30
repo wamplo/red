@@ -15,8 +15,8 @@
 		<?php foreach ($data['posts'] as $post): ?>
 			<?php
 			echo '<li class="type-0">';
-			echo '<a class="df" href="/post?id='.$post['PID'].'">'.$post['title'].'</a> 
-			<i>by</i> <a class="dp"href="/'.$post['username'].'">'.$post['name'].'</a>';
+			echo '<a class="dg" href="/post?id='.$post['PID'].'">'.$post['title'].'</a> 
+			<i>by</i> <a class="dq"href="/'.$post['username'].'">'.$post['name'].'</a>';
 			?>
 		<?php endforeach ?>
 		</ul>

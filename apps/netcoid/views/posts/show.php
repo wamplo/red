@@ -13,7 +13,7 @@ if (strlen($data['post']['title']) > 60) {
 				<li><b><?php echo $data['post']['title']; ?></b></li>
 			</ul>
 		</div>
-		<div class="r"><a href="<?php echo $data['post']['username']; ?>" class="u"><?php echo $data['post']['name']; ?></a></div>
+		<div class="r"><a data-pjax="#rr-2" href="<?php echo $data['post']['username']; ?>" class="u"><?php echo $data['post']['name']; ?></a></div>
 	</div>
 
 	<?php if ($data['login'] == $data['post']['post_UID']) : ?>
