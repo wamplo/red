@@ -120,8 +120,7 @@ class Config(object):
             elif key == "--js":
                 self.setJsFiles(value)
             elif key == "--ignore":
-                print 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
-                print value
+                print 'Anthena: IGNORING CSS ' + value
                 self.setIgnore(value)
             elif key == "--view-ext":
                 self.view_extension = value

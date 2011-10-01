@@ -10,5 +10,6 @@ IGNORECSS = [
 	'#error-description',
 	'.clearfix',
 	'.u',
-	'.example'
+	'.example',
+	'#d'
 ];
