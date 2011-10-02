@@ -10,13 +10,13 @@ class Messages extends \Engine\libraries\Database {
 	public $database = 'application';
 	
 	function getListMessages($ruid) {
-		$data = $this->fetchAll ( "SELECT users.name, messages.mid, messages.suid, messages.subject, messages.timecreate
+		$data = $this->fetchAll ( "SELECT users.name, users.username, messages.mid, messages.suid, messages.subject, messages.timecreate
 		FROM messages, users WHERE suid = users.uid AND ruid = :ruid AND type = 0 ORDER BY mid DESC LIMIT 20", array ('ruid' => $ruid ) );
 		return $data;
 	}
 	
 	function getListArchives($ruid) {
-		$data = $this->fetchAll ( "SELECT users.name, messages.mid, messages.suid, messages.subject, messages.timecreate
+		$data = $this->fetchAll ( "SELECT users.name, users.username, messages.mid, messages.suid, messages.subject, messages.timecreate
 		FROM messages, users WHERE suid = users.uid AND ruid = :ruid AND type = 1 ORDER BY mid DESC LIMIT 20", array ('ruid' => $ruid ) );
 		return $data;
 	}
@@ -31,9 +31,9 @@ class Messages extends \Engine\libraries\Database {
 		return $status;
 	}
 	
-	function getMessage($mid) {
-		$data = $this->fetch ( 'SELECT messages.suid, messages.message, messages.subject, messages.timecreate, users.name, users.phone
-		FROM messages JOIN users ON messages.suid = users.uid WHERE mid = :mid LIMIT 1', array ('mid' => $mid ) );
+	function getMessage($mid, $ruid) {
+		$data = $this->fetch ( 'SELECT messages.suid, messages.message, messages.subject, messages.timecreate, users.name, users.username, users.phone, messages.type
+		FROM messages JOIN users ON messages.suid = users.uid AND messages.ruid = :ruid WHERE mid = :mid LIMIT 1', array ('mid' => $mid, 'ruid' => $ruid));
 		return $data;
 	}
 	
@@ -48,7 +48,7 @@ class Messages extends \Engine\libraries\Database {
 		return $status;
 	}
 	
-	function countMessage($uid) {
+	function countMessageUID($uid) {
 		$count = $this->fetch ( 'SELECT count(MID) as countmessage 
 		FROM messages WHERE ruid = :uid AND type = 0 LIMIT 1', array ('uid' => $uid ) );
 		return $count;

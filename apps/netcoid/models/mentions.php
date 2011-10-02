@@ -35,6 +35,12 @@ class Mentions extends \Engine\libraries\Database {
 		$data = $this->fetch ( "SELECT mention_UID, MID FROM mentions WHERE mention_CID = :cid and mention_UID = :uid", array ('cid' => $cid, 'uid' => $uid ) );
 		return $data;
 	}
+
+	function countMentionUID($uid){
+		$data = $this->fetch ("SELECT count(MID) as countmention 
+		FROM mentions WHERE mention_UID = :uid AND `read` = 0 LIMIT 1", array ('uid' => $uid ) );
+		return $data;		
+	}
 }
 
 ?>

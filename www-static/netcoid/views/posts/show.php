@@ -8,25 +8,25 @@ if (strlen($data['post']['title']) > 60) {
 ?>
 <div class="clearfix" id="red-content">
 	<div class="clearfix" id="post-header">
-		<div class="dr" style="width:700px">
+		<div class="ds" style="width:700px">
 			<ul>
 				<li><b><?php echo $data['post']['title']; ?></b></li>
 			</ul>
 		</div>
-		<div class="du"><a data-pjax="#rr-2" href="<?php echo $data['post']['username']; ?>" class="u"><?php echo $data['post']['name']; ?></a></div>
+		<div class="dv"><a data-pjax="#rr-2" href="<?php echo $data['post']['username']; ?>" class="u"><?php echo $data['post']['name']; ?></a></div>
 	</div>
 
 	<?php if ($data['login'] == $data['post']['post_UID']) : ?>
 		<div class="clearfix" id="post-menu">
-			<ul class="dr clearfix">
-				<li class="dr"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
+			<ul class="ds clearfix">
+				<li class="ds"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
 			</ul>
-			<ul class="du">
+			<ul class="dv">
 				
 				<?php if (strtotime($data['post']['time_bump']) < strtotime('-1 Hour')): ?>
-					<li class="dr"><a href="/post/bump?id=<?php echo $_GET['id']; ?>">Bump</a></li>
+					<li class="ds"><a href="/post/bump?id=<?php echo $_GET['id']; ?>">Bump</a></li>
 				<?php endif ?>
-				<li class="dr"><a href="/post/delete?id=<?php echo $_GET['id']; ?>">x</a></li>
+				<li class="ds"><a href="/post/delete?id=<?php echo $_GET['id']; ?>">x</a></li>
 			</ul>
 		</div>
 	<?php endif ?>

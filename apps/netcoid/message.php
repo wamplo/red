@@ -38,13 +38,69 @@ class Message Extends Engine\Red
         }
     }
 
+    public function Index(){
+        $this->__Header();
+        
+        $this->h->showMessage();
+
+        $m = new Apps\Netcoid\Models\Messages;
+
+        # VIEW MESSAGE
+        if (isset($_GET['id'])) {
+
+            $messagesdata = array(
+                'message' => $m->getMessage($_GET['id'],$this->e->get('uid')),
+                'messages' => $m->getListMessages($this->e->get('uid'))
+            );
+
+            $this->r->branch(array(
+                'src' => 
+                    array(
+                        'html' => $this->a->getView('netcoid','messages/view.php', $messagesdata),
+                        'id' => 'rr-2'
+                    ),
+                'css' => 
+                    array(
+                        $this->a->getPath('default','css/framework.css'),
+                        $this->a->getPath('netcoid','css/main.v2.css'),
+                        $this->a->getPath('netcoid','css/blog.css')
+                    ),
+                'cache' => 0
+            ));   
+        }
+
+        # MESSAGE INDEX
+        if (!isset($_GET['id'])) {
+            $messagesdata = array(
+                'messages' => $m->getListMessages($this->e->get('uid')),
+                'archives' => $m->getListArchives($this->e->get('uid'))
+            );
+
+            $this->r->branch(array(
+                'src' => 
+                    array(
+                        'html' => $this->a->getView('netcoid','messages/index.php', $messagesdata),
+                        'id' => 'rr-2'
+                    ),
+                'css' => 
+                    array(
+                        $this->a->getPath('default','css/framework.css'),
+                        $this->a->getPath('netcoid','css/main.v2.css')
+                    ),
+                'cache' => 0
+            ));            
+        }
+
+        $this->__Footer();
+    }
+
     /**
      * www.networks.co.id/skel
      * Search Page Netcoid
      * @author Adam Ramadhan
      * @version 1
      **/
-    public function Index(){
+    public function Send(){
         $this->__Header();
 
         # CHECK IF THE RECEVER IS THERE IF NOT REDIRECT
@@ -58,20 +114,21 @@ class Message Extends Engine\Red
             $m['RUID'] = $_GET ['id']; # RECEVER
             $m['SUID'] = $this->e->get ( 'uid' ); # SENDER
             
-            if (!empty($m['subject'])) {
+            if (!empty($_POST['subject'])) {
                 $m['subject'] = $this->v->safe($_POST['subject']);
             }
-            if (empty($m['subject'])) {
+            if (empty($_POST['subject'])) {
                 $m['subject'] = l('nosubject');
             }
-            
+
             $m['message'] = $this->v->safe($_POST['message']);
             $m['type'] = '0'; #notopen 
-
             # get the time from jakarta
             $time = new DateTime(NULL, new DateTimeZone('Asia/Jakarta'));
             $m['timecreate'] = $time->format('Y-m-d H:i:s');
 
+            $this->v->regex($_POST['subject'], '/^[a-zA-Z0-9_\s#]{4,140}$/', 
+            '4-140 boleh berupa a-Z 0-9 # dan spasi');
             $this->v->required($m['message'], l('message_empty'));
             
             if (!sizeof($this->v->errors)) {
@@ -89,7 +146,7 @@ class Message Extends Engine\Red
         $this->r->branch(array(
             'src' => 
                 array(
-                    'html' => $this->a->getView('netcoid','send/message.php', $messagedata),
+                    'html' => $this->a->getView('netcoid','messages/send.php', $messagedata),
                     'id' => 'rr-2'
                 ),
             'css' => 
@@ -112,6 +169,7 @@ class Message Extends Engine\Red
 
         if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest" ) {
             
+
             # AN AJAX REQUEAST && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == $request 
             # var_dump($_SERVER);
             
@@ -123,8 +181,13 @@ class Message Extends Engine\Red
                 )
             );
 
+            $o = new Apps\Netcoid\Models\Mentions;
+            $m = new Apps\Netcoid\Models\Messages;
+
             $menudata = array(
-                'sessions' => $this->e
+                'sessions' => $this->e,
+                'countmentions' => $o->countMentionUID($this->e->get('uid')),
+                'countmessages' => $m->countMessageUID($this->e->get('uid'))
             );
 
             $this->r->branch(array(

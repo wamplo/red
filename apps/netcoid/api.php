@@ -322,6 +322,44 @@ class Api extends Engine\Red
         }
     }
 
+    // UNREAD MESSAGE
+    public function UnreadM(){
+        if (isset($_GET['id']) && $this->e->get('uid')) {
+            
+            $m = new Apps\Netcoid\Models\Messages;
+            $status = $m->getMessage($_GET['id'],$this->e->get('uid'));
+
+            # IF TRUE OR THERE IS A RETURN
+            if ($status['type'] == 1) {
+                $m->to_type($_GET['id'], 0);
+                $this->h->setMessage('Moveing to inbox...');
+                header('Location: /messages?id=' . $_GET['id']);
+            }
+
+        } else {
+            die('api@networks.co.id');
+        }        
+    }
+
+    // READ MESSAGE
+    public function ReadM(){
+        if (isset($_GET['id']) && $this->e->get('uid')) {
+            
+            $m = new Apps\Netcoid\Models\Messages;
+            $status = $m->getMessage($_GET['id'],$this->e->get('uid'));
+
+            # IF TRUE OR THERE IS A RETURN
+             if ($status['type'] == 0) {
+                $m->to_type($_GET['id'], 1);
+                $this->h->setMessage('Moveing to archive...');
+                header('Location: /messages?id=' . $_GET['id']);
+            }
+
+        } else {
+            die('api@networks.co.id');
+        }
+    }
+
     /**
      * PARSE COMMENT TO ARR DATA
      * @arg1 text

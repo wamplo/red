@@ -20,7 +20,7 @@
 
 			<?php if ($data['login']): ?>
 				<?php if ($data['login'] != $data['user']['uid']): ?>
-					<li><a data-pjax="#rr-2" class="a" href="/send/message?id=<?php echo $data['user']['uid']; ?>">Kirim pesan</a></li>	
+					<li><a data-pjax="#rr-2" class="a" href="/messages/send?id=<?php echo $data['user']['uid']; ?>">Kirim pesan</a></li>	
 				<?php endif ?>				
 			<?php endif ?>
 

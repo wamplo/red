@@ -17,8 +17,8 @@ $routes = array(
     'register' 			=>  'register:Index',
     'development'       =>  'test:Offline',
 
-
-    'send/message'      =>  'Message:Index',
+    'messages'          =>  'Message:Index',
+    'messages/send'     =>  'Message:Send',
 
     'api/c/username' 	=>  'Api:checkUsername',
     'api/c/name' 		=>  'Api:checkName',
@@ -27,9 +27,8 @@ $routes = array(
     'logout' 			=>  'Auth:Logout',
 
     'dashboard'         =>  'Users:Dashboard',
-    'edit/profile'		=>	'Users:editProfile',
     'mentions'          =>  'Users:Mentions',
-    'messages'          =>  'Users:Messages',
+    'edit/profile'		=>	'Users:editProfile',
 
     'post'				=> 	'posts:showPost',
     'post/edit'         =>  'posts:editPost',
@@ -39,6 +38,9 @@ $routes = array(
     'post/bump'         =>  'posts:Bump',
     'post/delete'       =>  'posts:Delete',
 
+    // MESSAGE
+    'api/message/read'  =>  'Api:ReadM',
+    'api/message/unread'  =>  'Api:UnreadM',
 
     'api/c/set'			=>	'Api:setC',
     'api/c/del'         =>  'Api:delC',
@@ -51,6 +53,7 @@ $routes = array(
     'api/p/refresh'     =>  'Api:postRefresh',
 #'api/c/get'			=>	'Api:getC'
 
+    // MENTION
     'api/m/open'        =>  'Api:openM'
     #'([0-9]+)' 	=>	'dashboard:Index'
 );

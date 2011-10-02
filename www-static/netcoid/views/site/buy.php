@@ -1,6 +1,6 @@
 <?php $data['validation']->getErrors(); ?>
 <div class="clearfix" id="red-content">
-	<div class="dr" style="width: 450px;">
+	<div class="ds" style="width: 450px;">
 		<?php $data['forms']->openForm('red-post-new'); ?>
 		 	<div class="wmd-panel">
 			<h3>Permintaan Baru</h3>
@@ -35,7 +35,7 @@
 			<p style="text-align: center; margin-top: 10px;"><input type="submit" id="button" name="register" value="Post" class="b cupid-green"></p>
 		<?php $data['forms']->closeForm('red-post-new'); ?>
 	</div>
-	<div class="du" style="width: 450px;">
+	<div class="dv" style="width: 450px;">
 		<h3>Preview</h3>
 		<h1 class="blog-post" id="wmd-title-preview"></h1>
 		<div class="blog-post" id="wmd-preview"></div>

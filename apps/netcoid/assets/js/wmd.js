@@ -6,7 +6,7 @@
 $(document).ready(function() {
 
     var converter = Markdown.getSanitizingConverter();
-    var help = function () { alert("Do you need help?"); }
+    var help = function () { alert("Do you need help? support@networks.co.id"); }
     var wmdeditor = new Markdown.Editor(converter, "", { handler: help });
     wmdeditor.run();
 

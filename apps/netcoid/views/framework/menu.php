@@ -1,18 +1,41 @@
+<style type="text/css">
+#mention-count {
+    color: #820000;
+    padding: 2px 5px;
+    text-shadow: none;
+}
+
+#messages-count {
+    color: #820000;
+    padding: 2px 5px;
+    text-shadow: none;
+}
+</style>
+
 <div id="red-header">
 	<div class="clearfix" id="red-menu">
 		<ul class="l">
 
 		<?php if ($data['sessions']->get('uid')): ?>
 			<li id="logo"><a data-pjax='#rr-2' href="/dashboard"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
-			<li class="t"><a data-pjax='#rr-2' href="/mentions">Mentions</a></li>
-			<li class="t"><a data-pjax='#rr-2' href="/messages">Pesan</a></li>
+			<?php #var_dump($data); ?>
+			<?php if ($data['countmentions']['countmention'] > 0): ?>
+				<li class="t"><a data-pjax='#rr-2' href="/mentions">Mentions *</a></li>
+			<?php else: ?>
+				<li class="t"><a data-pjax='#rr-2' href="/mentions">Mentions</a></li>
+			<?php endif ?>
+			<?php if ($data['countmessages']['countmessage'] > 0): ?>	
+				<li class="t"><a data-pjax='#rr-2' href="/messages">Pesan *</a></a></li>
+			<?php else: ?>		
+				<li class="t"><a data-pjax='#rr-2' href="/messages">Pesan</a></a></li>
+			<?php endif ?>
 		<?php endif ?>
 
 		<?php if (!$data['sessions']->get('uid')): ?>
 			<li id="logo"><a data-pjax='#rr-2' href="/"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
 		<?php endif ?>
 			
-			<li class="t"><a data-pjax='#rr-2' href="/search">search</a></li>
+			<li class="t"><a data-pjax='#rr-2' href="/search">Search</a></li>
 		</ul>
 		<ul class="r">
 			

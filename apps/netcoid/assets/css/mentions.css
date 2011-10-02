@@ -1,11 +1,14 @@
 .mentions{ 
-font-size:11px;
+    background: none repeat scroll 0 0 #FFFCE7;
+    font-size: 11px;
+    margin: 5px 0;
+    padding: 1px 15px;
 }
 
-.mentions #d a{color: #CCCCCC;
+.mentions #delete a{color: #CCCCCC;
 margin-left: 10px;opacity:0;}
-.mentions #l a{color: #D32E2E;
-margin-left: 10px;}
+.mentions #link a{color: #D32E2E;
+margin-left: 10px;float: right;}
 
-.mentions:hover #d a{
+.mentions:hover #delete a{
 opacity:1;}

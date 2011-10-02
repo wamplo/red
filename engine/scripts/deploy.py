@@ -315,7 +315,10 @@ def views():
 	views = [];
 	for x in glob.glob(PATH_VIEWS + '*.php'):
 		views.append(x)
-	
+
+	for x in glob.glob(PATH_VIEWS + '/*/*.php'):
+		views.append(x)
+
 	# HARUS STR 
 	print ','.join(IGNORECSS);
 	os.system(muncher + ' --css ' + ','.join(css) + ' --views ' + ','.join(views) + ' --ignore ' + ','.join(IGNORECSS))

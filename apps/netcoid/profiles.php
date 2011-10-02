@@ -220,6 +220,7 @@ class Profiles Extends Engine\Red
 
         if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest" ) {
             
+
             # AN AJAX REQUEAST && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == $request 
             # var_dump($_SERVER);
             
@@ -231,8 +232,13 @@ class Profiles Extends Engine\Red
                 )
             );
 
+            $o = new Apps\Netcoid\Models\Mentions;
+            $m = new Apps\Netcoid\Models\Messages;
+
             $menudata = array(
-                'sessions' => $this->e
+                'sessions' => $this->e,
+                'countmentions' => $o->countMentionUID($this->e->get('uid')),
+                'countmessages' => $m->countMessageUID($this->e->get('uid'))
             );
 
             $this->r->branch(array(
@@ -257,6 +263,7 @@ class Profiles Extends Engine\Red
      * @version 1
      **/
     private function __Footer(){
+        
         $this->r->branch(array(
         'src' => 
             array(

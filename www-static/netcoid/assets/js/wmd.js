@@ -1,1 +1,1 @@
-$(document).ready(function(){var a=Markdown.getSanitizingConverter();(new Markdown.Editor(a,"",{handler:function(){alert("Do you need help?")}})).run();$("#form-red-wmd").submit(function(){var b=a.makeHtml($("#wmd-input").val());$("#wmd-content-html").val(b)})});
+$(document).ready(function(){var a=Markdown.getSanitizingConverter();(new Markdown.Editor(a,"",{handler:function(){alert("Do you need help? support@networks.co.id")}})).run();$("#form-red-wmd").submit(function(){var b=a.makeHtml($("#wmd-input").val());$("#wmd-content-html").val(b)})});

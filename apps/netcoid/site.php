@@ -180,17 +180,13 @@ class Site Extends Engine\Red
     /**
      * FRAMEWORK __HEADER
      * @author Adam Ramadhan
-     * @version 1
-     **/
-    /**
-     * FRAMEWORK __HEADER
-     * @author Adam Ramadhan
      * @version 1 + PJAX
      **/
     private function __Header($title = 'Netcoid &mdash; jejaring bisnis indonesia', $desc = 'Netcoid, jejaring bisnis indonesia, menghubungkan pelaku bisnis indonesia'){
 
         if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest" ) {
             
+
             # AN AJAX REQUEAST && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == $request 
             # var_dump($_SERVER);
             
@@ -202,10 +198,15 @@ class Site Extends Engine\Red
                 )
             );
 
-            $menudata = array(
-                'sessions' => $this->e
-            );
+            $o = new Apps\Netcoid\Models\Mentions;
+            $m = new Apps\Netcoid\Models\Messages;
 
+            $menudata = array(
+                'sessions' => $this->e,
+                'countmentions' => $o->countMentionUID($this->e->get('uid')),
+                'countmessages' => $m->countMessageUID($this->e->get('uid'))
+            );
+            
             $this->r->branch(array(
                 'src' => 
                     array(
