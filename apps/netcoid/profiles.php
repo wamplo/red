@@ -45,13 +45,16 @@ class Profiles Extends Engine\Red
         $this->__securitycheck($username);
 
         $p = new Apps\Netcoid\Models\Posts;
+        $o = new Apps\Netcoid\Models\Follow;
 
         $userdata = $this->u->getData($username);
              
         $this->__Header($userdata['name'] . '&mdash; Posts');
+        $this->h->showAll(); # SHOW FLASH
 
         $postdata = array(
             'user' => $userdata,
+            'follow' => $o->isFollowingUID($this->e->get('uid'), $userdata['uid']),
             'posts' => $p->getPostbyUID($userdata['uid'], 20, $this->i->curroffset),
             'pagination' => $this->i,
             'login' => $this->e->get('uid'),
@@ -93,13 +96,16 @@ class Profiles Extends Engine\Red
         $this->__securitycheck($username);
 
         $p = new Apps\Netcoid\Models\Posts;
+        $o = new Apps\Netcoid\Models\Follow;
 
         $userdata = $this->u->getData($username);
 
         $this->__Header($userdata['name'] . '&mdash; Penawaran');
+        $this->h->showAll(); # SHOW FLASH
 
         $offerdata = array(
             'user' => $userdata,
+            'follow' => $o->isFollowingUID($this->e->get('uid'), $userdata['uid']),
             'posts' => $p->getPostbyUID($userdata['uid'], 20, $this->i->curroffset,1),
             'pagination' => $this->i,
             'login' => $this->e->get('uid'),
@@ -141,13 +147,16 @@ class Profiles Extends Engine\Red
         $this->__securitycheck($username);
 
         $p = new Apps\Netcoid\Models\Posts;
+        $o = new Apps\Netcoid\Models\Follow;
 
         $userdata = $this->u->getData($username);
 
         $this->__Header($userdata['name'] . '&mdash; Permintaan');
+        $this->h->showAll(); # SHOW FLASH
         
         $offerdata = array(
             'user' => $userdata,
+            'follow' => $o->isFollowingUID($this->e->get('uid'), $userdata['uid']),
             'posts' => $p->getPostbyUID($userdata['uid'], 20, $this->i->curroffset,2),
             'pagination' => $this->i,
             'login' => $this->e->get('uid'),
