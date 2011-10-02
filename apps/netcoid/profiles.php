@@ -54,7 +54,10 @@ class Profiles Extends Engine\Red
             'user' => $userdata,
             'posts' => $p->getPostbyUID($userdata['uid'], 20, $this->i->curroffset),
             'pagination' => $this->i,
-            'login' => $this->e->get('uid')
+            'login' => $this->e->get('uid'),
+            'ispost0' => $p->getPostbyUID($userdata['uid'], 1, $this->i->curroffset),
+            'ispost1' => $p->getPostbyUID($userdata['uid'], 1, $this->i->curroffset,1),
+            'ispost2' => $p->getPostbyUID($userdata['uid'], 1, $this->i->curroffset,2)
         );
 
         $this->i->maxperpage = 20;
@@ -99,7 +102,10 @@ class Profiles Extends Engine\Red
             'user' => $userdata,
             'posts' => $p->getPostbyUID($userdata['uid'], 20, $this->i->curroffset,1),
             'pagination' => $this->i,
-            'login' => $this->e->get('uid')
+            'login' => $this->e->get('uid'),
+            'ispost0' => $p->getPostbyUID($userdata['uid'], 1, $this->i->curroffset),
+            'ispost1' => $p->getPostbyUID($userdata['uid'], 1, $this->i->curroffset,1),
+            'ispost2' => $p->getPostbyUID($userdata['uid'], 1, $this->i->curroffset,2)
         );
 
         $this->i->maxperpage = 20;
@@ -144,7 +150,10 @@ class Profiles Extends Engine\Red
             'user' => $userdata,
             'posts' => $p->getPostbyUID($userdata['uid'], 20, $this->i->curroffset,2),
             'pagination' => $this->i,
-            'login' => $this->e->get('uid')
+            'login' => $this->e->get('uid'),
+            'ispost0' => $p->getPostbyUID($userdata['uid'], 1, $this->i->curroffset),
+            'ispost1' => $p->getPostbyUID($userdata['uid'], 1, $this->i->curroffset,1),
+            'ispost2' => $p->getPostbyUID($userdata['uid'], 1, $this->i->curroffset,2)
         );
 
         $this->i->maxperpage = 20;
@@ -180,6 +189,7 @@ class Profiles Extends Engine\Red
         $this->__securitycheck($username);
 
         $o = new Apps\Netcoid\Models\Follow;
+        $p = new Apps\Netcoid\Models\Posts;
         $user = $this->u->getData($username);
 
         $this->__Header($user['name']);
@@ -189,7 +199,10 @@ class Profiles Extends Engine\Red
         $profiledata = array(
             'user' => $user,
             'login' => $this->e->get('uid'),
-            'follow' => $o->isFollowingUID($this->e->get('uid'), $user['uid'])
+            'follow' => $o->isFollowingUID($this->e->get('uid'), $user['uid']),
+            'ispost0' => $p->getPostbyUID($user['uid'], 1, $this->i->curroffset),
+            'ispost1' => $p->getPostbyUID($user['uid'], 1, $this->i->curroffset,1),
+            'ispost2' => $p->getPostbyUID($user['uid'], 1, $this->i->curroffset,2)
         );
 
         $this->r->branch(array(

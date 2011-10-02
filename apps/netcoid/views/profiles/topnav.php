@@ -1,3 +1,5 @@
+<?php #var_dump($data); ?>
+
 	<div class="clearfix" id="profiles-header">
 		<div class="l" style="width:700px">
 		<ul id="profiles-menu">
@@ -29,10 +31,18 @@
 				<li><a data-pjax="#rr-2" class="a" href="/login">Masuk untuk mengikuti</a></li>
 			<?php endif ?>
 
-			<li><a data-pjax="#rr-2-1" class="a" href="/<?php echo $data['user']['username']; ?>/posts">Posts</a></li>
-			<li><a data-pjax="#rr-2-1" class="a" href="/<?php echo $data['user']['username']; ?>/offers">Penawaran</a></li>
-			<li><a data-pjax="#rr-2-1" class="a" href="/<?php echo $data['user']['username']; ?>/requests">Permintaan</a></li>
-			
+			<?php if (!empty($data['ispost0'])): ?>
+				<li><a data-pjax="#rr-2-1" class="a" href="/<?php echo $data['user']['username']; ?>/posts">Posts</a></li>
+			<?php endif ?>
+
+			<?php if (!empty($data['ispost1'])): ?>
+				<li><a data-pjax="#rr-2-1" class="a" href="/<?php echo $data['user']['username']; ?>/offers">Penawaran</a></li>
+			<?php endif ?>
+
+			<?php if (!empty($data['ispost2'])): ?>
+				<li><a data-pjax="#rr-2-1" class="a" href="/<?php echo $data['user']['username']; ?>/requests">Permintaan</a></li>
+			<?php endif ?>
+
 		</ul>
 		</div>
 		<div class="r"><a data-pjax="#rr-2-1" class="u" href="/<?php echo $data['user']['username']; ?>"><?php echo $data['user']['name'];  ?></a></div>
