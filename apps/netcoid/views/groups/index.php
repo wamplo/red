@@ -68,11 +68,11 @@ li.type-2 a.a{    color: #47C937;}
 				echo '<li class="type-'.$post['status'].'">';
 
 				if ($post['status'] == 2) {
-					echo "<span class='c' id='meta-offer'><i>Offer</i></span>";
+					echo "<span class='c' id='meta-offer'><i>Penawaran</i></span>";
 				}
 
 				if ($post['status'] == 1) {
-					echo "<span class='c' id='meta-request'><i>Requests</i></span>";
+					echo "<span class='c' id='meta-request'><i>Permintaan</i></span>";
 				}
 
 				echo '<a data-pjax="#rr-2" class="a" title="'.$post['title'].'" href="post?id='.$post['PID'].'">'.$post['title'].'</a> 
