@@ -61,6 +61,56 @@ if (strlen($data['post']['title']) > 60) {
 			(<?php echo $data['count']['COUNT(CID)']; ?>) <?php echo l('comments') ?>
 		</div>
 		<?php endif ?>
+
+		<!-- SOSIAL SHARE -->
+		<div class="clearfix" style="
+		    border-bottom: 1px solid #eee;
+		    border-left: 1px solid #eee;
+		    border-right: 1px solid #eee;
+		    padding: 5px 10px;
+		">
+			<style type="text/css">
+			.sosialbutton {
+				position: relative;
+				top: 2px;
+			}
+
+			</style>
+
+			<!-- FACEBOOK -->
+			<meta property="og:type" content="article" />
+			<meta property="og:site_name" content="Netcoid Indonesia" />
+			<meta property="fb:admins" content="1667473111" />
+			<script>(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) {return;}
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script><div class="fb-like sosialbutton l" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana"></div>
+			<!-- FACEBOOK END -->
+
+			<!-- TWITTER -->
+			<div class="sosialbutton l"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="netcoid" data-lang="id">Tweet</a></div>
+			<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+			<!-- TWITTER END -->
+
+			<!-- GOOGLE PLUS -->
+			<div class="sosialbutton l">
+			<!-- Place this tag where you want the +1 button to render -->
+			<div class="g-plusone" data-size="medium"></div>
+			<!-- Place this render call where appropriate -->
+			<script type="text/javascript">
+			  window.___gcfg = {lang: 'id'};
+			  (function() {
+			    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			    po.src = 'https://apis.google.com/js/plusone.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			  })();
+			</script>
+			</div>
+			<!-- GOOGLE PLUS END -->
+		</div>
 		
 		<ul>
 		<?php foreach ($data['comments'] as $comment): ?>
