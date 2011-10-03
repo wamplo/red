@@ -168,50 +168,10 @@
 	"buffers":
 	[
 		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/posts.css",
+			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/groups/index.php",
 			"settings":
 			{
-				"buffer_size": 427,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/users.php",
-			"settings":
-			{
-				"buffer_size": 8182,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/message.php",
-			"settings":
-			{
-				"buffer_size": 6587,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/messages/view.php",
-			"settings":
-			{
-				"buffer_size": 34,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/__init__.php",
-			"settings":
-			{
-				"buffer_size": 1633,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/messages.php",
-			"settings":
-			{
-				"buffer_size": 1976,
+				"buffer_size": 3273,
 				"line_ending": "Windows"
 			}
 		}
@@ -248,32 +208,58 @@
 	},
 	"file_history":
 	[
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/groups/index.new.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/groups.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/posts.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/migration/migrations_2.php",
+		"/D/Project Storage/wnmp/www/netcoid/wiki/database.sql",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/api.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/ignorecss.py",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/dashboard.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/topnav.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/editprofile.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/profiles/topnav.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/users.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/posts.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/profiles.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/message.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/auth.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/show.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/github/defunkt-jquery-pjax-7d9841e/jquery.pjax.js",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/register.php",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/redriver.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/site.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/profiles/index.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/framework/menu.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/mentions.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/messages.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/messages/index.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/__init__.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/messages.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/messages/view.php",
+		"/D/Project Storage/wnmp/www/netcoid/routes.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/editv2.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/ajax.php",
+		"/D/Project Storage/wnmp/www/netcoid/application/views/users/messages-single.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/posts.css",
+		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/deploy.py",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/js/wmd.js",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/edit.php",
+		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/messages/send.php",
 		"/D/Project Storage/red/www/www.networks.co.id/config/engine.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/mentions.css",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/mentions.php",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/redriver.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/default/assets/js/redriver.js",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/assets.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/site.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/profiles.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/profiles/index.php",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/vendors/github/defunkt-jquery-pjax-7d9841e/netcoid.pjax.js",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/profiles/posts.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/profiles/topnav.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/framework/menu.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/messages.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/main.v2.css",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/show.php",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/ignorecss.py",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/deploy.py",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/ignorecss.pyc",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/bin/muncher/muncher/config.py",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/pagination.css",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/showpost.css",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/posts.php",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/pagination.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/register.php",
 		"/D/Project Storage/red/www/www.networks.co.id/testing.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/any.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/js/Posts/wmd-addon.js",
@@ -282,24 +268,15 @@
 		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/bin/muncher/muncher/varfactory.py",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/profile.css",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/libraries/forms.php",
-		"/D/Project Storage/wnmp/www/netcoid/application/views/users/messages-single.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/site/search2.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/groups.php",
 		"/D/Project Storage/wnmp/www/netcoid/application/views/users/mentions-list.php",
 		"/D/Project Storage/wnmp/www/netcoid/application/views/users/messages-list.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/profiles/offers.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/profiles/request.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/auth.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/users.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/blog.css",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/default/assets/css/framework.css",
 		"/D/Project Storage/wnmp/www/netcoid/libraries/core.bootstrap.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/api.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/send/message.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/messages.php",
-		"/D/Project Storage/wnmp/www/netcoid/application/messages.php",
-		"/D/Project Storage/wnmp/www/netcoid/wiki/database.sql",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/__init__.php",
 		"/D/Project Storage/wnmp/www/netcoid/application/models/messages.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/users.php",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/migration/migrations_3.php",
@@ -307,14 +284,11 @@
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/test.php",
 		"/D/Project Storage/wnmp/www/netcoid/www-static/assets/js/users.v1.js",
 		"/D/Project Storage/wnmp/www/netcoid/www-static/assets/js/users/addarticle.js",
-		"/D/Project Storage/wnmp/www/netcoid/application/editv2.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/default/__init__.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/messages.phjp",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/dashboard.php",
 		"/D/Project Storage/wnmp/www/netcoid/application/views/usersv2/dashboard.php",
 		"/D/Project Storage/wnmp/www/netcoid/todo.txt",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/groups.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/posts.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/site/sitedev.php",
 		"/D/Project Storage/wnmp/www/netcoid/application/test.php",
 		"/D/Project Storage/wnmp/www/netcoid/application/blog.php",
@@ -335,8 +309,6 @@
 		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/README.markdown",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/email.php",
 		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/email/check.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/posts.css",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/edit.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/offer.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/posts/request.php",
 		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/comments.php",
@@ -363,19 +335,7 @@
 		"/D/Project Storage/red/www/www.networks.co.id/apps/default/defaults.php",
 		"/D/Program Storage/start/Data/Packages/Default/Default (Windows).sublime-keymap",
 		"/D/Project Storage/red/www/www.networks.co.id/www-static/README.markdown",
-		"/D/Project Storage/red/www/www.networks.co.id/www-static/README.md",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/__build__.py",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/framework/bottom.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/users/editprofile.php",
-		"/D/Program Storage/start/Data/Packages/User/Base File.sublime-settings",
-		"/D/Program Storage/start/Data/Packages/Default/Base File.sublime-settings",
-		"/D/Program Storage/start/Data/Packages/User/JSON.sublime-settings",
-		"/D/Program Storage/start/Data/Packages/Default/Global.sublime-settings",
-		"/D/Project Storage/wnmp/www/learn4/system/core/Router.php",
-		"/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/site/login.php",
-		"/D/Project Storage/red/www/www.networks.co.id/wiki/config",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/migration/migrations_1.php",
-		"/D/Project Storage/red/www/www.networks.co.id/engine/scripts/migration/migrations_2.php"
+		"/D/Project Storage/red/www/www.networks.co.id/www-static/README.md"
 	],
 	"find":
 	{
@@ -402,6 +362,11 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"post_views",
+			"$this->h",
+			"			",
+			"$this->h",
+			"OpenM",
 			"class=\"arrow\"",
 			"#post-menu",
 			"pagination-to-next",
@@ -524,12 +489,7 @@
 			"addarticle",
 			"textarea-informationbox",
 			"g",
-			"validateDelegate",
-			"textarea",
-			"side",
-			"label.error",
-			"#form-register",
-			"#red-register .textinput "
+			"validateDelegate"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -537,6 +497,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"count_views",
 			"id=\"pagination-to-next-arrow\"",
 			"data-pjax='#rr-2'",
 			"",
@@ -579,105 +540,23 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/assets/css/posts.css",
+					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/groups/index.php",
 					"settings":
 					{
-						"buffer_size": 427,
+						"buffer_size": 3273,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								426,
-								426
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0,
-						"translation.y": 0,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/users.php",
-					"settings":
-					{
-						"buffer_size": 8182,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6151,
-								6151
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0,
-						"translation.y": 3296,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/message.php",
-					"settings":
-					{
-						"buffer_size": 6587,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1865,
-								1865
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0,
-						"translation.y": 823,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/views/messages/view.php",
-					"settings":
-					{
-						"buffer_size": 34,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								27,
-								27
+								2148,
+								2148
 							]
 						],
 						"settings":
@@ -686,62 +565,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0,
-						"translation.y": 0,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/__init__.php",
-					"settings":
-					{
-						"buffer_size": 1633,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								934,
-								934
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0,
-						"translation.y": 81,
-						"zoom_level": 1
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/D/Project Storage/red/www/www.networks.co.id/apps/netcoid/models/messages.php",
-					"settings":
-					{
-						"buffer_size": 1976,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1212,
-								1222
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0,
-						"translation.y": 437,
+						"translation.y": 768,
 						"zoom_level": 1
 					},
 					"type": "text"

@@ -1,1 +1,1 @@
-jQuery(document).ready(function(){jQuery("time.timeago").timeago()});
+jQuery(document).ready(function(){$("time").timeago()});
