@@ -19,7 +19,7 @@ li.type-2 a.a{    color: #47C937;}
 <div id="red-content">
 
 	<div class="clearfix" id="groups-header">
-		<div class="dq" style="width:700px">
+		<div class="ef" style="width:700px">
 		<ul id="groups-menu">
 			<?php if ($data['status']['permission']['post'] && $data['login'] && 
 			in_array($data['user']['role'], $data['status']['permission']['users'])): ?>
@@ -42,7 +42,7 @@ li.type-2 a.a{    color: #47C937;}
 		</ul>
 
 		</div>
-		<div class="dt"><?php echo $data['info']['name']; ?></div>
+		<div class="ei"><?php echo $data['info']['name']; ?></div>
 	</div>
 
 	<div class="clearfix" id="groups-content">
@@ -53,7 +53,7 @@ li.type-2 a.a{    color: #47C937;}
 			));
 		?>
 
-		<div style="padding: 5px 0pt 0pt; width: 700px;" class="dq">
+		<div style="padding: 5px 0pt 0pt; width: 700px;" class="ef">
 
 		<?php if ($data['status']['status'] === 1): ?>
 			<ul>
@@ -68,14 +68,14 @@ li.type-2 a.a{    color: #47C937;}
 				echo '<li class="type-'.$post['status'].' clearfix">';
 				#var_dump($post['count_reply']);
 
-				echo '<div class="dq" style="margin-right: 5px;">';
-				echo '<span class="dr" id="count-reply">'.$post['count_reply'].'</span> ';
+				echo '<div class="ef" style="margin-right: 5px;">';
+				echo '<span class="eg" id="count-reply">'.$post['count_reply'].'</span> ';
 
 				if ($post['status'] == 2) {
 					echo "<span>offer</span> ";
 				}
 
-				echo '</div><div style="word-wrap: break-word; width: 630px;" class="dq">';
+				echo '</div><div style="word-wrap: break-word; width: 630px;" class="ef">';
 
 				echo '<a data-pjax="#rr-2" class="a" title="'.$post['title'].'" href="post?id='.$post['PID'].'">'.$post['title'].'</a> 
 				<i>by</i> <a class="u"href="'.$post['username'].'">'.$post['name'].'</a>';
@@ -91,7 +91,7 @@ li.type-2 a.a{    color: #47C937;}
 		<?php endif ?>
 
 		</div>
-		<div style="width: 250px; padding: 5px;" class="dt">
+		<div style="width: 250px; padding: 5px;" class="ei">
 			<div style="padding-bottom: 5px;"><?php echo $data['info']['description']; ?></div>
 
 			<?php if (!$data['login']): ?>

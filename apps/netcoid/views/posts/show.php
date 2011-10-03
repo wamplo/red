@@ -7,6 +7,8 @@ if (strlen($data['post']['title']) > 60) {
 
 ?>
 <div class="clearfix" id="red-content">
+
+	<!-- START POST HEADER -->
 	<div class="clearfix" id="post-header">
 		<div class="l" style="width:700px">
 			<ul>
@@ -15,7 +17,6 @@ if (strlen($data['post']['title']) > 60) {
 		</div>
 		<div class="r"><a data-pjax="#rr-2" href="<?php echo $data['post']['username']; ?>" class="u"><?php echo $data['post']['name']; ?></a></div>
 	</div>
-
 
 	<!-- START CONTENT -->
 	<div class="clearfix blog-post">

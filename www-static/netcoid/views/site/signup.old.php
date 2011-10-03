@@ -1,5 +1,5 @@
 <div class="clearfix" id="red-content">
-	<div class="dq" style="width: 715px;">
+	<div class="ef" style="width: 715px;">
 
 	<style type="text/css">
 	#type-news{
@@ -23,24 +23,24 @@
 		echo '<li class="clearfix">';
 
 		if ($posts['status'] == 0) {
-			echo '<div class="dq" style="margin-right: 10px;"><span id="type-news">Artikel</span></div>';
+			echo '<div class="ef" style="margin-right: 10px;"><span id="type-news">Artikel</span></div>';
 		}
 
 		if ($posts['status'] == 1) {
-			echo '<div class="dq" style="margin-right: 10px;"><span id="type-sell">Penawaran</span></div>';
+			echo '<div class="ef" style="margin-right: 10px;"><span id="type-sell">Penawaran</span></div>';
 		}
 
 		if ($posts['status'] == 2) {
-			echo '<div class="dq" style="margin-right: 10px;"><span id="type-buy">Permintaan</span></div>';
+			echo '<div class="ef" style="margin-right: 10px;"><span id="type-buy">Permintaan</span></div>';
 		}
 
-		echo '<div class="dq" style="width: 610px;"><a class="a" href="post?id='.$posts['PID'].'">'.$posts['title'].'</a> oleh <a href="'.$posts['username'].'" class="u">@'.$posts['name'].'</a> di <i><span id="ab" class="gid-'.$posts['post_GID'].'">'.$posts['group'].'</span></i></div></li>';
+		echo '<div class="ef" style="width: 610px;"><a class="a" href="post?id='.$posts['PID'].'">'.$posts['title'].'</a> oleh <a href="'.$posts['username'].'" class="u">@'.$posts['name'].'</a> di <i><span id="ab" class="gid-'.$posts['post_GID'].'">'.$posts['group'].'</span></i></div></li>';
 	}
 	
 	?>
 	</ul>
 	</div>
-	<div class="dt" style="width: 245px;">
+	<div class="ei" style="width: 245px;">
 		<?php $data['forms']->openForm('red-register',array('action' => '/register')); ?>
 			<h3><strong>Pendaftaran</strong></h3>
 			<i>Hello!, are you registered?</i>

@@ -8,7 +8,7 @@
 	padding: 5px 10px;
 	border-left: 1px solid #EEE;
 	border-top: 1px solid #EEE;
-	border-right: 1px solid #EEE;
+	border-right: 1px solid #EEE;margin-top: 5px;
 }
 #post-menu a{      color: #AAAAAA;}
 #post-menu li{
