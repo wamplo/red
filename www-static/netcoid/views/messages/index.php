@@ -28,7 +28,7 @@ font-size: 12px;
 	<ul class="h">
 	<h2>Inbox</h2>
 	<?php foreach ($data['messages'] as $message): ?>
-		<a class="dc" href="/messages?id=<?php echo $message['mid']; ?>"><li>
+		<a class="bz" href="/messages?id=<?php echo $message['mid']; ?>"><li>
 		<div id="messages-subject">
 			<?php echo $message['subject']; ?>
 		</div>
@@ -44,7 +44,7 @@ font-size: 12px;
 	<h2>Archives</h2>
 	<ul class="h">
 	<?php foreach ($data['archives'] as $archive): ?>
-		<a class="dc" href="/messages?id=<?php echo $archive['mid']; ?>"><li>
+		<a class="bz" href="/messages?id=<?php echo $archive['mid']; ?>"><li>
 		<div id="messages-subject">
 			<?php echo $archive['subject']; ?>
 		</div>

@@ -20,7 +20,7 @@
 			}
 
 			echo '<li class="type-0">';
-			echo '<a data-pjax="#rr-2" href="/post?id='.$post['PID'].'" class="dc">'.$post['title'].'</a> 
+			echo '<a data-pjax="#rr-2" href="/post?id='.$post['PID'].'" class="bz">'.$post['title'].'</a> 
 			<i>by</i> <a class="u"href="/'.$post['username'].'">'.$post['name'].'</a>';
 			?>
 		<?php endforeach ?>

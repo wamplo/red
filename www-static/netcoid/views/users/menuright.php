@@ -1,12 +1,12 @@
 <div id="red-side-menu">
 	<ul>
 		<ul>
-			<li class="ch"><?php $this->href('/dashboard',l('home')); ?></li>
-			<li class="ce"><?php $this->href('/edit/profile',l('Profiledata')); ?></li>
+			<li class="ci"><?php $this->href('/dashboard',l('home')); ?></li>
+			<li class="cf"><?php $this->href('/edit/profile',l('Profiledata')); ?></li>
 			<li class="bk"><?php $this->href('/edit/frontbox',l('informationbox')); ?></li>
 			<li class="bq"><?php $this->href('/edit/connections',l('connectioncenter')); ?></li>
-			<li class="cj"><?php $this->href('/edit/products',l('productlist')); ?></li>
-			<li class="cj"><?php $this->href('/edit/products','List Post'); ?></li>
+			<li class="ck"><?php $this->href('/edit/products',l('productlist')); ?></li>
+			<li class="ck"><?php $this->href('/edit/products','List Post'); ?></li>
 			<li class="bn"><?php $this->href('/beta/insights',l('insights')); ?>
 			<sup style="font-size: 10px;">beta</sup></li>
 		</ul>

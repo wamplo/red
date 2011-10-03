@@ -34,7 +34,7 @@
 			echo '<div class="ds" style="margin-right: 10px;"><span id="type-buy">Permintaan</span></div>';
 		}
 
-		echo '<div class="ds" style="width: 610px;"><a class="dc" href="post?id='.$posts['PID'].'">'.$posts['title'].'</a> oleh <a href="'.$posts['username'].'" class="u">@'.$posts['name'].'</a> di <i><span id="ab" class="gid-'.$posts['post_GID'].'">'.$posts['group'].'</span></i></div></li>';
+		echo '<div class="ds" style="width: 610px;"><a class="bz" href="post?id='.$posts['PID'].'">'.$posts['title'].'</a> oleh <a href="'.$posts['username'].'" class="u">@'.$posts['name'].'</a> di <i><span id="ab" class="gid-'.$posts['post_GID'].'">'.$posts['group'].'</span></i></div></li>';
 	}
 	
 	?>

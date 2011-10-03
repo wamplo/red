@@ -7,6 +7,13 @@
 #groups-menu li{float:left;margin-right:15px;}
 li.type-1 a.a{color:#1EA7E7;}
 li.type-2 a.a{    color: #47C937;}
+
+#meta-request{
+    margin-right: 10px;
+}
+#meta-offer {
+    margin-right: 10px;
+}
 </style>
 <?php #var_dump($data); ?>
 <div id="red-content">
@@ -59,6 +66,14 @@ li.type-2 a.a{    color: #47C937;}
 				}			
 
 				echo '<li class="type-'.$post['status'].'">';
+
+				if ($post['status'] == 2) {
+					echo "<span class='c' id='meta-offer'><i>Jual</i></span>";
+				}
+
+				if ($post['status'] == 1) {
+					echo "<span class='c' id='meta-request'><i>Beli</i></span>";
+				}
 
 				echo '<a data-pjax="#rr-2" class="a" title="'.$post['title'].'" href="post?id='.$post['PID'].'">'.$post['title'].'</a> 
 				<i>by</i> <a class="u"href="'.$post['username'].'">'.$post['name'].'</a>';

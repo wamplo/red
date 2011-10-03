@@ -8,11 +8,11 @@
 li.type-1 a.bz{color:#1EA7E7;}
 li.type-2 a.bz{    color: #47C937;}
 
-#meta-request{
-    margin-right: 10px;
-}
-#meta-offer {
-    margin-right: 10px;
+#count-reply{
+	background: none repeat scroll 0 0 #444444;
+    color: #FFFFFF;
+    padding: 1px 10px;
+    margin-right: 5px;
 }
 </style>
 <?php #var_dump($data); ?>
@@ -65,19 +65,25 @@ li.type-2 a.bz{    color: #47C937;}
 					$post['title'] = substr($post['title'], 0, 60) . '(...)';
 				}			
 
-				echo '<li class="type-'.$post['status'].'">';
+				echo '<li class="type-'.$post['status'].' clearfix">';
+				#var_dump($post['count_reply']);
+
+				echo '<div class="ds" style="margin-right: 5px;">';
+				echo '<span class="dt" id="count-reply">'.$post['count_reply'].'</span> ';
 
 				if ($post['status'] == 2) {
-					echo "<span class='dt' id='meta-offer'><i>Jual</i></span>";
+					echo "<span>offer</span> ";
 				}
 
-				if ($post['status'] == 1) {
-					echo "<span class='dt' id='meta-request'><i>Beli</i></span>";
-				}
+				echo '</div><div style="word-wrap: break-word; width: 630px;" class="ds">';
 
 				echo '<a data-pjax="#rr-2" class="bz" title="'.$post['title'].'" href="post?id='.$post['PID'].'">'.$post['title'].'</a> 
 				<i>by</i> <a class="u"href="'.$post['username'].'">'.$post['name'].'</a>';
+
+				echo "</div>";
+
 				echo "</li>";
+
 
 				?>
 			<?php endforeach ?>

@@ -1,6 +1,6 @@
 
 <style type="text/css">
-.v{}
+.w{}
 #red-menu-dashboard {
     background: none repeat scroll 0 0 #EEEEEE;
     height: 50px;

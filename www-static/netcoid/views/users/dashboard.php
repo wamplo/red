@@ -1,5 +1,5 @@
 <style type="text/css">
-.v{}
+.w{}
 #red-menu-dashboard {
     background: none repeat scroll 0 0 #EEEEEE;
     height: 50px;
@@ -58,19 +58,19 @@ a .i:hover{text-decoration:none;color:#444;background-color:#FFFDE8;border:1px s
 				<?php if ($post['type'] === 'post'): ?>
 					<!-- POST -->
 					<?php if ($post['post']['status'] == 0): ?>
-						<li class="from-follow-uid" data-id="<?php echo $post['post']['PID'];?>"><a class="u" href="/<?php echo $post['post']['username'] ?>"><?php echo $post['post']['name'] ?></a> <i>post</i> <a target="_blank" class="dc" href="/post?id=<?php echo $post['post']['PID'] ?>">
+						<li class="from-follow-uid" data-id="<?php echo $post['post']['PID'];?>"><a class="u" href="/<?php echo $post['post']['username'] ?>"><?php echo $post['post']['name'] ?></a> <i>post</i> <a target="_blank" class="bz" href="/post?id=<?php echo $post['post']['PID'] ?>">
 						<?php echo $post['post']['title']; ?></a></li>
 					<?php endif ?>
 
 					<!-- OFFER -->
 					<?php if ($post['post']['status'] == 1): ?>
-						<li class="from-follow-uid" data-id="<?php echo $post['post']['PID'];?>"><a class="u" href="/<?php echo $post['post']['username'] ?>"><?php echo $post['post']['name'] ?></a> <i>offers</i> <a target="_blank" class="dc" href="/post?id=<?php echo $post['post']['PID'] ?>">
+						<li class="from-follow-uid" data-id="<?php echo $post['post']['PID'];?>"><a class="u" href="/<?php echo $post['post']['username'] ?>"><?php echo $post['post']['name'] ?></a> <i>offers</i> <a target="_blank" class="bz" href="/post?id=<?php echo $post['post']['PID'] ?>">
 						<?php echo $post['post']['title']; ?></a></li>
 					<?php endif ?>
 
 					<!-- OFFER -->
 					<?php if ($post['post']['status'] == 2): ?>
-						<li class="from-follow-uid" data-id="<?php echo $post['post']['PID'];?>"><a class="u" href="/<?php echo $post['post']['username'] ?>"><?php echo $post['post']['name'] ?></a> <i>requests</i> <a target="_blank" class="dc" href="/post?id=<?php echo $post['post']['PID'] ?>">
+						<li class="from-follow-uid" data-id="<?php echo $post['post']['PID'];?>"><a class="u" href="/<?php echo $post['post']['username'] ?>"><?php echo $post['post']['name'] ?></a> <i>requests</i> <a target="_blank" class="bz" href="/post?id=<?php echo $post['post']['PID'] ?>">
 						<?php echo $post['post']['title']; ?></a></li>
 					<?php endif ?>				
 				<?php endif ?>
@@ -79,17 +79,17 @@ a .i:hover{text-decoration:none;color:#444;background-color:#FFFDE8;border:1px s
 				<?php if ($post['type'] === 'groups'): ?>
 					<!-- POST -->
 					<?php if ($post['post']['status'] == 0): ?>
-						<li class="from-follow-gid" data-id="<?php echo $post['post']['PID'];?>"><i>In</i> <a class="dc" target="_blank" href="/group?id=<?php echo $post['post']['post_GID'] ?>"><?php echo $post['post']['groupname']; ?></a>, <a class="u" href="/<?php echo $post['post']['username'] ?>"><?php echo $post['post']['name'] ?></a> <i>post</i> <a target="_blank" class="dc" href="/post?id=<?php echo $post['post']['PID'] ?>"><?php echo $post['post']['title']; ?></a></li>
+						<li class="from-follow-gid" data-id="<?php echo $post['post']['PID'];?>"><i>In</i> <a class="bz" target="_blank" href="/group?id=<?php echo $post['post']['post_GID'] ?>"><?php echo $post['post']['groupname']; ?></a>, <a class="u" href="/<?php echo $post['post']['username'] ?>"><?php echo $post['post']['name'] ?></a> <i>post</i> <a target="_blank" class="bz" href="/post?id=<?php echo $post['post']['PID'] ?>"><?php echo $post['post']['title']; ?></a></li>
 					<?php endif ?>
 
 					<!-- OFFER -->
 					<?php if ($post['post']['status'] == 1): ?>
-						<li class="from-follow-gid" data-id="<?php echo $post['post']['PID'];?>"><i>In</i> <a class="dc" target="_blank" href="/group?id=<?php echo $post['post']['post_GID'] ?>"><?php echo $post['post']['groupname']; ?></a>, <a class="u" href="/<?php echo $post['post']['username'] ?>"><?php echo $post['post']['name'] ?></a> <i>offers</i> <a target="_blank" class="dc" href="/post?id=<?php echo $post['post']['PID'] ?>"><?php echo $post['post']['title']; ?></a></li>
+						<li class="from-follow-gid" data-id="<?php echo $post['post']['PID'];?>"><i>In</i> <a class="bz" target="_blank" href="/group?id=<?php echo $post['post']['post_GID'] ?>"><?php echo $post['post']['groupname']; ?></a>, <a class="u" href="/<?php echo $post['post']['username'] ?>"><?php echo $post['post']['name'] ?></a> <i>offers</i> <a target="_blank" class="bz" href="/post?id=<?php echo $post['post']['PID'] ?>"><?php echo $post['post']['title']; ?></a></li>
 					<?php endif ?>
 
 					<!-- OFFER -->
 					<?php if ($post['post']['status'] == 2): ?>
-						<li class="from-follow-gid" data-id="<?php echo $post['post']['PID'];?>"><i>In</i> <a class="dc" target="_blank" href="/group?id=<?php echo $post['post']['post_GID'] ?>"><?php echo $post['post']['groupname']; ?></a>, <a class="u" href="/<?php echo $post['post']['username'] ?>"><?php echo $post['post']['name'] ?></a> <i>requests</i> <a target="_blank" class="dc" href="/post?id=<?php echo $post['post']['PID'] ?>"><?php echo $post['post']['title']; ?></a></li>
+						<li class="from-follow-gid" data-id="<?php echo $post['post']['PID'];?>"><i>In</i> <a class="bz" target="_blank" href="/group?id=<?php echo $post['post']['post_GID'] ?>"><?php echo $post['post']['groupname']; ?></a>, <a class="u" href="/<?php echo $post['post']['username'] ?>"><?php echo $post['post']['name'] ?></a> <i>requests</i> <a target="_blank" class="bz" href="/post?id=<?php echo $post['post']['PID'] ?>"><?php echo $post['post']['title']; ?></a></li>
 					<?php endif ?>				
 				<?php endif ?>
 

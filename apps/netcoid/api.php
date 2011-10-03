@@ -288,19 +288,24 @@ class Api extends Engine\Red
 
                     # START PLUGIN
                     $m = new Engine\Vendors\Stackexchangeinc\wmd\ElephantMarkdown;
-                    $p['comment_html'] = $m->netcoid_safe_parse($p['comment']);
+                    $data['comment_html'] = $m->netcoid_safe_parse($p['comment']);
                     #$p['comment_html'] = filter_var($unsafe['comment_html'], FILTER_SANITIZE_STRING);
                     # END PLUGIN
 
-                    $p['comment_UID'] = $this->e->get('uid');
-                    $p['comment_PID'] = $_POST['id'];            
+                    $data['comment_UID'] = $this->e->get('uid');
+                    $data['comment_PID'] = $_POST['id'];            
                     $time = new DateTime ( NULL, new DateTimeZone ( 'Asia/Jakarta' ) );
-                    $p['timecreate'] = $time->format('Y-m-d H:i:s');
+                    $data['timecreate'] = $time->format('Y-m-d H:i:s');
                     $m = new Apps\Netcoid\Models\Mentions;
 
                     # SET COMMENT
                     $c = new Apps\Netcoid\Models\Comments;
-                    $c->set($p);
+                    $p = new Apps\Netcoid\Models\Posts;
+
+                    $c->set($data);
+                    
+                    # TAMBAH SATU REPLY
+                    $p->addReply1($data['comment_PID']);
 
                     # SET MENTION IF THERE IS SOME USERNAME IN COMMENT
                     if (!empty($r['usernames'])) {

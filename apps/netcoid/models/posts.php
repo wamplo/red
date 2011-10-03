@@ -44,7 +44,7 @@ class Posts extends \Engine\libraries\Database {
 	}	
 
 	function getPostbyPID($pid){
-		$data = $this->fetch( 'SELECT posts.PID, posts.title, posts.content, posts.content_html, posts.time_create, posts.time_update, posts.time_bump, posts.status, posts.post_UID, posts.post_views, users.username, users.name as name, users.username FROM posts, users WHERE posts.PID = :pid AND posts.post_UID = users.UID LIMIT 1',array( 'pid' => $pid ));
+		$data = $this->fetch( 'SELECT posts.PID, posts.title, posts.content, posts.content_html, posts.time_create, posts.time_update, posts.time_bump, posts.status, posts.post_UID, posts.count_views, users.username, users.name as name, users.username FROM posts, users WHERE posts.PID = :pid AND posts.post_UID = users.UID LIMIT 1',array( 'pid' => $pid ));
 		return $data;	
 	}
 
@@ -60,7 +60,7 @@ class Posts extends \Engine\libraries\Database {
 			$end = $items; 
 		}
 
-		$data = $this->fetchAll( 'SELECT posts.PID, posts.title, posts.content, posts.content_html, posts.time_create, posts.time_update, posts.time_bump, posts.post_UID, posts.post_views, users.username, users.name FROM posts, users WHERE users.UID = posts.Post_UID AND posts.post_UID = :uid AND posts.status = :status ORDER BY time_bump DESC LIMIT '. $start .','. $end, array( 'uid' => $uid, 'status' => $status ));
+		$data = $this->fetchAll( 'SELECT posts.PID, posts.title, posts.content, posts.content_html, posts.time_create, posts.time_update, posts.time_bump, posts.post_UID, posts.count_views, users.username, users.name FROM posts, users WHERE users.UID = posts.Post_UID AND posts.post_UID = :uid AND posts.status = :status ORDER BY time_bump DESC LIMIT '. $start .','. $end, array( 'uid' => $uid, 'status' => $status ));
 		return $data;	
 	}
 
@@ -87,12 +87,17 @@ class Posts extends \Engine\libraries\Database {
 		}
 
 		#var_dump($start,$end,$offset);
-		$data = $this->fetchAll( 'SELECT posts.PID, posts.title, posts.content, posts.content_html, posts.time_create, posts.time_update, posts.time_bump, posts.status, posts.post_UID, posts.post_views, users.username, users.name FROM posts, users WHERE posts.post_GID = :gid AND posts.post_UID = users.UID ORDER BY time_bump DESC LIMIT '. $start .','. $end, array( 'gid' => $gid ));
+		$data = $this->fetchAll( 'SELECT posts.PID, posts.title, posts.content, posts.content_html, posts.time_create, posts.time_update, posts.time_bump, posts.status, posts.post_UID, posts.count_reply, posts.count_views, users.username, users.name FROM posts, users WHERE posts.post_GID = :gid AND posts.post_UID = users.UID ORDER BY time_bump DESC LIMIT '. $start .','. $end, array( 'gid' => $gid ));
 		return $data;		
 	}
 
 	function getLastPost($limit = 10) {
-		$data = $this->fetchAll( 'SELECT PID, title, content, content_html, time_create, time_update, time_bump, posts.status, post_UID, post_views, post_GID, groups.name as `group`, users.name as name, username FROM posts, groups, users WHERE post_GID = GID AND post_UID = UID ORDER BY time_create DESC LIMIT ' . $limit);
+		$data = $this->fetchAll( 'SELECT PID, title, content, content_html, time_create, time_update, time_bump, posts.status, post_UID, count_views, post_GID, groups.name as `group`, users.name as name, username FROM posts, groups, users WHERE post_GID = GID AND post_UID = UID ORDER BY time_create DESC LIMIT ' . $limit);
+		return $data;
+	}
+
+	function addReply1($pid){
+		$data = $this->query('UPDATE posts SET posts.count_reply = posts.count_reply + 1 WHERE posts.PID = :pid', array( 'pid' => $pid ));
 		return $data;
 	}
 

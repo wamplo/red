@@ -53,7 +53,7 @@
 	<div class="dv h" id="unread-messages">
 		<ul>
 			<?php foreach ($data['messages'] as $message): ?>
-				<a class="dc" href="/messages?id=<?php echo $message['mid']; ?>"><li>
+				<a class="bz" href="/messages?id=<?php echo $message['mid']; ?>"><li>
 				<div id="messages-subject">
 					<?php echo $message['subject']; ?>
 				</div>
