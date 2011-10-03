@@ -166,7 +166,7 @@ class Posts Extends Engine\Red
         ));
 
         # BIAR JSNYA GAK KE RERWITE SAMA MUNCHER
-        include '/engine/vendors/netcoid/sosial/sosialjs.php';
+        include 'engine/vendors/netcoid/sosial/sosialjs.php';
 
         $this->__Footer();
     }
