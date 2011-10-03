@@ -49,7 +49,7 @@ class Profiles Extends Engine\Red
 
         $userdata = $this->u->getData($username);
              
-        $this->__Header($userdata['name'] . '&mdash; Posts');
+        $this->__Header($userdata['name'] . ' &mdash; Posts');
         $this->h->showAll(); # SHOW FLASH
 
         $postdata = array(
@@ -100,7 +100,7 @@ class Profiles Extends Engine\Red
 
         $userdata = $this->u->getData($username);
 
-        $this->__Header($userdata['name'] . '&mdash; Penawaran');
+        $this->__Header($userdata['name'] . ' &mdash; Penawaran');
         $this->h->showAll(); # SHOW FLASH
 
         $offerdata = array(
@@ -151,9 +151,9 @@ class Profiles Extends Engine\Red
 
         $userdata = $this->u->getData($username);
 
-        $this->__Header($userdata['name'] . '&mdash; Permintaan');
+        $this->__Header($userdata['name'] . ' &mdash; Permintaan');
         $this->h->showAll(); # SHOW FLASH
-        
+
         $offerdata = array(
             'user' => $userdata,
             'follow' => $o->isFollowingUID($this->e->get('uid'), $userdata['uid']),
@@ -242,7 +242,7 @@ class Profiles Extends Engine\Red
 
         if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest" ) {
             
-
+            echo "<title>$title</title>";
             # AN AJAX REQUEAST && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == $request 
             # var_dump($_SERVER);
             

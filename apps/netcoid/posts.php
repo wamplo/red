@@ -127,7 +127,6 @@ class Posts Extends Engine\Red
         }
 
         $this->__Header($post['title']);
-
         $this->h->showAll(); # SHOW FLASH
 
         $postdata = array(
@@ -166,7 +165,7 @@ class Posts Extends Engine\Red
                     )
                 ),
             'cache' => 0
-        ),1);
+        ));
 
         $this->__Footer();
     }
@@ -359,10 +358,8 @@ class Posts Extends Engine\Red
     private function __Header($title = 'Netcoid &mdash; jejaring bisnis indonesia', $desc = 'Netcoid, jejaring bisnis indonesia, menghubungkan pelaku bisnis indonesia'){
 
         if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest" ) {
-            
 
-            # AN AJAX REQUEAST && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == $request 
-            # var_dump($_SERVER);
+            echo "<title>$title</title>";
             
         } else {    
             echo $this->a->getView('netcoid','framework/header.php',

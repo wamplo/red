@@ -89,7 +89,7 @@ class Register extends Engine\Red
             'src' => 
                 array(
                     'html' => $this->a->getView('Netcoid','Users/Welcome.php'),
-                    'id' => 'rr-ajax-welcome'
+                    'id' => 'rr-2'
                 ),
             'css' => 
                 array(

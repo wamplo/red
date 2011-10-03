@@ -119,7 +119,7 @@ class Auth Extends Engine\Red
 
         if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest" ) {
             
-
+            echo "<title>$title</title>";
             # AN AJAX REQUEAST && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == $request 
             # var_dump($_SERVER);
             

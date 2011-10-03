@@ -33,7 +33,7 @@ if (strlen($data['post']['title']) > 60) {
 
 	<!-- START CONTENT -->
 	<div class="clearfix blog-post">
-		<h1 style="word-wrap: break-word;text-align: center;margin-bottom: 10px;"><a href="/post?id=<?php echo $_GET['id']; ?>"><?php echo $data['post']['fulltitle']; ?></a></h1>
+		<h1 style="word-wrap: break-word;text-align: center;margin-bottom: 10px;"><a data-pjax="rr-2" href="/post?id=<?php echo $_GET['id']; ?>"><?php echo $data['post']['fulltitle']; ?></a></h1>
 		<?php echo $data['post']['content_html']; ?>
 	</div>
 
