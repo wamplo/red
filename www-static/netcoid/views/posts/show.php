@@ -16,20 +16,6 @@ if (strlen($data['post']['title']) > 60) {
 		<div class="dt"><a data-pjax="#rr-2" href="<?php echo $data['post']['username']; ?>" class="u"><?php echo $data['post']['name']; ?></a></div>
 	</div>
 
-	<?php if ($data['login'] == $data['post']['post_UID']) : ?>
-		<div class="clearfix" id="post-menu">
-			<ul class="dq clearfix">
-				<li class="dq"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
-			</ul>
-			<ul class="dt">
-				
-				<?php if (strtotime($data['post']['time_bump']) < strtotime('-1 Hour')): ?>
-					<li class="dq"><a href="/post/bump?id=<?php echo $_GET['id']; ?>">Bump</a></li>
-				<?php endif ?>
-				<li class="dq"><a href="/post/delete?id=<?php echo $_GET['id']; ?>">x</a></li>
-			</ul>
-		</div>
-	<?php endif ?>
 
 	<!-- START CONTENT -->
 	<div class="clearfix blog-post">
@@ -45,6 +31,22 @@ if (strlen($data['post']['title']) > 60) {
 
 	</div>
 
+	<!-- START MENU FOR THREAD STARTER -->
+	<?php if ($data['login'] == $data['post']['post_UID']) : ?>
+		<div class="clearfix" id="post-menu">
+			<ul class="dq clearfix">
+				<li class="dq"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
+			</ul>
+			<ul class="dt">
+				
+				<?php if (strtotime($data['post']['time_bump']) < strtotime('-1 Hour')): ?>
+					<li class="dq"><a href="/post/bump?id=<?php echo $_GET['id']; ?>">Bump</a></li>
+				<?php endif ?>
+				<li class="dq"><a href="/post/delete?id=<?php echo $_GET['id']; ?>">x</a></li>
+			</ul>
+		</div>
+	<?php endif ?>
+
 	<!-- START COMMENT -->
 	<div id="a">
 		<?php if ($data['count']['COUNT(CID)'] == 0): ?>
@@ -55,26 +57,8 @@ if (strlen($data['post']['title']) > 60) {
 
 		<?php if ($data['count']['COUNT(CID)'] != 0): ?>		
 		<div id="meta-comments">
-			<h4>(<?php echo $data['count']['COUNT(CID)']; ?>) <?php echo l('comments') ?></h4>
+			(<?php echo $data['count']['COUNT(CID)']; ?>) <?php echo l('comments') ?>
 		</div>
-		<?php endif ?>
-
-
-		<?php if ($data['login']): ?>
-			<div id="post-comment">
-				<?php $data['forms']->openForm('red-comment',array(
-						'action' => '/api/c/set'
-					)); ?>
-					<ul>
-						<li><?php $data['forms']->textarea('comment', l('addcomment'), array( 
-								  'cols' => '135',
-								  'rows' => '3')); ?></li>
-					</ul>
-					<p><input type="submit" value="Kirim" name="insert" id="button"></p>
-
-				<input type="hidden" name="id" value="<?php echo $_GET['id'] ?>"/>
-				<?php $data['forms']->closeForm('red-comment'); ?>					
-			</div>
 		<?php endif ?>
 		
 		<ul>
@@ -95,6 +79,23 @@ if (strlen($data['post']['title']) > 60) {
 			?>
 		<?php endforeach ?>
 		</ul>
+
+		<?php if ($data['login']): ?>
+			<div id="post-comment">
+				<?php $data['forms']->openForm('red-comment',array(
+						'action' => '/api/c/set'
+					)); ?>
+					<ul>
+						<li><?php $data['forms']->textarea('comment', l('addcomment'), array( 
+								  'cols' => '135',
+								  'rows' => '3')); ?></li>
+					</ul>
+					<p><input type="submit" value="Kirim" name="insert" id="button"></p>
+
+				<input type="hidden" name="id" value="<?php echo $_GET['id'] ?>"/>
+				<?php $data['forms']->closeForm('red-comment'); ?>					
+			</div>
+		<?php endif ?>
 
 	</div>
 <!-- 

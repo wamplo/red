@@ -20,9 +20,36 @@ class Admin Extends Engine\Red
         $this->r = new RedRiver;
 
         $this->v = new Validation;
+        $this->e = new Sessions;
         $this->f = new Forms;
-        header('Location: /404');
-        die();
+        $this->u = new Apps\Netcoid\Models\Users; 
+
+        $user = $this->u->getData($this->e->get('uid'));
+
+        if ($user['role'] != 5) {
+            header('Location: /');  
+        }
+    }
+
+    public function Index(){
+        $this->__Header();
+
+        # INDEX
+        $this->r->branch(array(
+        'src' => 
+            array(
+                'html' => $this->a->getView('admin','site/index.php'),
+                'id' => 'rr-2'
+            ),
+        'css' => 
+            array(
+                $this->a->getPath('default','css/framework.css'),
+                $this->a->getPath('netcoid','css/main.v2.css')
+            ),
+         'cache' => 0
+        )); # END
+
+        $this->__Footer();
     }
 
     /**
@@ -31,7 +58,7 @@ class Admin Extends Engine\Red
      * @author Adam Ramadhan
      * @version 1
      **/
-    public function Index(){
+    public function Groups(){
         $g = new Apps\Netcoid\Models\Groups;
 
 
@@ -104,33 +131,45 @@ class Admin Extends Engine\Red
     /**
      * FRAMEWORK __HEADER
      * @author Adam Ramadhan
-     * @version 1
+     * @version 1 + PJAX
      **/
-    private function __Header(){
-        echo $this->a->getView('netcoid','Framework/Header.php',
-            array(
-                'title' => 'Netcoid &mdash; jejaring bisnis indonesia',
-                'description' => 'Netcoid, jejaring bisnis indonesia, menghubungkan pelaku bisnis indonesia' 
-            )
-        );
+    private function __Header($title = 'Netcoid &mdash; jejaring bisnis indonesia', $desc = 'Netcoid, jejaring bisnis indonesia, menghubungkan pelaku bisnis indonesia'){
 
-        $menudata = array(
-            'sessions' => new Sessions
-        );
+        if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest" ) {
 
-        $this->r->branch(array(
-            'src' => 
+            echo "<title>$title</title>";
+            
+        } else {    
+            echo $this->a->getView('netcoid','framework/header.php',
                 array(
-                    'html' => $this->a->getView('netcoid','Framework/Menu.php', $menudata),
-                    'id' => 'rr-ajax-menu'
-                ),
-            'css' => 
-                array(
-                    $this->a->getPath('default','css/framework.css'),
-                    $this->a->getPath('netcoid','css/main.v2.css')
-                ),
-            'cache' => 0
-        ),0); # START
+                    'title' => $title,
+                    'description' => $desc 
+                )
+            );
+
+            $o = new Apps\Netcoid\Models\Mentions;
+            $m = new Apps\Netcoid\Models\Messages;
+
+            $menudata = array(
+                'sessions' => $this->e,
+                'countmentions' => $o->countMentionUID($this->e->get('uid')),
+                'countmessages' => $m->countMessageUID($this->e->get('uid'))
+            );
+
+            $this->r->branch(array(
+                'src' => 
+                    array(
+                        'html' => $this->a->getView('netcoid','framework/menu.php', $menudata),
+                        'id' => 'rr-1'
+                    ),
+                'css' => 
+                    array(
+                        $this->a->getPath('default','css/framework.css'),
+                        $this->a->getPath('netcoid','css/main.v2.css')
+                    ),
+                'cache' => 0
+            ),0); # START
+        }
     }
 
     /**
@@ -143,7 +182,7 @@ class Admin Extends Engine\Red
         'src' => 
             array(
                 'html' => $this->a->getView('netcoid','Framework/Bottom.php'),
-                'id' => 'rr-ajax-footer'
+                'id' => 'rr-3'
             ),
         'css' => 
             array(

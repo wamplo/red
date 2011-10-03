@@ -1,23 +1,27 @@
 #meta-comments {
-    border-bottom: 1px solid #EEEEEE;
-    padding-bottom: 5px;
-    text-align: center;
+    border: 1px solid #DDD;
+    padding: 5px 10px;
+    background: #EEE;
+    padding: 5px 10px;
 }
 #comment-meta-name{margin-right: 10px;}
 #comments .comments #comment{margin-right: 5px;}
 #comments .comments time{      margin-right: 10px;color: #E6CDAD;}
 
-#comments .comments{
-    border-bottom: 1px solid #EEEEEE;
-    margin-bottom: 6px;
-    padding: 5px 0;
+#comments .comments {
+border-bottom: 1px dashed #EEE;
+margin-bottom: 6px;
+padding: 5px 0;
 }
 /*
 #comments .comments {
     border-bottom: 1px solid #EEEEEE;
     padding: 2.5px 0;
 }*/
-
+#form-red-comment label {
+padding: 10px 0;
+font-weight: bold;
+}
 #comments #says{    color: #CCCCCC;
     font-style: italic;}
 /*#comments .comments:nth-child(odd){background: none repeat scroll 0 0 #FFFFD5;}
