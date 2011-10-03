@@ -154,13 +154,11 @@ class Posts Extends Engine\Red
                 ),
             'js' =>
                 array(
-                    /*
                     array(
-                       '/engine/vendors/github/holman-boastful-7423621/jquery.boastful.js'
+                       #'/engine/vendors/github/holman-boastful-7423621/jquery.boastful.js',
+                       $this->a->getPath('netcoid','js/jquery/jquery.timeago.js')
                     ),
-                    */
                     array(
-                       $this->a->getPath('netcoid','js/jquery/jquery.timeago.js'),
                        $this->a->getPath('netcoid','js/timeago.js')
                     )
                 ),
