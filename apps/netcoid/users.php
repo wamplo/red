@@ -150,7 +150,11 @@ class Users Extends Engine\Red
         if ($this->f->checkHumanPost(1)) {
 
             $e['information'] = $this->v->safe($_POST['information']);
-            $e['information_html'] = $_POST['information_html'];
+            #$e['information_html'] = $_POST['information_html'];
+            
+            $m = new Engine\Vendors\Stackexchangeinc\wmd\ElephantMarkdown;
+            $e['information_html'] = $m->netcoid_safe_parse($_POST['information']);
+
             $e['uid'] = $this->e->get('uid');
 
             $this->v->required($_POST['information_html'], 'security@networks.co.id');

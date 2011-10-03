@@ -437,14 +437,6 @@ class Posts Extends Engine\Red
             $p['title'] = $_POST['title'];
             $p['content'] = $this->v->safe($_POST['content']);
 
-            # FALLBACK
-            if (empty($_POST['content_html'])) {
-                $m = new Engine\Vendors\Stackexchangeinc\wmd\ElephantMarkdown;
-                $p['content_html'] = $m->netcoid_safe_parse($_POST['content']);
-            }
-
-            # THIS IS NOT SAFE! @todo
-
             $m = new Engine\Vendors\Stackexchangeinc\wmd\ElephantMarkdown;
             $p['content_html'] = $m->netcoid_safe_parse($_POST['content']);
 
