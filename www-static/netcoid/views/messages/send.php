@@ -1,6 +1,6 @@
 <div class="clearfix" id="red-content">
 
-<div style="width: 475px; border: 1px solid rgb(238, 238, 238); margin: 20px auto 0pt; padding: 10px 15px;" id="form-red-wmd" class="dr"><?php $data['forms']->openForm('red-wmd'); ?>
+<div style="width: 475px; border: 1px solid rgb(238, 238, 238); margin: 20px auto 0pt; padding: 10px 15px;" id="form-red-wmd" class="df"><?php $data['forms']->openForm('red-wmd'); ?>
 	<ul>
 		<li id="form-header"><h3><strong>Kirim Pesan</strong></h3></li>
 

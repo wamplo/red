@@ -12,5 +12,9 @@ IGNORECSS = [
 	'.u',
 	'.example',
 	'#d',
-	'.a'
+	'.a',
+
+	'.fb-like',
+	'.twitter-share-button',
+	'.g-plusone'
 ];

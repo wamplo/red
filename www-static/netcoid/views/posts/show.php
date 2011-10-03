@@ -10,12 +10,12 @@ if (strlen($data['post']['title']) > 60) {
 
 	<!-- START POST HEADER -->
 	<div class="clearfix" id="post-header">
-		<div class="ef" style="width:700px">
+		<div class="dr" style="width:700px">
 			<ul>
 				<li><b><?php echo $data['post']['title']; ?></b></li>
 			</ul>
 		</div>
-		<div class="ei"><a data-pjax="#rr-2" href="<?php echo $data['post']['username']; ?>" class="u"><?php echo $data['post']['name']; ?></a></div>
+		<div class="du"><a data-pjax="#rr-2" href="<?php echo $data['post']['username']; ?>" class="u"><?php echo $data['post']['name']; ?></a></div>
 	</div>
 
 	<!-- START CONTENT -->
@@ -35,15 +35,15 @@ if (strlen($data['post']['title']) > 60) {
 	<!-- START MENU FOR THREAD STARTER -->
 	<?php if ($data['login'] == $data['post']['post_UID']) : ?>
 		<div class="clearfix" id="post-menu">
-			<ul class="ef clearfix">
-				<li class="ef"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
+			<ul class="dr clearfix">
+				<li class="dr"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
 			</ul>
-			<ul class="ei">
+			<ul class="du">
 				
 				<?php if (strtotime($data['post']['time_bump']) < strtotime('-1 Hour')): ?>
-					<li class="ef"><a href="/post/bump?id=<?php echo $_GET['id']; ?>">Bump</a></li>
+					<li class="dr"><a href="/post/bump?id=<?php echo $_GET['id']; ?>">Bump</a></li>
 				<?php endif ?>
-				<li class="ef"><a href="/post/delete?id=<?php echo $_GET['id']; ?>">x</a></li>
+				<li class="dr"><a href="/post/delete?id=<?php echo $_GET['id']; ?>">x</a></li>
 			</ul>
 		</div>
 	<?php endif ?>
@@ -70,44 +70,28 @@ if (strlen($data['post']['title']) > 60) {
 		    padding: 5px 10px;
 		">
 			<style type="text/css">
-			.bt {
+			.bn {
 				position: relative;
 				top: 2px;
 			}
-
 			</style>
 
 			<!-- FACEBOOK -->
 			<meta property="og:type" content="article" />
 			<meta property="og:site_name" content="Netcoid Indonesia" />
 			<meta property="fb:admins" content="1667473111" />
-			<script>(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) {return;}
-			  js = d.createElement(s); js.ed = id;
-			  js.ct = "//connect.ck.net/en_US/all.cq#xfbml=1";
-			  fjs.ap.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));</script><div class="fb-like bt ef" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana"></div>
+			<div class="fb-like bn dr" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana"></div>
 			<!-- FACEBOOK END -->
 
 			<!-- TWITTER -->
-			<div class="bt ef"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="netcoid" data-lang="id">Tweet</a></div>
-			<script type="text/javascript" src="//platform.cs.com/widgets.js"></script>
+			<div class="bn dr"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="netcoid" data-lang="id">Tweet</a></div>
 			<!-- TWITTER END -->
 
 			<!-- GOOGLE PLUS -->
-			<div class="bt ef">
+			<div class="bn dr">
 			<!-- Place this tag where you want the +1 button to render -->
 			<div class="g-plusone" data-size="medium"></div>
 			<!-- Place this render call where appropriate -->
-			<script type="text/javascript">
-			  window.cx = {lang: 'id'};
-			  (function() {
-			    var po = document.createElement('script'); po.m = 'text/javascript'; po.do = true;
-			    po.ct = 'https://apis.dg.com/js/plusone.js';
-			    var s = document.getElementsByTagName('script')[0]; s.ap.insertBefore(po, s);
-			  })();
-			</script>
 			</div>
 			<!-- GOOGLE PLUS END -->
 		</div>

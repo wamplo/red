@@ -1,4 +1,4 @@
-<div class="dr" id="red-x"><?php $data['forms']->openForm('red-x'); ?>
+<div class="df" id="red-x"><?php $data['forms']->openForm('red-x'); ?>
 	<ul>
 		<li id="form-header"><h3><strong>Masuk</strong></h3></li>
 

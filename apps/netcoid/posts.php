@@ -140,7 +140,7 @@ class Posts Extends Engine\Red
         $this->r->branch(array(
             'src' => 
                 array(
-                    'html' => $this->a->getView('netcoid','Posts/Show.php', $postdata),
+                    'html' => $this->a->getView('netcoid','posts/show.php', $postdata),
                     'id' => 'rr-2'
                 ),
             'css' => 
@@ -164,6 +164,9 @@ class Posts Extends Engine\Red
                 ),
             'cache' => 0
         ));
+
+        # BIAR JSNYA GAK KE RERWITE SAMA MUNCHER
+        include '/engine/vendors/netcoid/sosial/sosialjs.php';
 
         $this->__Footer();
     }
