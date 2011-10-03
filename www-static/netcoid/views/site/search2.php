@@ -1,11 +1,11 @@
 <style type="text/css">
-.ay{
+.ax{
 	margin-bottom: 10px;
 }
-.cy {
+.cw {
     font-size: 11px;
 }
-li.cz{
+li.cx{
 	
 }
 </style>
@@ -15,19 +15,19 @@ li.cz{
 		<?php 
 
 		$i = 1;	
-		echo '<div class="ds" style="width:320px">';
+		echo '<div class="dq" style="width:320px">';
 		foreach ($data['g'] as $value) {
 
-			echo '<ul id="cat-'.$value['GID'].'" class="ay">';
+			echo '<ul id="cat-'.$value['GID'].'" class="ax">';
 			echo '<li class="cat-title"><h3>'.$value['name'].'</h3></li>';
 
 			if (isset($value['children'])) {
 				foreach ($value['children'] as $children) {
-					echo '<li class="cz"><a data-pjax="#rr-2" href="/group?id='.$children['GID'].'" class="bz">'.$children['name'].'</a></li>';
+					echo '<li class="cx"><a data-pjax="#rr-2" href="/group?id='.$children['GID'].'" class="a">'.$children['name'].'</a></li>';
 
 					if (isset($children['children'])) {
 						foreach ($children['children'] as $children) {
-							echo '<span class="cy"><a data-pjax="#rr-2" href="/group?id='.$children['GID'].'">'.$children['name'].'</a></span> ';
+							echo '<span class="cw"><a data-pjax="#rr-2" href="/group?id='.$children['GID'].'">'.$children['name'].'</a></span> ';
 						}
 					}
 				}
@@ -36,7 +36,7 @@ li.cz{
 			echo '</ul>';
 
 			if ($i % 3 == 0 ) {
-				echo '</div><div class="ds" style="width:320px">';
+				echo '</div><div class="dq" style="width:320px">';
 			}
 			$i++;
 		}

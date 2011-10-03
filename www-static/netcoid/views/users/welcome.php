@@ -24,7 +24,7 @@
 			tatap muka.</p>				
 		</div>
 		<div class="clearfix"></div>
-		<span class="bt">
+		<span class="br">
 		Setelah anda membaca, anda dapat langsung "masuk" dari menu atas kanan.</span>
 	</div>
 	<!-- CONTENT END -->

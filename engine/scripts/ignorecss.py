@@ -11,5 +11,6 @@ IGNORECSS = [
 	'.clearfix',
 	'.u',
 	'.example',
-	'#d'
+	'#d',
+	'.a'
 ];

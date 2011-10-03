@@ -5,8 +5,8 @@
 }
 
 #groups-menu li{float:left;margin-right:15px;}
-li.type-1 a.bz{color:#1EA7E7;}
-li.type-2 a.bz{    color: #47C937;}
+li.type-1 a.a{color:#1EA7E7;}
+li.type-2 a.a{    color: #47C937;}
 
 #meta-request{
     margin-right: 10px;
@@ -19,30 +19,30 @@ li.type-2 a.bz{    color: #47C937;}
 <div id="red-content">
 
 	<div class="clearfix" id="groups-header">
-		<div class="ds" style="width:700px">
+		<div class="dq" style="width:700px">
 		<ul id="groups-menu">
 			<?php if ($data['status']['permission']['post'] && $data['login'] && 
 			in_array($data['user']['role'], $data['status']['permission']['users'])): ?>
-				<li><a class="bz" href="/post/any?id=<?php echo $_GET['id'] ?>">Post</a></li>
+				<li><a class="a" href="/post/any?id=<?php echo $_GET['id'] ?>">Post</a></li>
 			<?php endif ?>
 
 			<?php if ($data['status']['permission']['request'] && $data['login'] && 
 			in_array($data['user']['role'], $data['status']['permission']['users'])): ?>
-				<li><a class="bz" href="/post/request?id=<?php echo $_GET['id'] ?>">Permintaan</a></li>
+				<li><a class="a" href="/post/request?id=<?php echo $_GET['id'] ?>">Permintaan</a></li>
 			<?php endif ?>
 
 			<?php if ($data['status']['permission']['offer'] && $data['login'] && 
 			in_array($data['user']['role'], $data['status']['permission']['users'])): ?>
-				<li><a class="bz" href="/post/offer?id=<?php echo $_GET['id'] ?>">Penawaran</a></li>
+				<li><a class="a" href="/post/offer?id=<?php echo $_GET['id'] ?>">Penawaran</a></li>
 			<?php endif ?>
 
 			<?php if (!$data['login']): ?>
-				<li><a class="bz" href="/login">Masuk untuk posting</a></li>
+				<li><a class="a" href="/login">Masuk untuk posting</a></li>
 			<?php endif ?>
 		</ul>
 
 		</div>
-		<div class="dv"><?php echo $data['info']['name']; ?></div>
+		<div class="dt"><?php echo $data['info']['name']; ?></div>
 	</div>
 
 	<div class="clearfix" id="groups-content">
@@ -53,7 +53,7 @@ li.type-2 a.bz{    color: #47C937;}
 			));
 		?>
 
-		<div style="padding: 5px 0pt 0pt; width: 700px;" class="ds">
+		<div style="padding: 5px 0pt 0pt; width: 700px;" class="dq">
 
 		<?php if ($data['status']['status'] === 1): ?>
 			<ul>
@@ -68,14 +68,14 @@ li.type-2 a.bz{    color: #47C937;}
 				echo '<li class="type-'.$post['status'].'">';
 
 				if ($post['status'] == 2) {
-					echo "<span class='dt' id='meta-offer'><i>Jual</i></span>";
+					echo "<span class='dr' id='meta-offer'><i>Jual</i></span>";
 				}
 
 				if ($post['status'] == 1) {
-					echo "<span class='dt' id='meta-request'><i>Beli</i></span>";
+					echo "<span class='dr' id='meta-request'><i>Beli</i></span>";
 				}
 
-				echo '<a data-pjax="#rr-2" class="bz" title="'.$post['title'].'" href="post?id='.$post['PID'].'">'.$post['title'].'</a> 
+				echo '<a data-pjax="#rr-2" class="a" title="'.$post['title'].'" href="post?id='.$post['PID'].'">'.$post['title'].'</a> 
 				<i>by</i> <a class="u"href="'.$post['username'].'">'.$post['name'].'</a>';
 				echo "</li>";
 
@@ -85,20 +85,20 @@ li.type-2 a.bz{    color: #47C937;}
 		<?php endif ?>
 
 		</div>
-		<div style="width: 250px; padding: 5px;" class="dv">
+		<div style="width: 250px; padding: 5px;" class="dt">
 			<div style="padding-bottom: 5px;"><?php echo $data['info']['description']; ?></div>
 
 			<?php if (!$data['login']): ?>
-				<div><a class="bz" href="/login">Masuk untuk Mengikuti <?php echo $data['info']['name']; ?></a></div>
+				<div><a class="a" href="/login">Masuk untuk Mengikuti <?php echo $data['info']['name']; ?></a></div>
 			<?php endif ?>
 
 			<?php if ($data['login']): ?>
 					<?php if (!$data['follow']): ?>
-						<div><a class="bz" href="/api/s/g/follow?id=<?php echo $_GET['id'] ?>">Ikuti <?php echo $data['info']['name']; ?></a></div>
+						<div><a class="a" href="/api/s/g/follow?id=<?php echo $_GET['id'] ?>">Ikuti <?php echo $data['info']['name']; ?></a></div>
 					<?php endif ?>
 
 					<?php if ($data['follow']): ?>
-						<div><a class="bz" href="/api/s/g/unfollow?id=<?php echo $_GET['id'] ?>">Tidak ikuti <?php echo $data['info']['name']; ?></a></div>
+						<div><a class="a" href="/api/s/g/unfollow?id=<?php echo $_GET['id'] ?>">Tidak ikuti <?php echo $data['info']['name']; ?></a></div>
 					<?php endif ?>				
 			<?php endif ?>
 		</div>

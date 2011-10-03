@@ -1,13 +1,13 @@
 <div id="red-side-menu">
 	<ul>
 		<ul>
-			<li class="ci"><?php $this->href('/dashboard',l('home')); ?></li>
-			<li class="cf"><?php $this->href('/edit/profile',l('Profiledata')); ?></li>
-			<li class="bk"><?php $this->href('/edit/frontbox',l('informationbox')); ?></li>
-			<li class="bq"><?php $this->href('/edit/connections',l('connectioncenter')); ?></li>
-			<li class="ck"><?php $this->href('/edit/products',l('productlist')); ?></li>
-			<li class="ck"><?php $this->href('/edit/products','List Post'); ?></li>
-			<li class="bn"><?php $this->href('/beta/insights',l('insights')); ?>
+			<li class="cg"><?php $this->href('/dashboard',l('home')); ?></li>
+			<li class="cc"><?php $this->href('/edit/profile',l('Profiledata')); ?></li>
+			<li class="bj"><?php $this->href('/edit/frontbox',l('informationbox')); ?></li>
+			<li class="bp"><?php $this->href('/edit/connections',l('connectioncenter')); ?></li>
+			<li class="ci"><?php $this->href('/edit/products',l('productlist')); ?></li>
+			<li class="ci"><?php $this->href('/edit/products','List Post'); ?></li>
+			<li class="bm"><?php $this->href('/beta/insights',l('insights')); ?>
 			<sup style="font-size: 10px;">beta</sup></li>
 		</ul>
 		<li><p id="users-menu-information">Beta*, status beta menunjukan bahwa fitur tersebut masih dalam tahap uji coba.</p></li>

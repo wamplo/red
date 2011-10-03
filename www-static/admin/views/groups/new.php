@@ -1,7 +1,7 @@
 
 <?php $data['validation']->getErrors(); ?>
 <div class="clearfix" id="red-content">
-	<div class="ds" style="width: 450px;">
+	<div class="dq" style="width: 450px;">
 		<?php $data['forms']->openForm('red-groups-new'); ?>
 		 	<div class="wmd-panel">
 			<h3>New Post</h3>
@@ -23,10 +23,10 @@
 			</ul>
 				
 			</div> <!-- END WMD -->
-			<p style="text-align: center; margin-top: 10px;"><input type="submit" id="button" name="register" value="Post" class="b cupid-green"></p>
+			<p style="text-align: center; margin-top: 10px;"><input type="submit" id="button" name="register" value="Post" class="a cupid-green"></p>
 		<?php $data['forms']->closeForm('red-groups-new'); ?>
 	</div>
-	<div class="dv" style="width: 450px;">
+	<div class="dt" style="width: 450px;">
 		<h3>Preview</h3>
 		<h1 class="blog-post" id="wmd-tag-preview"></h1>
 		<h2 class="blog-post" id="wmd-name-preview"></h2>

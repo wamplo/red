@@ -8,25 +8,25 @@ if (strlen($data['post']['title']) > 60) {
 ?>
 <div class="clearfix" id="red-content">
 	<div class="clearfix" id="post-header">
-		<div class="ds" style="width:700px">
+		<div class="dq" style="width:700px">
 			<ul>
 				<li><b><?php echo $data['post']['title']; ?></b></li>
 			</ul>
 		</div>
-		<div class="dv"><a data-pjax="#rr-2" href="<?php echo $data['post']['username']; ?>" class="u"><?php echo $data['post']['name']; ?></a></div>
+		<div class="dt"><a data-pjax="#rr-2" href="<?php echo $data['post']['username']; ?>" class="u"><?php echo $data['post']['name']; ?></a></div>
 	</div>
 
 	<?php if ($data['login'] == $data['post']['post_UID']) : ?>
 		<div class="clearfix" id="post-menu">
-			<ul class="ds clearfix">
-				<li class="ds"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
+			<ul class="dq clearfix">
+				<li class="dq"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
 			</ul>
-			<ul class="dv">
+			<ul class="dt">
 				
 				<?php if (strtotime($data['post']['time_bump']) < strtotime('-1 Hour')): ?>
-					<li class="ds"><a href="/post/bump?id=<?php echo $_GET['id']; ?>">Bump</a></li>
+					<li class="dq"><a href="/post/bump?id=<?php echo $_GET['id']; ?>">Bump</a></li>
 				<?php endif ?>
-				<li class="ds"><a href="/post/delete?id=<?php echo $_GET['id']; ?>">x</a></li>
+				<li class="dq"><a href="/post/delete?id=<?php echo $_GET['id']; ?>">x</a></li>
 			</ul>
 		</div>
 	<?php endif ?>
@@ -80,7 +80,7 @@ if (strlen($data['post']['title']) > 60) {
 		<ul>
 		<?php foreach ($data['comments'] as $comment): ?>
 			<?php 
-			echo "<li class='f clearfix' id='comment-".$comment['CID']."'>";
+			echo "<li class='e clearfix' id='comment-".$comment['CID']."'>";
 			echo "<div id='comment'>".$comment['comment_html']."</div>";
 			echo "<div id='comment-meta'>";
 			echo "<span id='comment-meta-name'><a class='u' href='/".$comment['username']."'>".$comment['name']."</a></span>";
@@ -99,7 +99,7 @@ if (strlen($data['post']['title']) > 60) {
 	</div>
 <!-- 
 <style type="text/css">
-#oracle-social-comments .f {
+#oracle-social-comments .e {
     border-bottom: 1px solid #EEEEEE;
     padding: 2.5px 0;
 }

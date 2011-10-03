@@ -14,7 +14,7 @@
 			<hr>
 			<p style="padding: 5px;">Anda Menyetujui <a target="_blank" href="/terms" style="color: rgb(211, 46, 46);">Kebijakan Layanan</a> dan <a target="_blank" href="/privacy" style="color: rgb(211, 46, 46);">Kebijakan Privasi</a> Netcoid.</p>
 			<hr>
-			<p style="text-align: center;"><input class="b cupid-green" type="submit" value="Setuju &amp; Registrasi" name="register" id="button"></p>
+			<p style="text-align: center;"><input class="a cupid-green" type="submit" value="Setuju &amp; Registrasi" name="register" id="button"></p>
 		<?php $data['forms']->closeForm('red-register'); ?>
 	</div>
 </div>

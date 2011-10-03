@@ -1,5 +1,5 @@
 <div class="clearfix" id="red-content">
-	<div class="ds" style="width: 715px;">
+	<div class="dq" style="width: 715px;">
 
 	<style type="text/css">
 	#type-news{
@@ -23,24 +23,24 @@
 		echo '<li class="clearfix">';
 
 		if ($posts['status'] == 0) {
-			echo '<div class="ds" style="margin-right: 10px;"><span id="type-news">Artikel</span></div>';
+			echo '<div class="dq" style="margin-right: 10px;"><span id="type-news">Artikel</span></div>';
 		}
 
 		if ($posts['status'] == 1) {
-			echo '<div class="ds" style="margin-right: 10px;"><span id="type-sell">Penawaran</span></div>';
+			echo '<div class="dq" style="margin-right: 10px;"><span id="type-sell">Penawaran</span></div>';
 		}
 
 		if ($posts['status'] == 2) {
-			echo '<div class="ds" style="margin-right: 10px;"><span id="type-buy">Permintaan</span></div>';
+			echo '<div class="dq" style="margin-right: 10px;"><span id="type-buy">Permintaan</span></div>';
 		}
 
-		echo '<div class="ds" style="width: 610px;"><a class="bz" href="post?id='.$posts['PID'].'">'.$posts['title'].'</a> oleh <a href="'.$posts['username'].'" class="u">@'.$posts['name'].'</a> di <i><span id="ab" class="gid-'.$posts['post_GID'].'">'.$posts['group'].'</span></i></div></li>';
+		echo '<div class="dq" style="width: 610px;"><a class="a" href="post?id='.$posts['PID'].'">'.$posts['title'].'</a> oleh <a href="'.$posts['username'].'" class="u">@'.$posts['name'].'</a> di <i><span id="ab" class="gid-'.$posts['post_GID'].'">'.$posts['group'].'</span></i></div></li>';
 	}
 	
 	?>
 	</ul>
 	</div>
-	<div class="dv" style="width: 245px;">
+	<div class="dt" style="width: 245px;">
 		<?php $data['forms']->openForm('red-register',array('action' => '/register')); ?>
 			<h3><strong>Pendaftaran</strong></h3>
 			<i>Hello!, are you registered?</i>
@@ -54,7 +54,7 @@
 			<hr>
 			<p style="padding: 5px;">Anda Menyetujui <a target="_blank" href="/terms" style="color: rgb(211, 46, 46);">Kebijakan Layanan</a> dan <a target="_blank" href="/privacy" style="color: rgb(211, 46, 46);">Kebijakan Privasi</a> Netcoid.</p>
 			<hr>
-			<p style="text-align: center;"><input class="b cupid-green" type="submit" value="Setuju &amp; Registrasi" name="register" id="button"></p>
+			<p style="text-align: center;"><input class="a cupid-green" type="submit" value="Setuju &amp; Registrasi" name="register" id="button"></p>
 		<?php $data['forms']->closeForm('red-register'); ?>
 	</div>
 </div>
