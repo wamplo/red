@@ -5,3 +5,9 @@ margin-bottom: 10px;
 }
 
 #profiles-menu li{float:left;margin-right:15px;}
+
+/* HD DEAFULT */
+#profile-content object{
+	width:960px;
+	height:518px;
+}
