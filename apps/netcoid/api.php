@@ -288,8 +288,13 @@ class Api extends Engine\Red
 
                     # START PLUGIN
                     $m = new Engine\Vendors\Stackexchangeinc\wmd\ElephantMarkdown;
-                    $data['comment_html'] = $m->netcoid_safe_parse($p['comment']);
-                    #$p['comment_html'] = filter_var($unsafe['comment_html'], FILTER_SANITIZE_STRING);
+                    $vendorHTMLpurifier = new Engine\Vendors\HTMLpurifier\HTMLpurifier;
+                    $HTMLpurifierConfig = HTMLPurifier_Config::createDefault();
+                    $HTMLpurifierConfig->set('HTML.SafeObject', "1");
+                    $HTMLpurifierConfig->set('Output.FlashCompat', "1");
+                    $HTMLpurifierConfig->set('Filter.YouTube', "1");
+                    $purifier = new HTMLPurifier($HTMLpurifierConfig);
+                    $data['comment_html'] = $purifier->purify($m->parse($p['comment']));
                     # END PLUGIN
 
                     $data['comment_UID'] = $this->e->get('uid');

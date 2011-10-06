@@ -39,8 +39,8 @@ class Message Extends Engine\Red
     }
 
     public function Index(){
-        $this->__Header();
         
+        $this->__Header('Netcoid &mdash; Messages');  
         $this->h->showMessage();
 
         $m = new Apps\Netcoid\Models\Messages;
@@ -101,7 +101,7 @@ class Message Extends Engine\Red
      * @version 1
      **/
     public function Send(){
-        $this->__Header();
+        $this->__Header('Netcoid &mdash; Send Message');  
 
         # CHECK IF THE RECEVER IS THERE IF NOT REDIRECT
         $user = $this->u->uidexist($_GET['id']);
@@ -208,26 +208,34 @@ class Message Extends Engine\Red
 
     /**
      * FRAMEWORK __FOOTER
-     * Footer Element
      * @author Adam Ramadhan
-     * @version 1
+     * @version 1 + PJAX
      **/
     private function __Footer(){
-        $this->r->branch(array(
-        'src' => 
-            array(
-                'html' => $this->a->getView('netcoid','framework/bottom.php'),
-                'id' => 'rr-3'
-            ),
-        'css' => 
-            array(
-                $this->a->getPath('default','css/framework.css'),
-                $this->a->getPath('netcoid','css/main.v2.css')
-            ),
-         'cache' => 0
-        ),2); # END
 
-        echo $this->a->getView('netcoid','framework/footer.php');
+        if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest" ) {
+
+            # AN AJAX REQUEAST && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == $request 
+            # var_dump($_SERVER);
+            
+        } else { 
+
+            $this->r->branch(array(
+            'src' => 
+                array(
+                    'html' => $this->a->getView('netcoid','framework/bottom.php'),
+                    'id' => 'rr-3'
+                ),
+            'css' => 
+                array(
+                    $this->a->getPath('default','css/framework.css'),
+                    $this->a->getPath('netcoid','css/main.v2.css')
+                ),
+             'cache' => 0
+            ),2); # END
+
+            echo $this->a->getView('netcoid','Framework/Footer.php');
+        }
     }
 }
 ?>

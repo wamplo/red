@@ -11,7 +11,7 @@ class RedRiver extends Assets
 {
 	public $start = FALSE;
 	public $end = FALSE;
-	public $ajax = TRUE;
+	public $ajax = FALSE;
 	private $dev = FALSE;
 
 	function start(){
@@ -22,12 +22,12 @@ class RedRiver extends Assets
 		if ($this->ajax) {
 			# REDRIVER
 			echo "\n\t" . '<script type="text/javascript" src="'.$this->getPath('default', 'js/redriver.js').'?_='.rand().'"></script>';	
-
+		}
 			# PJAX
 			echo "\n\t" . '<script type="text/javascript" src="/engine/vendors/github/defunkt-jquery-pjax-7d9841e/jquery.pjax.js"></script>';
 
 			echo "\n\t" . '<script type="text/javascript" src="/engine/vendors/github/defunkt-jquery-pjax-7d9841e/netcoid.pjax.js?'.rand().'"></script>';
-		}
+	
 	}
 
 	function branch($params, $status = 1){
@@ -67,16 +67,7 @@ class RedRiver extends Assets
 		# BOOTSTRAPING BRANCH
 		$branch = "\n\t" . '<script>$.redriver.branch({js:'.json_encode($o['js'],JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP).',css:'.json_encode($o['css'],JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP).',src:'.json_encode($o['src'],JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP).',cache:'.json_encode($o['cache']).' });</script>';
 
-
-		# BRANCH PUSH
-		$this->branch[] = $branch;
-
-		# LOAD OLNY AT THE END
-		if ($status == 2) {
-			foreach ($this->branch as $branch) {
-				echo $branch;
-			}
-		}
+		echo $branch;
 	}
 
 	public $loadedcss = array();
@@ -113,13 +104,6 @@ class RedRiver extends Assets
 				# PUSH TO LOADED CSS
 				$this->loadedcss[] = $css;
 			}
-		}
-		#var_dump($params['src']['id']);
-		# ECHO DIV
-		
-		#var_dump($params['src']['html']);
-		if ($params['src']['id'] == $params['src']['id']) {
-			#echo "\n\t" . '<div id="'.$params['src']['id'].'">'.$params['src']['html'].'</div>';
 		}
 		
 		echo "\n\t" . '<div id="'.$params['src']['id'].'">'.$params['src']['html'].'</div>';

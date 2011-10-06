@@ -37,14 +37,16 @@ $.extend($.fn, {
 
 		if ( validator.settings.onsubmit ) {
 
+			var inputsAndButtons = this.find("input, button");
+
 			// allow suppresing validation by adding a cancel class to the submit button
-			this.find("input, button").filter(".cancel").click(function() {
+			inputsAndButtons.filter(".cancel").click(function () {
 				validator.cancelSubmit = true;
 			});
 
 			// when a submitHandler is used, capture the submitting button
 			if (validator.settings.submitHandler) {
-				this.find("input, button").filter(":submit").click(function() {
+				inputsAndButtons.filter(":submit").click(function () {
 					validator.submitButton = this;
 				});
 			}
@@ -212,9 +214,9 @@ $.extend($.validator, {
 		errorContainer: $( [] ),
 		errorLabelContainer: $( [] ),
 		onsubmit: true,
-		ignore: [],
+		ignore: ":hidden",
 		ignoreTitle: false,
-		onfocusin: function(element) {
+		onfocusin: function(element, event) {
 			this.lastActive = element;
 
 			// hide error label and remove error class on focus if enabled
@@ -223,17 +225,17 @@ $.extend($.validator, {
 				this.addWrapper(this.errorsFor(element)).hide();
 			}
 		},
-		onfocusout: function(element) {
+		onfocusout: function(element, event) {
 			if ( !this.checkable(element) && (element.name in this.submitted || !this.optional(element)) ) {
 				this.element(element);
 			}
 		},
-		onkeyup: function(element) {
+		onkeyup: function(element, event) {
 			if ( element.name in this.submitted || element == this.lastElement ) {
 				this.element(element);
 			}
 		},
-		onclick: function(element) {
+		onclick: function(element, event) {
 			// click on selects, radiobuttons and checkboxes
 			if ( element.name in this.submitted )
 				this.element(element);
@@ -311,7 +313,7 @@ $.extend($.validator, {
 			function delegate(event) {
 				var validator = $.data(this[0].form, "validator"),
 					eventType = "on" + event.type.replace(/^validate/, "");
-				validator.settings[eventType] && validator.settings[eventType].call(validator, this[0] );
+				validator.settings[eventType] && validator.settings[eventType].call(validator, this[0], event);
 			}
 			$(this.currentForm)
 			       .validateDelegate("[type='text'], [type='password'], [type='file'], select, textarea, " +
@@ -347,7 +349,7 @@ $.extend($.validator, {
 
 		// http://docs.jquery.com/Plugins/Validation/Validator/element
 		element: function( element ) {
-			element = this.clean( element );
+			element = this.validationTargetFor( this.clean( element ) );
 			this.lastElement = element;
 			this.prepareElement( element );
 			this.currentElements = $(element);
@@ -392,6 +394,7 @@ $.extend($.validator, {
 			if ( $.fn.resetForm )
 				$( this.currentForm ).resetForm();
 			this.submitted = {};
+			this.lastElement = null;
 			this.prepareForm();
 			this.hideErrors();
 			this.elements().removeClass( this.settings.errorClass );
@@ -490,12 +493,7 @@ $.extend($.validator, {
 		},
 
 		check: function( element ) {
-			element = this.clean( element );
-
-			// if radio/checkbox, validate first element in group instead
-			if (this.checkable(element)) {
-				element = this.findByName( element.name ).not(this.settings.ignore)[0];
-			}
+			element = this.validationTargetFor( this.clean( element ) );
 
 			var rules = $(element).rules();
 			var dependencyMismatch = false;
@@ -676,6 +674,14 @@ $.extend($.validator, {
 			return this.groups[element.name] || (this.checkable(element) ? element.name : element.id || element.name);
 		},
 
+		validationTargetFor: function(element) {
+			// if radio/checkbox, validate first element in group instead
+			if (this.checkable(element)) {
+				element = this.findByName( element.name ).not(this.settings.ignore)[0];
+			}
+			return element;
+		},
+
 		checkable: function( element ) {
 			return /radio|checkbox/i.test(element.type);
 		},
@@ -788,7 +794,13 @@ $.extend($.validator, {
 		var $element = $(element);
 
 		for (var method in $.validator.methods) {
-			var value = $element.attr(method);
+			var value;
+			// If .prop exists (jQuery >= 1.6), use it to get true/false for required
+			if (method === 'required' && typeof $.fn.prop === 'function') {
+				value = $element.prop(method);
+			} else {
+				value = $element.attr(method);
+			}
 			if (value) {
 				rules[method] = value;
 			} else if ($element[0].getAttribute("type") === method) {
@@ -1015,7 +1027,7 @@ $.extend($.validator, {
 		// http://docs.jquery.com/Plugins/Validation/Methods/email
 		email: function(value, element) {
 			// contributed by Scott Gonzalez: http://projects.scottsplayground.com/email_address_validation/
-			return this.optional(element) || /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i.test(value);
+			return this.optional(element) || /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i.test(value);
 		},
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/url

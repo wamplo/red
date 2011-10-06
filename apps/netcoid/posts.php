@@ -67,7 +67,7 @@ class Posts Extends Engine\Red
         $postdata = $this->p->getPostbyPID($_GET['id']);
         $this->__processPost($postdata['status'],1); # 0 any, 1 offer, 2 request, 3 ntah.
 
-        $this->__Header();
+        $this->__Header('Netcoid &mdash; Edit Post');  
 
         $editdata = array(
             'forms' => $this->f,
@@ -183,7 +183,7 @@ class Posts Extends Engine\Red
 
         $this->__processPost(0); # 0 any, 1 offer, 2 request, 3 ntah.
 
-        $this->__Header();
+        $this->__Header('Netcoid &mdash; Post Anything');  
 
         $postdata = array(
             'forms' => $this->f,
@@ -243,7 +243,7 @@ class Posts Extends Engine\Red
         
         $this->__processPost(1); # 0 any, 1 offer, 2 request, 3 ntah.
 
-        $this->__Header();
+        $this->__Header('Netcoid &mdash; Post Offer');  
 
         $postdata = array(
             'forms' => $this->f,
@@ -303,7 +303,7 @@ class Posts Extends Engine\Red
 
         $this->__processPost(2); # 0 any, 1 offer, 2 request, 3 ntah.
 
-        $this->__Header();
+        $this->__Header('Netcoid &mdash; Post Request');  
 
         $postdata = array(
             'forms' => $this->f,
@@ -398,24 +398,33 @@ class Posts Extends Engine\Red
     /**
      * FRAMEWORK __FOOTER
      * @author Adam Ramadhan
-     * @version 1
+     * @version 1 + PJAX
      **/
     private function __Footer(){
-        $this->r->branch(array(
-        'src' => 
-            array(
-                'html' => $this->a->getView('netcoid','Framework/Bottom.php'),
-                'id' => 'rr-3'
-            ),
-        'css' => 
-            array(
-                $this->a->getPath('default','css/framework.css'),
-                $this->a->getPath('netcoid','css/main.v2.css')
-            ),
-         'cache' => 0
-        ),2); # END
 
-        echo $this->a->getView('netcoid','Framework/Footer.php');
+        if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest" ) {
+
+            # AN AJAX REQUEAST && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == $request 
+            # var_dump($_SERVER);
+            
+        } else { 
+
+            $this->r->branch(array(
+            'src' => 
+                array(
+                    'html' => $this->a->getView('netcoid','framework/bottom.php'),
+                    'id' => 'rr-3'
+                ),
+            'css' => 
+                array(
+                    $this->a->getPath('default','css/framework.css'),
+                    $this->a->getPath('netcoid','css/main.v2.css')
+                ),
+             'cache' => 0
+            ),2); # END
+
+            echo $this->a->getView('netcoid','Framework/Footer.php');
+        }
     }
 
     private function __checkPostUser(){
@@ -438,8 +447,17 @@ class Posts Extends Engine\Red
             $p['title'] = $_POST['title'];
             $p['content'] = $this->v->safe($_POST['content']);
 
+            # START PLUGIN
             $m = new Engine\Vendors\Stackexchangeinc\wmd\ElephantMarkdown;
-            $p['content_html'] = $m->netcoid_safe_parse($_POST['content']);
+            $vendorHTMLpurifier = new Engine\Vendors\HTMLpurifier\HTMLpurifier;
+            $HTMLpurifierConfig = HTMLPurifier_Config::createDefault();
+            $HTMLpurifierConfig->set('HTML.SafeObject', "1");
+            $HTMLpurifierConfig->set('Output.FlashCompat', "1");
+            $HTMLpurifierConfig->set('Filter.YouTube', "1");
+
+            $purifier = new HTMLPurifier($HTMLpurifierConfig);
+            $p['content_html'] = $purifier->purify($m->parse($_POST['content']));
+            # END PLUGIN
 
             $time = new DateTime(NULL, new DateTimeZone('Asia/Jakarta'));
 

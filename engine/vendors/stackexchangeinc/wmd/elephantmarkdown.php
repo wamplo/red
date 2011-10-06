@@ -49,17 +49,6 @@ class ElephantMarkdown
     protected $footnoteCounter = 1;
     protected $listLevel = 0;
 
-    public static function netcoid_safe_parse($text)
-    {
-        $md = new static;
-
-        # http://stackoverflow.com/questions/885532/safe-markdown-processor-for-php
-        $md->NO_MARKUP = true;
-        $md->NO_ENTITIES = true;
-
-        return $md->transform($text);        
-    }
-
     public static function parse($text)
     {
         $md = new static;

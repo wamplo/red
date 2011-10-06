@@ -282,25 +282,33 @@ class Profiles Extends Engine\Red
     /**
      * FRAMEWORK __FOOTER
      * @author Adam Ramadhan
-     * @version 1
+     * @version 1 + PJAX
      **/
     private function __Footer(){
-        
-        $this->r->branch(array(
-        'src' => 
-            array(
-                'html' => $this->a->getView('netcoid','Framework/Bottom.php'),
-                'id' => 'rr-3'
-            ),
-        'css' => 
-            array(
-                $this->a->getPath('default','css/framework.css'),
-                $this->a->getPath('netcoid','css/main.v2.css')
-            ),
-         'cache' => 0
-        ),2); # END
 
-        echo $this->a->getView('netcoid','Framework/Footer.php');
+        if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest" ) {
+
+            # AN AJAX REQUEAST && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == $request 
+            # var_dump($_SERVER);
+            
+        } else { 
+
+            $this->r->branch(array(
+            'src' => 
+                array(
+                    'html' => $this->a->getView('netcoid','framework/bottom.php'),
+                    'id' => 'rr-3'
+                ),
+            'css' => 
+                array(
+                    $this->a->getPath('default','css/framework.css'),
+                    $this->a->getPath('netcoid','css/main.v2.css')
+                ),
+             'cache' => 0
+            ),2); # END
+
+            echo $this->a->getView('netcoid','Framework/Footer.php');
+        }
     }
 }
 ?>

@@ -80,7 +80,7 @@ class Users Extends Engine\Red
         $this->r->branch(array(
             'src' => 
                 array(
-                    'html' => $this->a->getView('netcoid','Users/Dashboard.php', $dashboarddata),
+                    'html' => $this->a->getView('netcoid','users/dashboard.php', $dashboarddata),
                     'id' => 'rr-2'
                 ),
             'css' => 
@@ -92,7 +92,7 @@ class Users Extends Engine\Red
             'js' => 
                 array(
                     array(
-                        $this->a->getPath('netcoid','js/Users/Dashboard.js')
+                        $this->a->getPath('netcoid','js/users/dashboard.js')
                     ),
                 ),
             'cache' => 0
@@ -151,13 +151,22 @@ class Users Extends Engine\Red
 
             $e['information'] = $this->v->safe($_POST['information']);
             #$e['information_html'] = $_POST['information_html'];
-            
-            $m = new Engine\Vendors\Stackexchangeinc\wmd\ElephantMarkdown;
-            $e['information_html'] = $m->netcoid_safe_parse($_POST['information']);
 
+            # START PLUGIN
+            $m = new Engine\Vendors\Stackexchangeinc\wmd\ElephantMarkdown;
+            $vendorHTMLpurifier = new Engine\Vendors\HTMLpurifier\HTMLpurifier;
+            $HTMLpurifierConfig = HTMLPurifier_Config::createDefault();
+            $HTMLpurifierConfig->set('HTML.SafeObject', "1");
+            $HTMLpurifierConfig->set('Output.FlashCompat', "1");
+            $HTMLpurifierConfig->set('Filter.YouTube', "1");
+
+            $purifier = new HTMLPurifier($HTMLpurifierConfig);
+            $e['information_html'] = $purifier->purify($m->parse($_POST['information']));
+            # END PLUGIN
+            
             $e['uid'] = $this->e->get('uid');
 
-            $this->v->required($_POST['information_html'], 'security@networks.co.id');
+            $this->v->required($e['information_html'], 'security@networks.co.id');
 
             if(!sizeof($this->v->errors)) 
             {
@@ -166,7 +175,7 @@ class Users Extends Engine\Red
             }
         }
 
-        $this->__Header();
+        $this->__Header('Netcoid &mdash; Edit Profile');
 
         $editprofile = array(
             'forms' => new Forms,
@@ -266,22 +275,30 @@ class Users Extends Engine\Red
      * @version 1 + PJAX
      **/
     private function __Footer(){
-            
-        $this->r->branch(array(
-        'src' => 
-            array(
-                'html' => $this->a->getView('netcoid','Framework/Bottom.php'),
-                'id' => 'rr-3'
-            ),
-        'css' => 
-            array(
-                $this->a->getPath('default','css/framework.css'),
-                $this->a->getPath('netcoid','css/main.v2.css')
-            ),
-         'cache' => 0
-        ),2); # END
 
-        echo $this->a->getView('netcoid','Framework/Footer.php');
+        if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest" ) {
+
+            # AN AJAX REQUEAST && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == $request 
+            # var_dump($_SERVER);
+            
+        } else { 
+
+            $this->r->branch(array(
+            'src' => 
+                array(
+                    'html' => $this->a->getView('netcoid','framework/bottom.php'),
+                    'id' => 'rr-3'
+                ),
+            'css' => 
+                array(
+                    $this->a->getPath('default','css/framework.css'),
+                    $this->a->getPath('netcoid','css/main.v2.css')
+                ),
+             'cache' => 0
+            ),2); # END
+
+            echo $this->a->getView('netcoid','Framework/Footer.php');
+        }
     }
 }
 ?>

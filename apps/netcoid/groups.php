@@ -37,9 +37,6 @@ class Groups Extends Engine\Red
      **/
     public function Index(){
 
-        $this->__Header();
-
-        $this->h->showAll();
         $o = new Apps\Netcoid\Models\Follow;
         $indexdata = array(
             'user'  => $this->u->getData($this->e->get('uid')),
@@ -50,6 +47,9 @@ class Groups Extends Engine\Red
             'login' => $this->e->get('uid'),
             'follow' => $o->isFollowingGID($this->e->get('uid'), $_GET['id'])
         );
+
+        $this->__Header('Netcoid &mdash; ' . $indexdata['info']['name']);  
+        $this->h->showAll();
 
         $this->i->maxperpage = 20;
         $this->i->totalrow = $this->p->CountPostsbyGroup($_GET['id']);
@@ -123,26 +123,34 @@ class Groups Extends Engine\Red
     /**
      * FRAMEWORK __FOOTER
      * @author Adam Ramadhan
-     * @version 1
+     * @version 1 + PJAX
      **/
     private function __Footer(){
-        $this->r->branch(array(
-        'src' => 
-            array(
-                'html' => $this->a->getView('netcoid','Framework/Bottom.php'),
-                'id' => 'rr-3'
-            ),
-        'css' => 
-            array(
-                $this->a->getPath('default','css/framework.css'),
-                $this->a->getPath('netcoid','css/main.v2.css')
-            ),
-         'cache' => 0
-        ),2); # END
 
-        echo $this->a->getView('netcoid','Framework/Footer.php');
+        if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest" ) {
+
+            # AN AJAX REQUEAST && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == $request 
+            # var_dump($_SERVER);
+            
+        } else { 
+
+            $this->r->branch(array(
+            'src' => 
+                array(
+                    'html' => $this->a->getView('netcoid','framework/bottom.php'),
+                    'id' => 'rr-3'
+                ),
+            'css' => 
+                array(
+                    $this->a->getPath('default','css/framework.css'),
+                    $this->a->getPath('netcoid','css/main.v2.css')
+                ),
+             'cache' => 0
+            ),2); # END
+
+            echo $this->a->getView('netcoid','Framework/Footer.php');
+        }
     }
-
     private function __checkGroup(){
 
         $status = $this->g->getStatusbyGID($_GET['id']);
