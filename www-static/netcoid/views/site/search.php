@@ -7,7 +7,7 @@
 
 <div class="clearfix" id="red-content">
 
-	<div class="dr" style="width: 480px;">
+	<div class="ds" style="width: 480px;">
 
 		<ul class="ay">
 			<li><h3>Netcoid HQ</h3></li>
@@ -34,7 +34,7 @@
 		</ul>
 	</div>
 
-	<div class="du" style="width: 480px;">
+	<div class="dv" style="width: 480px;">
 		<ul class="ay">
 			<li><h3>Fashion</h3></li>
 			<li><a class="a" href="#">Man</a></li>

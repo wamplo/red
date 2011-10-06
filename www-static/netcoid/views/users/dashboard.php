@@ -35,7 +35,7 @@ a .h:hover{text-decoration:none;color:#444;background-color:#FFFDE8;border:1px s
 
 	<!-- IF NO POST -->
 	<?php if (empty($data['posts'])): ?>
-        <a href="/search"><div class="ds h">
+        <a href="/search"><div class="dt h">
             <div class="az">Ikuti Perkembangan disekitar anda</div> 
             <div class="bg">Jelajahi groups, follow pelaku bisnis atau topik yang ingin anda ikuti.</div>
         </div></a>

@@ -1,7 +1,7 @@
 <?php #var_dump($data); ?>
 
 	<div class="clearfix" id="profiles-header">
-		<div class="dr" style="width:700px">
+		<div class="ds" style="width:700px">
 		<ul id="profiles-menu">
 
 			<?php if ($data['login'] == $data['user']['uid']): ?>
@@ -45,5 +45,5 @@
 
 		</ul>
 		</div>
-		<div class="du"><a data-pjax="#rr-2-1" class="u" href="/<?php echo $data['user']['username']; ?>"><?php echo $data['user']['name'];  ?></a></div>
+		<div class="dv"><a data-pjax="#rr-2-1" class="u" href="/<?php echo $data['user']['username']; ?>"><?php echo $data['user']['name'];  ?></a></div>
 	</div>
