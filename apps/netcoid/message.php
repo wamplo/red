@@ -101,7 +101,6 @@ class Message Extends Engine\Red
      * @version 1
      **/
     public function Send(){
-        $this->__Header('Netcoid &mdash; Send Message');  
 
         # CHECK IF THE RECEVER IS THERE IF NOT REDIRECT
         $user = $this->u->uidexist($_GET['id']);
@@ -139,6 +138,9 @@ class Message Extends Engine\Red
             # GET DATA FROM POST
         }
 
+
+        $this->__Header('Netcoid &mdash; Send Message');  
+        
         $messagedata = array(
             'forms' => $this->f
         );
