@@ -10,12 +10,12 @@ if (strlen($data['post']['title']) > 60) {
 
 	<!-- START POST HEADER -->
 	<div class="clearfix" id="post-header">
-		<div class="ds" style="width:700px">
+		<div class="dq" style="width:700px">
 			<ul>
 				<li><b><?php echo $data['post']['title']; ?></b></li>
 			</ul>
 		</div>
-		<div class="dv"><a data-pjax="#rr-2" href="<?php echo $data['post']['username']; ?>" class="u"><?php echo $data['post']['name']; ?></a></div>
+		<div class="dt"><a data-pjax="#rr-2" href="<?php echo $data['post']['username']; ?>" class="u"><?php echo $data['post']['name']; ?></a></div>
 	</div>
 
 	<!-- START CONTENT -->
@@ -35,15 +35,15 @@ if (strlen($data['post']['title']) > 60) {
 	<!-- START MENU FOR THREAD STARTER -->
 	<?php if ($data['login'] == $data['post']['post_UID']) : ?>
 		<div class="clearfix" id="post-menu">
-			<ul class="ds clearfix">
-				<li class="ds"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
+			<ul class="dq clearfix">
+				<li class="dq"><a href="/post/edit?id=<?php echo $_GET['id']; ?>">Edit</a></li>
 			</ul>
-			<ul class="dv">
+			<ul class="dt">
 				
 				<?php if (strtotime($data['post']['time_bump']) < strtotime('-1 Hour')): ?>
-					<li class="ds"><a href="/post/bump?id=<?php echo $_GET['id']; ?>">Bump</a></li>
+					<li class="dq"><a href="/post/bump?id=<?php echo $_GET['id']; ?>">Bump</a></li>
 				<?php endif ?>
-				<li class="ds"><a href="/post/delete?id=<?php echo $_GET['id']; ?>">x</a></li>
+				<li class="dq"><a href="/post/delete?id=<?php echo $_GET['id']; ?>">x</a></li>
 			</ul>
 		</div>
 	<?php endif ?>
@@ -70,7 +70,7 @@ if (strlen($data['post']['title']) > 60) {
 		    padding: 5px 10px;
 		">
 			<style type="text/css">
-			.bn {
+			.bl {
 				position: relative;
 				top: 2px;
 			}
@@ -80,15 +80,15 @@ if (strlen($data['post']['title']) > 60) {
 			<meta property="og:type" content="article" />
 			<meta property="og:site_name" content="Netcoid Indonesia" />
 			<meta property="fb:admins" content="1667473111" />
-			<div class="fb-like bn ds" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana"></div>
+			<div class="fb-like bl dq" data-send="false" data-layout="button_count" data-show-faces="false" data-font="verdana"></div>
 			<!-- FACEBOOK END -->
 
 			<!-- TWITTER -->
-			<div class="bn ds"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="netcoid" data-lang="id">Tweet</a></div>
+			<div class="bl dq"><a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="netcoid" data-lang="id">Tweet</a></div>
 			<!-- TWITTER END -->
 
 			<!-- GOOGLE PLUS -->
-			<div class="bn ds">
+			<div class="bl dq">
 			<!-- Place this tag where you want the +1 button to render -->
 			<div class="g-plusone" data-size="medium"></div>
 			<!-- Place this render call where appropriate -->

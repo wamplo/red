@@ -35,7 +35,7 @@
 	<?php #var_dump($data); ?>
 
 	<!-- SINGLE MESSAGE START -->
-	<div class="ds blog-post" id="single-message">
+	<div class="dq blog-post" id="single-message">
 		<h1><?php echo $data['message']['subject'] ?></h1>
 		<?php echo $data['message']['message']; ?>
 
@@ -50,7 +50,7 @@
 	<!-- SINGLE MESSAGE END -->
 
 	<!-- UNREAD MESSAGES START -->
-	<div class="dv f" id="unread-messages">
+	<div class="dt f" id="unread-messages">
 		<ul>
 			<?php foreach ($data['messages'] as $message): ?>
 				<a class="a" href="/messages?id=<?php echo $message['mid']; ?>"><li>

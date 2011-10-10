@@ -24,7 +24,7 @@
 <div id="rr-2-2">
 	<div class="clearfix" id="red-content">
 
-		<div class="users-left50 ds dg" id="red-wmd"><?php $data['forms']->openForm('red-wmd'); ?>
+		<div class="users-left50 dq de" id="red-wmd"><?php $data['forms']->openForm('red-wmd'); ?>
 			<ul>
 				<li id="form-header"><h3><strong>Profile</strong> <a style="font-size:12px;margin-left:10px" class="s" href="/<?php echo $data['username']; ?>">See Profile</a></h3></li>
 				<div class="clearfix" id="wmd-button-bar"></div>
@@ -44,7 +44,7 @@
 			</ul>
 		<?php $data['forms']->closeForm('red-wmd'); ?></div>	
 
-		<div class="dv users-right50">
+		<div class="dt users-right50">
 			<div id="howto-informationbox">Informasi yang anda masukan akan dimuat pada halaman depan profil anda</div>
 		</div>
 	</div>

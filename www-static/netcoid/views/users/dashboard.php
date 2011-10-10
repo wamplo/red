@@ -13,15 +13,15 @@
     display:block;
 }
 
-a .h:hover{text-decoration:none;color:#444;background-color:#FFFDE8;border:1px solid #ddd;}
-.h{border: 1px solid #CCC;}
-.h .az{    background-image: url("www-static/netcoid/assets/img/icons/lisat.png");
+a .k:hover{text-decoration:none;color:#444;background-color:#FFFDE8;border:1px solid #ddd;}
+.k{border: 1px solid #CCC;}
+.k .da{    background-image: url("www-static/netcoid/assets/img/icons/lisat.png");
     background-position: 10px center;
     background-repeat: no-repeat;
     border-bottom: 1px solid #EEEEEE;
     padding: 5px;
     text-align: center;}
-.h .bg{padding: 5px;}
+.k .dg{padding: 5px;}
 </style>
 
 <?php 
@@ -36,9 +36,9 @@ a .h:hover{text-decoration:none;color:#444;background-color:#FFFDE8;border:1px s
 
 		<!-- IF NO POST -->
 		<?php if (empty($data['posts'])): ?>
-	        <a href="/search"><div class="dt h">
-	            <div class="az">Ikuti Perkembangan disekitar anda</div> 
-	            <div class="bg">Jelajahi groups, follow pelaku bisnis atau topik yang ingin anda ikuti.</div>
+	        <a href="/search"><div class="dr k">
+	            <div class="da">Ikuti Perkembangan disekitar anda</div> 
+	            <div class="dg">Jelajahi groups, follow pelaku bisnis atau topik yang ingin anda ikuti.</div>
 	        </div></a>
 
 	        <div style="margin-top: 20px;">
