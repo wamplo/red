@@ -13,6 +13,10 @@ padding-left: 10px;
 border-left: 1px solid #EEE;
 color: #666;
 }
+
+a:hover #cat-description{	
+	text-decoration:none !important;
+}
 </style>
 
 <div class="clearfix" id="red-content">
@@ -29,8 +33,9 @@ color: #666;
 			if (isset($value['children'])) {
 				foreach ($value['children'] as $children) {
 					echo '<li class="level2">
-							<a data-pjax="#rr-2" href="/group?id='.$children['GID'].'" class="a">'.$children['name'].'</a>
+							<a data-pjax="#rr-2" href="/group?id='.$children['GID'].'" class="a">'.$children['name'].'
 							<p id="cat-description">'.$children['description'].'</p>
+							</a>
 						</li>';
 
 					if (isset($children['children'])) {

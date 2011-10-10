@@ -109,7 +109,7 @@ class Message Extends Engine\Red
             redirect('/');
         }
 
-        if($this->f->checkHumanPost(5)) {
+        if($this->f->checkHumanPost(3)) {
 
             $m['RUID'] = $_GET ['id']; # RECEVER
             $m['SUID'] = $this->e->get ( 'uid' ); # SENDER
