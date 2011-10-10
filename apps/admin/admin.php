@@ -52,6 +52,27 @@ class Admin Extends Engine\Red
         $this->__Footer();
     }
 
+    public function Accounts(){
+        $this->__Header();
+
+        # INDEX
+        $this->r->branch(array(
+        'src' => 
+            array(
+                'html' => $this->a->getView('admin','accounts/index.php'),
+                'id' => 'rr-2'
+            ),
+        'css' => 
+            array(
+                $this->a->getPath('default','css/framework.css'),
+                $this->a->getPath('netcoid','css/main.v2.css')
+            ),
+         'cache' => 0
+        )); # END
+
+        $this->__Footer();
+    }
+
     /**
      * www.networks.co.id/skel
      * Search Page Netcoid
@@ -146,20 +167,15 @@ class Admin Extends Engine\Red
                     'description' => $desc 
                 )
             );
-
-            $o = new Apps\Netcoid\Models\Mentions;
-            $m = new Apps\Netcoid\Models\Messages;
-
+            
             $menudata = array(
-                'sessions' => $this->e,
-                'countmentions' => $o->countMentionUID($this->e->get('uid')),
-                'countmessages' => $m->countMessageUID($this->e->get('uid'))
+                'sessions' => $this->e
             );
 
             $this->r->branch(array(
                 'src' => 
                     array(
-                        'html' => $this->a->getView('netcoid','framework/menu.php', $menudata),
+                        'html' => $this->a->getView('admin','framework/menu.php', $menudata),
                         'id' => 'rr-1'
                     ),
                 'css' => 
@@ -175,24 +191,33 @@ class Admin Extends Engine\Red
     /**
      * FRAMEWORK __FOOTER
      * @author Adam Ramadhan
-     * @version 1
+     * @version 1 + PJAX
      **/
     private function __Footer(){
-        $this->r->branch(array(
-        'src' => 
-            array(
-                'html' => $this->a->getView('netcoid','Framework/Bottom.php'),
-                'id' => 'rr-3'
-            ),
-        'css' => 
-            array(
-                $this->a->getPath('default','css/framework.css'),
-                $this->a->getPath('netcoid','css/main.v2.css')
-            ),
-         'cache' => 0
-        ),2); # END
 
-        echo $this->a->getView('netcoid','Framework/Footer.php');
+        if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == "XMLHttpRequest" ) {
+
+            # AN AJAX REQUEAST && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == $request 
+            # var_dump($_SERVER);
+            
+        } else { 
+
+            $this->r->branch(array(
+            'src' => 
+                array(
+                    'html' => $this->a->getView('netcoid','framework/bottom.php'),
+                    'id' => 'rr-3'
+                ),
+            'css' => 
+                array(
+                    $this->a->getPath('default','css/framework.css'),
+                    $this->a->getPath('netcoid','css/main.v2.css')
+                ),
+             'cache' => 0
+            ),2); # END
+
+            echo $this->a->getView('netcoid','Framework/Footer.php');
+        }
     }
 }
 ?>

@@ -26,6 +26,8 @@ CREATE TABLE `users` (
   `facebook` VARCHAR(255) NULL ,
   `reset` VARCHAR(255) NULL ,
 #ALTER TABLE users ADD COLUMN timeregister DATETIME NULL AFTER reset; 
+#ALTER TABLE users CHANGE timeregister time_register DATETIME NULL;
+#ALTER TABLE users CHANGE timelogin time_login DATETIME NULL;
   `timeregister` DATETIME NULL,
   `timelogin` DATETIME NULL,
   PRIMARY KEY (`UID`) ,

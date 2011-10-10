@@ -9,10 +9,15 @@ if (! defined ( 'SECURE' ))
 
 class RedRiver extends Assets
 {
+	# CONFIGURATION
 	public $start = FALSE;
 	public $end = FALSE;
-	public $ajax = FALSE;
+	public $ajax = TRUE; # FALSENYA MASIH BUG
 	private $dev = FALSE;
+
+	# LOADED ASSET
+	public $loadedcss = array();
+	public $loadedjs  = array();
 
 	function start(){
 
@@ -21,7 +26,8 @@ class RedRiver extends Assets
 
 		if ($this->ajax) {
 			# REDRIVER
-			echo "\n\t" . '<script type="text/javascript" src="'.$this->getPath('default', 'js/redriver.js').'?_='.rand().'"></script>';	
+			echo "\n\t" . '<script type="text/javascript" src="'.$this->getPath('default', 'js/redriver.js').'?_='.rand().'"></script>';
+			echo '<div id="loading"></div>';
 		}
 			# PJAX
 			echo "\n\t" . '<script type="text/javascript" src="/engine/vendors/github/defunkt-jquery-pjax-7d9841e/jquery.pjax.js"></script>';
@@ -60,7 +66,6 @@ class RedRiver extends Assets
 		$o['css'] = $params['css'];
 		$o['src']['id'] = $params['src']['id'];
 		$o['src']['html'] = $params['src']['html'];
-
 		# SET PLACER
 		echo "\n\t" . '<div id="'.$params['src']['id'].'"></div>';
 
@@ -68,10 +73,36 @@ class RedRiver extends Assets
 		$branch = "\n\t" . '<script>$.redriver.branch({js:'.json_encode($o['js'],JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP).',css:'.json_encode($o['css'],JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP).',src:'.json_encode($o['src'],JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP).',cache:'.json_encode($o['cache']).' });</script>';
 
 		echo $branch;
-	}
 
-	public $loadedcss = array();
-	public $loadedjs  = array();
+		# FIX PJAX BUG NOT LOAD JS
+		if(!empty($_SERVER['HTTP_X_REQUESTED_WITH'])) {
+			# PREPARE JAVASCRIPT
+			if (!empty($params['js'])) {
+				foreach ($params['js'] as $jsstate) 
+				{
+					foreach ($jsstate as $js) {
+
+						# IS IT LOADED ?
+						if (!in_array($js, $this->loadedjs)) {
+
+							# CACHE ? 
+							if ($params['cache'] == 1) {
+								echo '<script type="text/javascript" src="'.$js.'"></script>';
+							}
+
+							# NO CACHE ? 
+							if ($params['cache'] == 0) {
+								echo '<script type="text/javascript" src="'.$js.'"></script>';
+							}
+
+							# PUSH TO LOADED CSS
+							$this->loadedjs[] = $js;
+						}	
+					}		
+				}
+			}
+		}
+	}
 
 	public function noAjax($params, $status){
 
@@ -85,29 +116,28 @@ class RedRiver extends Assets
 		if ($status == 0) {
 			$this->start();
 		}
+		if (!empty($params['css'])) {
+			foreach ($params['css'] as $css) {
 
-		foreach ($params['css'] as $css) {
+				# IS IT LOADED ?
+				if (!in_array($css, $this->loadedcss)) {
 
-			# IS IT LOADED ?
-			if (!in_array($css, $this->loadedcss)) {
+					# CACHE ? 
+					if ($params['cache'] == 0) {
+						echo "\n\t" . '<link type="text/css" rel="stylesheet" href="'.$css.'?_='.rand().'">';
+					}
 
-				# CACHE ? 
-				if ($params['cache'] == 0) {
-					echo "\n\t" . '<link type="text/css" rel="stylesheet" href="'.$css.'?_='.rand().'">';
+					# NO CACHE ? 
+					if ($params['cache'] == 1) {
+						echo "\n\t" . '<link type="text/css" rel="stylesheet" href="'.$css.'">';
+					}
+
+					# PUSH TO LOADED CSS
+					$this->loadedcss[] = $css;
 				}
-
-				# NO CACHE ? 
-				if ($params['cache'] == 1) {
-					echo "\n\t" . '<link type="text/css" rel="stylesheet" href="'.$css.'">';
-				}
-
-				# PUSH TO LOADED CSS
-				$this->loadedcss[] = $css;
 			}
 		}
-		
 		echo "\n\t" . '<div id="'.$params['src']['id'].'">'.$params['src']['html'].'</div>';
-
 		#echo $params['src']['html'];
 		
 		# PREPARE JAVASCRIPT
@@ -119,28 +149,20 @@ class RedRiver extends Assets
 					# IS IT LOADED ?
 					if (!in_array($js, $this->loadedjs)) {
 
+						# CACHE ? 
+						if ($params['cache'] == 1) {
+							echo '<script type="text/javascript" src="'.$js.'"></script>';
+						}
+
+						# NO CACHE ? 
+						if ($params['cache'] == 0) {
+							echo '<script type="text/javascript" src="'.$js.'"></script>';
+						}
+
 						# PUSH TO LOADED CSS
 						$this->loadedjs[] = $js;
 					}	
 				}		
-			}
-		}
-
-		# LOAD ONLY AT THE END
-		if ($status == 2) {
-			
-			# ECHO JAVASCRIPT
-			foreach ($this->loadedjs as $javascript) {
-				
-				# CACHE ? 
-				if ($params['cache'] == 1) {
-					echo '<script type="text/javascript" src="'.$javascript.'"></script>';
-				}
-
-				# NO CACHE ? 
-				if ($params['cache'] == 0) {
-					echo '<script type="text/javascript" src="'.$javascript.'"></script>';
-				}
 			}
 		}
 	}

@@ -300,7 +300,7 @@ class Api extends Engine\Red
                     $data['comment_UID'] = $this->e->get('uid');
                     $data['comment_PID'] = $_POST['id'];            
                     $time = new DateTime ( NULL, new DateTimeZone ( 'Asia/Jakarta' ) );
-                    $data['timecreate'] = $time->format('Y-m-d H:i:s');
+                    $data['time_create'] = $time->format('Y-m-d H:i:s');
                     $m = new Apps\Netcoid\Models\Mentions;
 
                     # SET COMMENT

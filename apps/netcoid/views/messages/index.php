@@ -33,7 +33,7 @@ font-size: 12px;
 			<?php echo $message['subject']; ?>
 		</div>
 		<div id="messages-meta">
-			<a class="u" href="/<?php echo $message['username']; ?>"><?php echo $message['name']; ?></a> <i>on</i> <?php echo $message['timecreate'] ?>
+			<a class="u" href="/<?php echo $message['username']; ?>"><?php echo $message['name']; ?></a> <i>on</i> <?php echo $message['time_create'] ?>
 		</div>
 		</li></a>
 	<?php endforeach ?>
@@ -49,7 +49,7 @@ font-size: 12px;
 			<?php echo $archive['subject']; ?>
 		</div>
 		<div id="messages-meta">
-			<a class="u" href="/<?php echo $archive['username']; ?>"><?php echo $archive['name']; ?></a> <i>on</i> <?php echo $archive['timecreate'] ?>
+			<a class="u" href="/<?php echo $archive['username']; ?>"><?php echo $archive['name']; ?></a> <i>on</i> <?php echo $archive['time_create'] ?>
 		</div>
 		</li></a>
 	<?php endforeach ?>

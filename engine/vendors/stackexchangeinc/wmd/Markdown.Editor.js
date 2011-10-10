@@ -5,9 +5,9 @@
     var util = {},
         position = {},
         ui = {},
-        doc = top.document,
-        re = top.RegExp,
-        nav = top.navigator,
+        doc = window.document,
+        re = window.RegExp,
+        nav = window.navigator,
         SETTINGS = { lineLength: 72 },
 
     // Used to work around some browser bugs where we can't use feature testing.
@@ -28,7 +28,7 @@
     // The text that appears on the upper part of the dialog box when
     // entering links.
     var linkDialogText = "<p><b>Insert Hyperlink</b></p><p>http://example.com/ \"optional title\"</p>";
-    var imageDialogText = "<p><b>Insert Image</b></p><p>http://example.com/images/diagram.jpg \"optional title\"</p>";
+    var imageDialogText = "<p><b>Insert Image</b></p><p>http://example.com/images/diagram.jpg \"optional title\"<br><br>Need <a href='http://www.google.com/search?q=free+image+hosting' target='_blank'>free image hosting?</a></p>";
 
     // The default text that appears in the dialog input box when entering
     // links.
@@ -410,7 +410,7 @@
             }
 
             if (!uaSniffed.isIE || mode != "moving") {
-                timer = top.setTimeout(refreshState, 1);
+                timer = setTimeout(refreshState, 1);
             }
             else {
                 inputStateObj = null;
@@ -425,7 +425,7 @@
         this.setCommandMode = function () {
             mode = "command";
             saveState();
-            timer = top.setTimeout(refreshState, 0);
+            timer = setTimeout(refreshState, 0);
         };
 
         this.canUndo = function () {
@@ -539,8 +539,8 @@
                 if (event.preventDefault) {
                     event.preventDefault();
                 }
-                if (top.event) {
-                    top.event.returnValue = false;
+                if (window.event) {
+                    window.event.returnValue = false;
                 }
                 return;
             }
@@ -786,8 +786,8 @@
 
             var result = 0;
 
-            if (top.innerHeight) {
-                result = top.pageYOffset;
+            if (window.innerHeight) {
+                result = window.pageYOffset;
             }
             else
                 if (doc.documentElement && doc.documentElement.scrollTop) {
@@ -833,7 +833,7 @@
         var applyTimeout = function () {
 
             if (timeout) {
-                top.clearTimeout(timeout);
+                clearTimeout(timeout);
                 timeout = undefined;
             }
 
@@ -848,7 +848,7 @@
                 if (delay > maxDelay) {
                     delay = maxDelay;
                 }
-                timeout = top.setTimeout(makePreviewHtml, delay);
+                timeout = setTimeout(makePreviewHtml, delay);
             }
         };
 
@@ -935,12 +935,12 @@
             var fullTop = position.getTop(panels.input) - getDocScrollTop();
 
             if (uaSniffed.isIE) {
-                top.setTimeout(function () {
-                    top.scrollBy(0, fullTop - emptyTop);
+                setTimeout(function () {
+                    window.scrollBy(0, fullTop - emptyTop);
                 }, 0);
             }
             else {
-                top.scrollBy(0, fullTop - emptyTop);
+                window.scrollBy(0, fullTop - emptyTop);
             }
         };
 
@@ -968,7 +968,7 @@
         style = background.style;
         style.position = "absolute";
         style.top = "0";
-        
+
         style.zIndex = "1000";
 
         if (uaSniffed.isIE) {
@@ -1135,7 +1135,7 @@
 
         // Why is this in a zero-length timeout?
         // Is it working around a browser bug?
-        top.setTimeout(function () {
+        setTimeout(function () {
 
             createDialog();
 
@@ -1227,8 +1227,8 @@
                     key.preventDefault();
                 }
 
-                if (top.event) {
-                    top.event.returnValue = false;
+                if (window.event) {
+                    window.event.returnValue = false;
                 }
             }
         });
@@ -1485,10 +1485,11 @@
 
     commandProto.wrap = function (chunk, len) {
         this.unwrap(chunk);
-        var regex = new re("(.{1," + len + "})( +|$\\n?)", "gm");
+        var regex = new re("(.{1," + len + "})( +|$\\n?)", "gm"),
+            that = this;
 
         chunk.selection = chunk.selection.replace(regex, function (line, marked) {
-            if (new re("^" + this.prefixes, "").test(line)) {
+            if (new re("^" + that.prefixes, "").test(line)) {
                 return line;
             }
             return marked + "\n";
@@ -1650,7 +1651,7 @@
         chunk.findTags(/\s*!?\[/, /\][ ]?(?:\n[ ]*)?(\[.*?\])?/);
         var background;
 
-        if (chunk.endTag.length > 1) {
+        if (chunk.endTag.length > 1 && chunk.startTag.length > 0) {
 
             chunk.startTag = chunk.startTag.replace(/!?\[/, "");
             chunk.endTag = "";
@@ -1658,6 +1659,12 @@
 
         }
         else {
+            
+            // We're moving start and end tag back into the selection, since (as we're in the else block) we're not
+            // *removing* a link, but *adding* one, so whatever findTags() found is now back to being part of the
+            // link text. linkEnteredCallback takes care of escaping any brackets.
+            chunk.selection = chunk.startTag + chunk.selection + chunk.endTag;
+            chunk.startTag = chunk.endTag = "";
 
             if (/\n\n/.test(chunk.selection)) {
                 this.addLinkDef(chunk, null);
@@ -1671,8 +1678,26 @@
                 background.parentNode.removeChild(background);
 
                 if (link !== null) {
-
-                    chunk.startTag = chunk.endTag = "";
+                    // (                          $1
+                    //     [^\\]                  anything that's not a backslash
+                    //     (?:\\\\)*              an even number (this includes zero) of backslashes
+                    // )
+                    // (?=                        followed by
+                    //     [[\]]                  an opening or closing bracket
+                    // )
+                    //
+                    // In other words, a non-escaped bracket. These have to be escaped now to make sure they
+                    // don't count as the end of the link or similar.
+                    // Note that the actual bracket has to be a lookahead, because (in case of to subsequent brackets),
+                    // the bracket in one match may be the "not a backslash" character in the next match, so it
+                    // should not be consumed by the first match.
+                    // The "prepend a space and finally remove it" steps makes sure there is a "not a backslash" at the
+                    // start of the string, so this also works if the selection begins with a bracket. We cannot solve
+                    // this by anchoring with ^, because in the case that the selection starts with two brackets, this
+                    // would mean a zero-width match at the start. Since zero-width matches advance the string position,
+                    // the first bracket could then not act as the "not a backslash" for the second.
+                    chunk.selection = (" " + chunk.selection).replace(/([^\\](?:\\\\)*)(?=[[\]])/g, "$1\\").substr(1);
+                    
                     var linkDef = " [999]: " + properlyEncoded(link);
 
                     var num = that.addLinkDef(chunk, linkDef);

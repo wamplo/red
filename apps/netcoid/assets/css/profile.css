@@ -1,12 +1,15 @@
 #profiles-header {
-border-bottom: 1px solid #DDD;
-padding: 5px 0;
-margin-bottom: 10px;
+	border-bottom: 1px solid #DDD;
+	padding: 5px 0;
+	margin-bottom: 10px;
 }
 
-#profiles-menu li{float:left;margin-right:15px;}
+#profiles-menu li{
+	float:left;
+	margin-right:15px;
+}
 
-/* HD DEAFULT */
+/* YOUTUBE HD DEAFULT */
 .profile-content object{
 	width:960px;
 	height:518px;

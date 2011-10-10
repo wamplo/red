@@ -34,8 +34,8 @@ class Comments extends \Engine\libraries\Database {
 	}
 
 	function getCommentsByPID($pid, $from = 0, $limit = 20) {
-		$data = $this->fetchAll ( "SELECT users.name, users.username, comments.comment, comments.comment_html, comments.CID, comments.timecreate, comments.comment_UID
-		FROM comments, users WHERE comments.comment_UID = users.UID AND comment_PID = :pid ORDER BY timecreate ASC LIMIT $limit", array('pid' => $pid));
+		$data = $this->fetchAll ( "SELECT users.name, users.username, comments.comment, comments.comment_html, comments.CID, comments.time_create, comments.comment_UID
+		FROM comments, users WHERE comments.comment_UID = users.UID AND comment_PID = :pid ORDER BY time_create ASC LIMIT $limit", array('pid' => $pid));
 		return $data;
 	}
 

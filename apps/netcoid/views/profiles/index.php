@@ -1,7 +1,7 @@
 <div id="red-content">
 
 	<?php 
-		echo $this->getView('netcoid','profiles/topnav.php', $data);
+	    echo $this->getView('netcoid','profiles/topnav.php', $data);
 	?>
 
 	<div id="rr-2-1">

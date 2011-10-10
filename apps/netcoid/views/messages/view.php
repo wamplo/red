@@ -58,7 +58,7 @@
 					<?php echo $message['subject']; ?>
 				</div>
 				<div id="messages-meta">
-					<a class="u" href="/<?php echo $message['username']; ?>"><?php echo $message['name']; ?></a> <i>on</i> <?php echo $message['timecreate'] ?>
+					<a class="u" href="/<?php echo $message['username']; ?>"><?php echo $message['name']; ?></a> <i>on</i> <?php echo $message['time_create'] ?>
 				</div>
 				</li></a>
 			<?php endforeach ?>

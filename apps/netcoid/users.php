@@ -185,10 +185,11 @@ class Users Extends Engine\Red
         );
 
         $this->h->showMessage();
+        
         $this->r->branch(array(
             'src' => 
                 array(
-                    'html' => $this->a->getView('netcoid','Users/Editprofile.php',$editprofile),
+                    'html' => $this->a->getView('netcoid','users/editprofile.php',$editprofile),
                     'id' => 'rr-2'
                 ),
             'css' => 

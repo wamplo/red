@@ -125,7 +125,7 @@ class Message Extends Engine\Red
             $m['type'] = '0'; #notopen 
             # get the time from jakarta
             $time = new DateTime(NULL, new DateTimeZone('Asia/Jakarta'));
-            $m['timecreate'] = $time->format('Y-m-d H:i:s');
+            $m['time_create'] = $time->format('Y-m-d H:i:s');
 
             $this->v->regex($_POST['subject'], '/^[a-zA-Z0-9_\s#]{4,140}$/', 
             '4-140 boleh berupa a-Z 0-9 # dan spasi');

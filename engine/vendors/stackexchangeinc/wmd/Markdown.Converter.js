@@ -425,6 +425,9 @@ else
             // Must come after _DoAnchors(), because you can use < and >
             // delimiters in inline links like [this](<url>).
             text = _DoAutoLinks(text);
+            
+            text = text.replace(/~P/g, "://"); // put in place to prevent autolinking; reset now
+            
             text = _EncodeAmpsAndAngles(text);
             text = _DoItalicsAndBold(text);
 
@@ -553,7 +556,7 @@ else
         function writeAnchorTag(wholeMatch, m1, m2, m3, m4, m5, m6, m7) {
             if (m7 == undefined) m7 = "";
             var whole_match = m1;
-            var link_text = m2;
+            var link_text = m2.replace(/:\/\//g, "~P"); // to prevent auto-linking withing the link. will be converted back after the auto-linker runs
             var link_id = m3.toLowerCase();
             var url = m4;
             var title = m7;
@@ -1110,6 +1113,8 @@ else
 
             var grafs = text.split(/\n{2,}/g);
             var grafsOut = [];
+            
+            var markerRe = /~K(\d+)K/;
 
             //
             // Wrap <p> tags.
@@ -1119,10 +1124,10 @@ else
                 var str = grafs[i];
 
                 // if this is an HTML marker, copy it
-                if (str.search(/~K(\d+)K/g) >= 0) {
+                if (markerRe.test(str)) {
                     grafsOut.push(str);
                 }
-                else if (str.search(/\S/) >= 0) {
+                else if (/\S/.test(str)) {
                     str = _RunSpanGamut(str);
                     str = str.replace(/^([ \t]*)/g, "<p>");
                     str += "</p>"
@@ -1136,11 +1141,13 @@ else
             if (!doNotUnhash) {
                 end = grafsOut.length;
                 for (var i = 0; i < end; i++) {
-                    // if this is a marker for an html block...
-                    while (grafsOut[i].search(/~K(\d+)K/) >= 0) {
-                        var blockText = g_html_blocks[RegExp.$1];
-                        blockText = blockText.replace(/\$/g, "$$$$"); // Escape any dollar signs
-                        grafsOut[i] = grafsOut[i].replace(/~K\d+K/, blockText);
+                    var foundAny = true;
+                    while (foundAny) { // we may need several runs, since the data may be nested
+                        foundAny = false;
+                        grafsOut[i] = grafsOut[i].replace(/~K(\d+)K/g, function (wholeMatch, id) {
+                            foundAny = true;
+                            return g_html_blocks[id];
+                        });
                     }
                 }
             }

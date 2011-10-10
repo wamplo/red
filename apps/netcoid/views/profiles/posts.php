@@ -1,13 +1,13 @@
 <div id="red-content">
 
-	<?php
+	<?php 
 		$data['pagination']->createHtml(array(
 			'data-pjax' => '#rr-2-1'
 		));
 	?>
 
 	<?php 
-		echo $this->getView('netcoid','profiles/topnav.php', $data);
+	    echo $this->getView('netcoid','profiles/topnav.php', $data);
 	?>
 
 	<div id="rr-2-1">

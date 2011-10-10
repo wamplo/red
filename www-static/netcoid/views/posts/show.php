@@ -103,7 +103,7 @@ if (strlen($data['post']['title']) > 60) {
 			echo "<div id='comment'>".$comment['comment_html']."</div>";
 			echo "<div id='comment-meta'>";
 			echo "<span id='comment-meta-name'><a class='u' href='/".$comment['username']."'>".$comment['name']."</a></span>";
-			echo '<time datetime="'.$comment['timecreate'].'">July 17, 2008</time>';
+			echo '<time datetime="'.$comment['time_create'].'">July 17, 2008</time>';
 
 			# DELETE LINK
 			if ($data['login'] == $comment['comment_UID']) {
