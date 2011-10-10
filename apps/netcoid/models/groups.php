@@ -14,7 +14,7 @@ class Groups extends \Engine\libraries\Database {
 	}
 
 	function getSearch(){
-		$data = $this->fetchAll ( 'SELECT GID, name, parent_GID FROM groups');
+		$data = $this->fetchAll ( 'SELECT GID, name, parent_GID, description FROM groups');
 		return $data;		
 	}
 

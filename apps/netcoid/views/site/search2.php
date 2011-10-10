@@ -8,12 +8,17 @@
 li.level2{
 	
 }
+#cat-description {
+padding-left: 10px;
+border-left: 1px solid #EEE;
+color: #666;
+}
 </style>
 
 <div class="clearfix" id="red-content">
 
 		<?php 
-
+		#var_dump($data);
 		$i = 1;	
 		echo '<div class="l" style="width:320px">';
 		foreach ($data['g'] as $value) {
@@ -23,7 +28,10 @@ li.level2{
 
 			if (isset($value['children'])) {
 				foreach ($value['children'] as $children) {
-					echo '<li class="level2"><a data-pjax="#rr-2" href="/group?id='.$children['GID'].'" class="a">'.$children['name'].'</a></li>';
+					echo '<li class="level2">
+							<a data-pjax="#rr-2" href="/group?id='.$children['GID'].'" class="a">'.$children['name'].'</a>
+							<p id="cat-description">'.$children['description'].'</p>
+						</li>';
 
 					if (isset($children['children'])) {
 						foreach ($children['children'] as $children) {

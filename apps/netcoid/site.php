@@ -109,6 +109,7 @@ class Site Extends Engine\Red
         foreach ($t as $value) {
             $thisref = &$refs[ $value['GID'] ];
             $thisref['parent_GID'] = $value['parent_GID'];
+            $thisref['description'] = $value['description'];
             $thisref['GID'] = $value['GID'];
 
             $thisref['name'] = $value['name'];
