@@ -25,14 +25,18 @@ class Messages extends \Engine\libraries\Database {
 		$uid = $this->fetch ( 'SELECT ruid, type FROM messages WHERE mid = :mid LIMIT 1', array ('mid' => $mid ) );
 		return $uid;
 	}
-	
+
+	function delReadMessages($uid){
+		$status = $this->query ( "DELETE FROM messages WHERE ruid = :uid AND type = 1", array ('uid' => $uid) );
+		return $status;	}	
+
 	function delMessage($mid) {
-		$status = $this->query ( "DELETE FROM messages WHERE mid = :mid", array ('mid' => $mid ) );
+		$status = $this->query ( "DELETE FROM messages WHERE mid = :mid", array ('mid' => $mid) );
 		return $status;
 	}
 	
 	function getMessage($mid, $ruid) {
-		$data = $this->fetch ( 'SELECT messages.suid, messages.message, messages.subject, messages.time_create, users.name, users.username, users.phone, messages.type
+		$data = $this->fetch ( 'SELECT messages.suid, messages.ruid, messages.message, messages.subject, messages.time_create, users.name, users.username, users.phone, messages.type
 		FROM messages JOIN users ON messages.suid = users.uid AND messages.ruid = :ruid WHERE mid = :mid LIMIT 1', array ('mid' => $mid, 'ruid' => $ruid));
 		return $data;
 	}

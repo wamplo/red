@@ -11,12 +11,12 @@
 #type-buy {
     font-weight: bold;
 }
-	#as li {
+	#at li {
 	    margin-bottom: 5px;
 	}
-	#ab{text-decoration:italic;}
+	#ac{text-decoration:italic;}
 	</style>
-	<ul id="as">
+	<ul id="at">
 	<?php 
 
 	foreach ($data['posts'] as $posts) {
@@ -34,7 +34,7 @@
 			echo '<div class="dq" style="margin-right: 10px;"><span id="type-buy">Permintaan</span></div>';
 		}
 
-		echo '<div class="dq" style="width: 610px;"><a class="a" href="post?id='.$posts['PID'].'">'.$posts['title'].'</a> oleh <a href="'.$posts['username'].'" class="u">@'.$posts['name'].'</a> di <i><span id="ab" class="gid-'.$posts['post_GID'].'">'.$posts['group'].'</span></i></div></li>';
+		echo '<div class="dq" style="width: 610px;"><a class="a" href="post?id='.$posts['PID'].'">'.$posts['title'].'</a> oleh <a href="'.$posts['username'].'" class="u">@'.$posts['name'].'</a> di <i><span id="ac" class="gid-'.$posts['post_GID'].'">'.$posts['group'].'</span></i></div></li>';
 	}
 	
 	?>

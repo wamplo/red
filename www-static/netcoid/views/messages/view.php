@@ -10,24 +10,46 @@
 #unread-messages li {
     word-wrap: break-word;
 }
-.f li:hover #messages-subject{background: #eee;}
-.f li:hover #messages-meta {background: #eee;}
-.f #messages-subject {
+.d li:hover #messages-subject{background: #eee;}
+.d li:hover #messages-meta {background: #eee;}
+.d #messages-subject {
     padding: 5px 10px;
 }
 
-.f #messages-meta {
+.d #messages-meta {
     border-bottom: 1px solid #eee;
     font-size: 11px;
     padding: 5px 10px;
     color:#ccc;
 }
-#ag {
-    border: 1px solid #EEEEEE;
+
+
+#message-helper
+{
     margin: 20px 0 0;
+}
+
+#message-helper a
+{
+	color:#444;
+}
+
+#message-helper #ah {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border-bottom: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
     padding: 5px;
     text-align: center;
 }
+
+#message-helper #av {
+    background: none repeat scroll 0 0 #DDDDDD;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+    text-align: center;
+}
+
 
 </style>
 <div class="clearfix" id="red-content">
@@ -40,17 +62,23 @@
 		<?php echo $data['message']['message']; ?>
 
 		<?php if ($data['message']['type'] == 0): ?>
-			<a href="/api/message/read?id=<?php echo $_GET['id']; ?>"><div id="ag">Done Reading</div></a>
+			<div id="message-helper">
+				<a href="/messages/send?id=<?php echo $data['message']['suid']; ?>"><div id="av">Reply</div></a>
+				<a href="/api/message/read?id=<?php echo $_GET['id']; ?>"><div id="ah">Done Reading</div></a>
+			</div>
 		<?php endif ?>
 
 		<?php if ($data['message']['type'] == 1): ?>
-			<a href="/api/message/unread?id=<?php echo $_GET['id']; ?>"><div id="ag">Unread</div></a>
+			<div id="message-helper">
+			   <a href="/api/message/delete?id=<?php echo $_GET['id']; ?>"><div id="av">Delete</div></a>
+				<a href="/api/message/unread?id=<?php echo $_GET['id']; ?>"><div id="ah">Unread</div></a>
+			</div>
 		<?php endif ?>
 	</div>
 	<!-- SINGLE MESSAGE END -->
 
 	<!-- UNREAD MESSAGES START -->
-	<div class="dt f" id="unread-messages">
+	<div class="dt d" id="unread-messages">
 		<ul>
 			<?php foreach ($data['messages'] as $message): ?>
 				<a class="a" href="/messages?id=<?php echo $message['mid']; ?>"><li>

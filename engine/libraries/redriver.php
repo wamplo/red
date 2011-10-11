@@ -21,6 +21,9 @@ class RedRiver extends Assets
 
 	function start(){
 
+		# START BUFFER
+		ob_start();
+
 		# JQUERY
 		echo "\n\t" . '<script type="text/javascript" src="'.$this->getPath('default', 'js/jquery-1.6.2.js').'"></script>';
 
@@ -28,12 +31,24 @@ class RedRiver extends Assets
 			# REDRIVER
 			echo "\n\t" . '<script type="text/javascript" src="'.$this->getPath('default', 'js/redriver.js').'?_='.rand().'"></script>';
 			echo '<div id="loading"></div>';
-		}
+
 			# PJAX
 			echo "\n\t" . '<script type="text/javascript" src="/engine/vendors/github/defunkt-jquery-pjax-7d9841e/jquery.pjax.js"></script>';
 
 			echo "\n\t" . '<script type="text/javascript" src="/engine/vendors/github/defunkt-jquery-pjax-7d9841e/netcoid.pjax.js?'.rand().'"></script>';
-	
+		}
+
+		# SEND TO BROWSER
+		ob_flush();
+	}
+
+	function end(){
+
+		# SEND TO BROWSER
+		ob_flush();
+
+		# CLEAN CACHE
+		ob_end_clean();		
 	}
 
 	function branch($params, $status = 1){
@@ -76,6 +91,7 @@ class RedRiver extends Assets
 
 		# FIX PJAX BUG NOT LOAD JS
 		if(!empty($_SERVER['HTTP_X_REQUESTED_WITH'])) {
+			
 			# PREPARE JAVASCRIPT
 			if (!empty($params['js'])) {
 				foreach ($params['js'] as $jsstate) 
@@ -102,10 +118,20 @@ class RedRiver extends Assets
 				}
 			}
 		}
+	
+		if ($status == 1) {
+
+			# SEND TO BROWSER
+			ob_flush();
+		}
+	
+		# LOAD OLNY ON THE END
+		if ($status == 2) {
+			$this->end();
+		}
 	}
 
 	public function noAjax($params, $status){
-
 		# SET DEFAULT PARAMS
 		isset($params['cache']) ? $params['cache'] : $params['cache'] = 1;
 		isset($params['callback']) ? $params['callback'] : $params['callback'] = '';
@@ -116,6 +142,7 @@ class RedRiver extends Assets
 		if ($status == 0) {
 			$this->start();
 		}
+
 		if (!empty($params['css'])) {
 			foreach ($params['css'] as $css) {
 
@@ -164,6 +191,17 @@ class RedRiver extends Assets
 					}	
 				}		
 			}
+		}
+
+		if ($status == 1) {
+			
+			# SEND TO BROWSER
+			ob_flush();
+		}
+
+		# LOAD OLNY ON THE END
+		if ($status == 2) {
+			$this->end();
 		}
 	}
 }

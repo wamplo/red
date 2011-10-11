@@ -17,14 +17,14 @@
 		<ul class="dq">
 
 		<?php if ($data['sessions']->get('uid')): ?>
-			<li id="az"><a data-pjax='#rr-2' href="/dashboard"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
+			<li id="bb"><a data-pjax='#rr-2' href="/dashboard"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
 			<?php #var_dump($data); ?>
 				<li class="dk"><a data-pjax='#rr-2' href="/admin/accounts">Accounts</a></li>
 				<li class="dk"><a data-pjax='#rr-2' href="/search">Search</a></li>
 		<?php endif ?>
 
 		<?php if (!$data['sessions']->get('uid')): ?>
-			<li id="az"><a data-pjax='#rr-2' href="/"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
+			<li id="bb"><a data-pjax='#rr-2' href="/"><?php $this->getIMG('netcoid','img/site/logo2.png'); ?></a></li>
 		<?php endif ?>
 		</ul>
 		<ul class="dt">

@@ -1,1 +1,1 @@
-python deploy.py new
+python deploy.py test

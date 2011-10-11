@@ -3,8 +3,8 @@
     padding: 5px 0;
 }
 .messageslist li{
-padding-bottom: 5px;
     border-bottom: 1px solid #EEEEEE;
+    padding: 5px 10px;
 }
 .messageslist li:hover {background: none repeat scroll 0 0 #FFFCE7;}
 
@@ -18,6 +18,27 @@ font-size: 12px;
     color:#ccc;
 }
 
+.messageslist #heading {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #DDDDDD;
+    padding: 5px;
+    text-align: center;
+}
+.messageslist #heading {
+    background: none repeat scroll 0 0 #DDDDDD;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+    text-align: center;
+}
+.messageslist #heading-meta {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border-bottom: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
 </style>
 
 <div id="red-content">
@@ -26,7 +47,8 @@ font-size: 12px;
 
 <?php if (!empty($data['messages'])): ?>
 	<ul class="messageslist">
-	<h2>Inbox</h2>
+	<div id="heading">Inbox</div>
+	<div id="heading-meta">See All</div>
 	<?php foreach ($data['messages'] as $message): ?>
 		<a class="a" href="/messages?id=<?php echo $message['mid']; ?>"><li>
 		<div id="messages-subject">
@@ -41,8 +63,9 @@ font-size: 12px;
 <?php endif ?>
 
 <?php if (!empty($data['archives'])): ?>
-	<h2>Archives</h2>
 	<ul class="messageslist">
+	<div id="heading">Archives</div>
+	<div id="heading-meta" class="clearfix"><span class="r"><a href="/api/message/delete">Delete All</a></span> <span class="l">See All</span></div>
 	<?php foreach ($data['archives'] as $archive): ?>
 		<a class="a" href="/messages?id=<?php echo $archive['mid']; ?>"><li>
 		<div id="messages-subject">

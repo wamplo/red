@@ -99,7 +99,7 @@ if (strlen($data['post']['title']) > 60) {
 		<ul>
 		<?php foreach ($data['comments'] as $comment): ?>
 			<?php 
-			echo "<li class='e clearfix' id='comment-".$comment['CID']."'>";
+			echo "<li class='f clearfix' id='comment-".$comment['CID']."'>";
 			echo "<div id='comment'>".$comment['comment_html']."</div>";
 			echo "<div id='comment-meta'>";
 			echo "<span id='comment-meta-name'><a class='u' href='/".$comment['username']."'>".$comment['name']."</a></span>";
@@ -135,7 +135,7 @@ if (strlen($data['post']['title']) > 60) {
 	</div>
 <!-- 
 <style type="text/css">
-#oracle-social-comments .e {
+#oracle-social-comments .f {
     border-bottom: 1px solid #EEEEEE;
     padding: 2.5px 0;
 }

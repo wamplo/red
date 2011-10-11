@@ -351,6 +351,44 @@ class Api extends Engine\Red
         }        
     }
 
+    // DELETE MESSAGE
+    public function DeleteM(){
+        # IF NOT SET ID DELETE ALL
+        if ($this->e->get('uid')) {
+        
+            $m = new Apps\Netcoid\Models\Messages;
+            
+            $m->delReadMessages($this->e->get('uid'));
+            $this->h->setMessage('Deleted...');
+            header('Location: /messages');
+
+        } else {
+            die('api@networks.co.id');
+        }   
+
+        # IF SET ID
+        if (isset($_GET['id']) && $this->e->get('uid')) {
+            
+            $m = new Apps\Netcoid\Models\Messages;
+            $status = $m->getMessage($_GET['id'],$this->e->get('uid'));
+
+            # IF TRUE OR THERE IS A RETURN
+            if ($status['type'] == 1) {
+
+                # AUTH JUST FOR RECIVER
+                if ($status['ruid'] == $this->e->get('uid')) {
+
+                    $m->delMessage($_GET['id']);
+                    $this->h->setMessage('Deleted...');
+                    header('Location: /messages');
+                }
+            }
+
+        } else {
+            die('api@networks.co.id');
+        }        
+    }
+
     // READ MESSAGE
     public function ReadM(){
         if (isset($_GET['id']) && $this->e->get('uid')) {

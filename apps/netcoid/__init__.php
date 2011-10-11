@@ -47,6 +47,7 @@ $routes = array(
     # MESSAGE
     'api/message/read'  =>  'Api:ReadM',
     'api/message/unread'=>  'Api:UnreadM',
+    'api/message/delete'=>  'Api:DeleteM',
 
     # COMMENT
     'api/c/set'			=>	'Api:setC',
@@ -60,7 +61,7 @@ $routes = array(
 
     # DASHBOARD
     'api/p/refresh'     =>  'Api:postRefresh',
-    #'api/c/get'			=>	'Api:getC'
+    #'api/c/get'		=>	'Api:getC'
 
     // MENTION
     'api/m/open'        =>  'Api:openM'

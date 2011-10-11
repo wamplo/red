@@ -22,12 +22,34 @@
     padding: 5px 10px;
     color:#ccc;
 }
-#doneread {
-    border: 1px solid #EEEEEE;
+
+
+#message-helper
+{
     margin: 20px 0 0;
+}
+
+#message-helper a
+{
+	color:#444;
+}
+
+#message-helper #doneread {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border-bottom: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
     padding: 5px;
     text-align: center;
 }
+
+#message-helper #reply {
+    background: none repeat scroll 0 0 #DDDDDD;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+    text-align: center;
+}
+
 
 </style>
 <div class="clearfix" id="red-content">
@@ -40,11 +62,17 @@
 		<?php echo $data['message']['message']; ?>
 
 		<?php if ($data['message']['type'] == 0): ?>
-			<a href="/api/message/read?id=<?php echo $_GET['id']; ?>"><div id="doneread">Done Reading</div></a>
+			<div id="message-helper">
+				<a href="/messages/send?id=<?php echo $data['message']['suid']; ?>"><div id="reply">Reply</div></a>
+				<a href="/api/message/read?id=<?php echo $_GET['id']; ?>"><div id="doneread">Done Reading</div></a>
+			</div>
 		<?php endif ?>
 
 		<?php if ($data['message']['type'] == 1): ?>
-			<a href="/api/message/unread?id=<?php echo $_GET['id']; ?>"><div id="doneread">Unread</div></a>
+			<div id="message-helper">
+			   <a href="/api/message/delete?id=<?php echo $_GET['id']; ?>"><div id="reply">Delete</div></a>
+				<a href="/api/message/unread?id=<?php echo $_GET['id']; ?>"><div id="doneread">Unread</div></a>
+			</div>
 		<?php endif ?>
 	</div>
 	<!-- SINGLE MESSAGE END -->
