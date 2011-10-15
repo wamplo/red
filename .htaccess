@@ -18,7 +18,6 @@ DirectoryIndex index.php
 # ExpiresByType image/* "modification plus 1 minutes" 
 
 suPHP_ConfigPath /home/netcoid
-php_flag suhosin.simulation On
 
 AddOutputFilterByType DEFLATE text/plain
 AddOutputFilterByType DEFLATE text/html
