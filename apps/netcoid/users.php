@@ -169,7 +169,7 @@ class Users Extends Engine\Red
             # @todo munkin nanti satu aja, information aja gak usah pake html karena sama ajA
             # penuh - penuhin database
             
-            $e['information'] = $purifier->purify($_POST['information']);
+            $e['information'] = $_POST['information'];
             $e['information_html'] = $e['information'];
             # END PLUGIN
             
