@@ -17,3 +17,4 @@ DirectoryIndex index.php
 # ExpiresActive on
 # ExpiresByType image/* "modification plus 1 minutes" 
 
+php_flag suhosin.simulation On
