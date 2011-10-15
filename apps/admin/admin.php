@@ -56,10 +56,11 @@ class Admin Extends Engine\Red
         $this->__Header();
 
         # INDEX
+        $data = array('forms' => $this->f  );
         $this->r->branch(array(
         'src' => 
             array(
-                'html' => $this->a->getView('admin','accounts/index.php'),
+                'html' => $this->a->getView('admin','accounts/index.php',$data),
                 'id' => 'rr-2'
             ),
         'css' => 

@@ -5,6 +5,8 @@ ALTER TABLE users CHANGE timeregister time_register DATETIME NULL;
 ALTER TABLE users CHANGE timelogin time_login DATETIME NULL;
 ALTER TABLE messages CHANGE timecreate time_create DATETIME NULL;
 ALTER TABLE comments CHANGE timecreate time_create DATETIME NULL;
+ALTER TABLE users CHANGE reset token VARCHAR(255) NULL ,
+ALTER TABLE users ADD COLUMN domain VARCHAR(255) NULL AFTER role;
 
 #rename table netcoid_comments to comments;
 #rename table netcoid_follow to follow;

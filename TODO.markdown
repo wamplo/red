@@ -1,2 +1,2 @@
 
-delete your one posts
+if post ada pic kasih icon beda

@@ -1,58 +1,23 @@
 #!/usr/bin/env python
 
-# DEVELOPMENT PATH
-PATH_APPS = '../../../apps/*/'
-PATH_ASSETS = PATH_APPS + 'assets'
-PATH_VIEWS = PATH_APPS + 'views/*/'
-
-# PRODUCTION PATH
-PATH_PRODUCTION = '../../../www-static/'
-
-googleclosure = 'anthena/bin/googleclosure/googlecc-06.152.011.jar'
-yuicompressor = 'anthena/bin/yuicompressor/yuicompressor-2.4.6.jar'
-optipng = 'anthena/bin/imageoptimizer/optipng-0.6.5.exe'
-jpegtrans = 'anthena/bin/imageoptimizer/jpegtran-8c.exe'
-muncher = 'anthena/bin/muncher/munch'
-gitftp = 'anthena/bin/gitftp/git-ftp.py'
-
-# CONFIGURATION
-cache = 'cache'
-debug = 0
-color = 1
-
-
-# HUMANIZE
-Athena = [
-"Kissing with ",
-"Great! im doing fine with ",
-"Hmm, quite funny heh? this ",
-"Locating the required gigapixels to render ",
-"Spinning up the hamster first... :d ok ",
-"My other load screen is much faster. You should try that one instead. ",
-"it's still faster than you could draw ",
-"why don't you order a sandwich? ",
-"don't think of me :) ",
-"testing your patience with ",
-"would you like fries with that ",
-"we're building the buildings as fast as we can with ",
-"thinking... maybe he knows -> "
-]
-
-
 # LOAD
 try:
+
 	import clint
 	import glob
 	import os
 	import fnmatch
 	import sys
 	import time
+
 	from random import randint
 	from clint.textui import colored
-	# IGNORE CSS
 
-	from deploy.ignorecss import *
-
+	# CONFIGURATIONS
+	from anthena.config.ignorecss import *
+	from anthena.config.paths import *
+	from anthena.config.humanize import *
+	from anthena.config.default import *
 
 	''' kedepannya kaya gini
 	configs = []
@@ -66,6 +31,7 @@ except Exception as inst: # raise e
 
 # SETUP
 def setup():
+
 	# https://github.com/kennethreitz/clint
 	os.system('easy_install clint');
 	os.system('easy_install gitpython');

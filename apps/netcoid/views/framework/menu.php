@@ -50,6 +50,9 @@
 		</ul>
 	</div>
 </div>
+
+<?php if ($data['sessions']->get('uid')): ?>
 <div style="height: 30px; background: none repeat scroll 0pt 0pt rgb(255, 255, 255); border-bottom: 1px solid rgb(231, 231, 231); color: rgb(68, 68, 68);"><p style="margin: 0pt auto; width: 960px; text-align: center; line-height: 29px;">
 Situs netcoid.com masih dalam <i>perkembangan</i>, <b>data dapat hilang tampa sepengetahuan</b>, silahkan ke situs lama di <a class="a" title="Netcoid - Jejaring Bisnis Indonesia" href="https://www.networks.co.id">www.networks.co.id</a>
 </p></div>
+<?php endif ?>

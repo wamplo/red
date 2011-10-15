@@ -149,24 +149,34 @@ class Users Extends Engine\Red
 
         if ($this->f->checkHumanPost(1)) {
 
-            $e['information'] = $this->v->safe($_POST['information']);
             #$e['information_html'] = $_POST['information_html'];
 
             # START PLUGIN
-            $m = new Engine\Vendors\Stackexchangeinc\wmd\ElephantMarkdown;
             $vendorHTMLpurifier = new Engine\Vendors\HTMLpurifier\HTMLpurifier;
             $HTMLpurifierConfig = HTMLPurifier_Config::createDefault();
             $HTMLpurifierConfig->set('HTML.SafeObject', "1");
             $HTMLpurifierConfig->set('Output.FlashCompat', "1");
             $HTMLpurifierConfig->set('Filter.YouTube', "1");
+            $HTMLpurifierConfig->set('URI.AllowedSchemes', array(
+                'ymsgr' => true,
+                'http' => true,
+                'https' => true,
+                'mailto' => true,
+            ));
 
             $purifier = new HTMLPurifier($HTMLpurifierConfig);
-            $e['information_html'] = $purifier->purify($m->parse($_POST['information']));
+
+            # @todo munkin nanti satu aja, information aja gak usah pake html karena sama ajA
+            # penuh - penuhin database
+            
+            $e['information'] = $purifier->purify($_POST['information']);
+            $e['information_html'] = $e['information'];
             # END PLUGIN
             
             $e['uid'] = $this->e->get('uid');
 
             $this->v->required($e['information_html'], 'security@networks.co.id');
+            $this->v->required($e['information'], 'security@networks.co.id');
 
             if(!sizeof($this->v->errors)) 
             {
@@ -200,21 +210,6 @@ class Users Extends Engine\Red
                     $this->a->getPath('netcoid','css/users.css'),
                     $this->a->getPath('netcoid','css/blog.css'),
                     '/engine/vendors/stackexchangeinc/wmd/demo.css'
-                ),
-            'js' =>
-                array(
-                    array(
-                       '/engine/vendors/stackexchangeinc/wmd/Markdown.Converter.js'
-                    ),
-                    array(
-                       '/engine/vendors/stackexchangeinc/wmd/Markdown.Sanitizer.js'
-                    ),
-                    array(
-                       '/engine/vendors/stackexchangeinc/wmd/Markdown.Editor.js'
-                    ),
-                    array(
-                        $this->a->getPath('netcoid','js/wmd.js')
-                    )
                 ),
 
             'cache' => 0

@@ -27,18 +27,22 @@
 		<div class="users-left50 dq de" id="red-wmd"><?php $data['forms']->openForm('red-wmd'); ?>
 			<ul>
 				<li id="form-header"><h3><strong>Profile</strong> <a style="font-size:12px;margin-left:10px" class="s" href="/<?php echo $data['username']; ?>">See Profile</a></h3></li>
-				<div class="clearfix" id="wmd-button-bar"></div>
 				<!-- INFORMATIONBOX -->
-				<li class="form-child"><?php $data['forms']->textarea('information',l('informationbox'), 
-					array( 
-						'data-error' => l('register_username_error'),
-						'class' => 't',
-						'id' => 'wmd-input',
-						'style' => 'width: 450px; height: 250px;',
-						'value'	=> $data['data']['information']
-					)); 
-				?></li>
 
+				<li class="form-child">
+				<label for="information">Kotak Informasi</label>
+				<div id="html-enabled" style="
+				    background: #eee;
+				    width: 450px;
+				    padding: 5px;
+				    margin: -5px 5px 0;
+				    position: relative;
+				    top: 11px;
+				    border: 1px solid #aaa;
+				    text-align: center;
+				">HTML enabled</div>
+				<textarea name="information" data-error="Username Anda Harus Berformat 6-20 Huruf atau Angka" class="dk" id="wmd-input" style="width: 450px; height: 250px;"><?php echo $data['data']['information']; ?></textarea>
+				</li>
 				<li><input type="hidden" name="information_html" id="wmd-content-html" value=""/></li>
 				<li class="form-button"><input type="submit" id="button" value="Edit"></li>
 			</ul>

@@ -60,7 +60,7 @@ class Posts extends \Engine\libraries\Database {
 			$end = $items; 
 		}
 
-		$data = $this->fetchAll( 'SELECT posts.PID, posts.title, posts.content, posts.content_html, posts.time_create, posts.time_update, posts.time_bump, posts.post_UID, posts.count_views, users.username, users.name FROM posts, users WHERE users.UID = posts.Post_UID AND posts.post_UID = :uid AND posts.status = :status ORDER BY time_bump DESC LIMIT '. $start .','. $end, array( 'uid' => $uid, 'status' => $status ));
+		$data = $this->fetchAll( 'SELECT groups.name as groups_name, posts.PID, posts.title, posts.time_create, posts.time_update, posts.time_bump, posts.status, posts.post_GID, posts.post_UID, posts.count_views, users.username, users.name FROM posts, users, groups WHERE users.UID = posts.post_UID AND posts.post_UID = :uid AND posts.post_GID = groups.GID AND posts.status = :status ORDER BY time_bump DESC LIMIT '. $start .','. $end, array( 'uid' => $uid, 'status' => $status ));
 		return $data;	
 	}
 
