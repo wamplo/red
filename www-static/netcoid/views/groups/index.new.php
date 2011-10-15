@@ -8,11 +8,14 @@
 li.type-1 a.a{color:#1EA7E7;}
 li.type-2 a.a{    color: #47C937;}
 
-#count-reply{
-	background: none repeat scroll 0 0 #444444;
-    color: #FFFFFF;
-    padding: 1px 10px;
-    margin-right: 5px;
+#count-views {
+	background: #EEE;
+	padding: 1px 5px;
+	color: #444;
+	border: 1px solid #AAA;
+	font-size: 8px;
+	position: relative;
+	top: -2.7px;
 }
 </style>
 <?php #var_dump($data); ?>
@@ -69,7 +72,7 @@ li.type-2 a.a{    color: #47C937;}
 				#var_dump($post['count_reply']);
 
 				echo '<div class="dq" style="margin-right: 5px;">';
-				echo '<span class="dr" id="count-reply">'.$post['count_reply'].'</span> ';
+				echo '<span class="dr" id="count-views">'.$post['count_views'].'</span> ';
 
 				if ($post['status'] == 2) {
 					echo "<span>offer</span> ";

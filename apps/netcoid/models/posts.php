@@ -101,6 +101,12 @@ class Posts extends \Engine\libraries\Database {
 		return $data;
 	}
 
+	function addView1($pid){
+		$data = $this->query('UPDATE posts SET posts.count_views = posts.count_views + 1 WHERE posts.PID = :pid', array( 'pid' => $pid ));
+		return $data;
+	}
+
+
 	function getFollowingPost($uid, $limit = 20) {
 		$data = $this->fetchAll ( "SELECT posts.PID, posts.post_GID, posts.title, posts.status, users.name, users.username
 		FROM posts

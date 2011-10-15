@@ -120,6 +120,13 @@ class Posts Extends Engine\Red
 
         $post = $this->p->getPostbyPID($_GET['id']);
 
+        # COUNT VIEW
+        if(!isset($_SESSION['NETCOID_GUEST_POST_COUNTED_'.$_GET['id']]))
+        {
+            $this->p->addView1($_GET['id']);
+           $_SESSION['NETCOID_GUEST_POST_COUNTED_'.$_GET['id']] = true;
+        }
+
         if (!$post) {
             header('HTTP/1.1 404 Not Found');
             echo '404';

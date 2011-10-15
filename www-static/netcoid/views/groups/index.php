@@ -14,6 +14,16 @@ li.type-2 a.a{    color: #47C937;}
 #meta-offer {
     margin-right: 10px;
 }
+
+#count-views {
+	background: #EEE;
+	padding: 1px 5px;
+	color: #444;
+	border: 1px solid #AAA;
+	font-size: 8px;
+	position: relative;
+	top: -2.7px;
+}
 </style>
 <?php #var_dump($data); ?>
 <div id="red-content">
@@ -66,6 +76,7 @@ li.type-2 a.a{    color: #47C937;}
 				}			
 
 				echo '<li class="type-'.$post['status'].'">';
+				echo '<span class="dr" id="count-views">'.$post['count_views'].'</span> ';
 
 				if ($post['status'] == 2) {
 					echo "<span class='dr' id='meta-offer'><i>Penawaran</i></span>";

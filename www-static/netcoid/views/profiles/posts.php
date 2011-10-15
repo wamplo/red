@@ -4,6 +4,15 @@
     padding-right: 10px;
     position: relative;
 }
+#count-views {
+	background: #EEE;
+	padding: 1px 5px;
+	color: #444;
+	border: 1px solid #AAA;
+	font-size: 8px;
+	position: relative;
+	top: -2.7px;
+}
 </style>
 
 <div id="red-content">
@@ -27,12 +36,12 @@
 				$post['title'] = substr($post['title'], 0, 60) . '(...)';
 			}
 			echo '<li class="type-'.$post['status'].'">';
-
+			echo '<span class="dr" id="count-views">'.$post['count_views'].'</span> ';
 			echo '<span id="icon-post">';
 			$this->getIMG('netcoid','img/icons/post.png');
 			echo "</span>";
 			echo '<a data-pjax="#rr-2" href="/post?id='.$post['PID'].'" class="a">'.$post['title'].'</a> 
-			<i>in</i> <a class="" href="/group?id='.$post['post_GID'].'">'.$post['groups_name'].'</a>';
+			<i>in</i> <a href="/group?id='.$post['post_GID'].'">'.$post['groups_name'].'</a>';
 			?>
 		<?php endforeach ?>
 		</ul>
